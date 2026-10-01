@@ -33,7 +33,7 @@ tags        ["期中"] / ["期末"]
 `dialogues.json` 每筆：`id`（L1_D01）、`lektion`、`week`、`title`、`scene`、`voices`（每個角色的聲音，`m`＝Conrad 男聲、`f`＝Seraphina 女聲，依角色性別指定）、`lines[{speaker, de, zh}]`。
 
 ## 語音
-hai 選定：單字／例句用 Seraphina（`de-DE-SeraphinaMultilingualNeural`），會話依角色分 Conrad（`de-DE-ConradNeural`）／Seraphina，整體 `-10%` 語速。App 先播 `audio/` 的 mp3，載入失敗才退回裝置內建語音。
+hai 選定：單字／例句用 Katja（`de-DE-KatjaNeural`），會話依角色分 Conrad（`de-DE-ConradNeural`）／Seraphina（`de-DE-SeraphinaMultilingualNeural`），整體 `-10%` 語速。App 先播 `audio/` 的 mp3，載入失敗才退回裝置內建語音。
 
 產生音檔：`~/.venvs/tts/bin/python tools/gen_audio.py`（venv 不存在就先 `python3 -m venv ~/.venvs/tts && ~/.venvs/tts/bin/pip install edge-tts`）。edge-tts 借用 Edge 朗讀服務、非正式 API，若失效要告訴 hai，不要自己換別的付費服務。
 
@@ -54,3 +54,5 @@ hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若�
 
 ## 範圍設定
 `index.html` 的 `SCOPES`：期中範圍 = Lektion 1–2（W8 期中），期末考 Lektion 2–3。加新週次時記得在 `SCOPES` 補 `w4`、`w5`… 的按鈕。
+
+> 踩坑：Seraphina 是多語語音，**單獨一個字**會自動判斷語言，Koreanisch、Englisch 這類字會念成英文腔。單字一律用純德語的 Katja；Seraphina 只用在整句會話。

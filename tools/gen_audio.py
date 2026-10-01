@@ -11,9 +11,10 @@ import edge_tts
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUDIO = os.path.join(ROOT, 'audio')
-VOICES = {'m': 'de-DE-ConradNeural', 'f': 'de-DE-SeraphinaMultilingualNeural'}
+VOICES = {'m': 'de-DE-ConradNeural', 'f': 'de-DE-SeraphinaMultilingualNeural', 'k': 'de-DE-KatjaNeural'}
 RATE = '-10%'          # Seraphina 原速偏快，整體放慢一點
-WORD_VOICE = 'f'       # 單字、例句用 Seraphina
+# 單字、例句用 Katja：Seraphina 是多語語音，單獨一個字時會誤判成英文（如 Koreanisch 念成英文腔）
+WORD_VOICE = 'k'
 
 
 def tts_text(text):
