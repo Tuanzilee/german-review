@@ -1,73 +1,342 @@
 [
- {"id": "L1_D01", "lektion": 1, "week": 1, "title": "一天中的問候", "scene": "早上、白天、晚上碰到人",
+ {
+  "id": "L1_D01",
+  "lektion": 1,
+  "week": 1,
+  "title": "一天中的問候",
+  "scene": "早上、白天、晚上碰到人",
   "lines": [
-   {"speaker": "A", "de": "Guten Morgen, Frau Weber!", "zh": "早安，Weber 女士！"},
-   {"speaker": "B", "de": "Guten Morgen, Herr Lin!", "zh": "早安，林先生！"},
-   {"speaker": "A", "de": "Guten Abend, Alexander!", "zh": "晚上好，Alexander！"},
-   {"speaker": "B", "de": "Hallo! Guten Abend!", "zh": "哈囉！晚上好！"},
-   {"speaker": "A", "de": "Auf Wiedersehen, Frau Weber!", "zh": "再見，Weber 女士！"},
-   {"speaker": "B", "de": "Tschüs! Bis später!", "zh": "掰掰！待會見！"}
-  ]},
- {"id": "L1_D02", "lektion": 1, "week": 2, "title": "自我介紹（正式 Sie）", "scene": "第一次見面、工作場合",
+   {
+    "speaker": "A",
+    "de": "Guten Morgen, Frau Weber!",
+    "zh": "早安，Weber 女士！"
+   },
+   {
+    "speaker": "B",
+    "de": "Guten Morgen, Herr Lin!",
+    "zh": "早安，林先生！"
+   },
+   {
+    "speaker": "A",
+    "de": "Guten Abend, Alexander!",
+    "zh": "晚上好，Alexander！"
+   },
+   {
+    "speaker": "B",
+    "de": "Hallo! Guten Abend!",
+    "zh": "哈囉！晚上好！"
+   },
+   {
+    "speaker": "A",
+    "de": "Auf Wiedersehen, Frau Weber!",
+    "zh": "再見，Weber 女士！"
+   },
+   {
+    "speaker": "B",
+    "de": "Tschüs! Bis später!",
+    "zh": "掰掰！待會見！"
+   }
+  ],
+  "voices": {
+   "A": "m",
+   "B": "f"
+  }
+ },
+ {
+  "id": "L1_D02",
+  "lektion": 1,
+  "week": 2,
+  "title": "自我介紹（正式 Sie）",
+  "scene": "第一次見面、工作場合",
   "lines": [
-   {"speaker": "A", "de": "Guten Tag. Mein Name ist Thomas Klein.", "zh": "您好。我的名字是 Thomas Klein。"},
-   {"speaker": "B", "de": "Guten Tag, Herr Klein. Ich bin Mei Chen.", "zh": "您好，Klein 先生。我是陳美。"},
-   {"speaker": "A", "de": "Entschuldigung, wie heißen Sie?", "zh": "不好意思，您叫什麼名字？"},
-   {"speaker": "B", "de": "Ich heiße Mei Chen.", "zh": "我叫陳美。"},
-   {"speaker": "A", "de": "Freut mich, Frau Chen.", "zh": "很高興認識您，陳女士。"},
-   {"speaker": "B", "de": "Freut mich auch.", "zh": "我也很高興認識您。"}
-  ]},
- {"id": "L1_D03", "lektion": 1, "week": 2, "title": "自我介紹（非正式 du）", "scene": "跟同學聊天",
+   {
+    "speaker": "A",
+    "de": "Guten Tag. Mein Name ist Thomas Klein.",
+    "zh": "您好。我的名字是 Thomas Klein。"
+   },
+   {
+    "speaker": "B",
+    "de": "Guten Tag, Herr Klein. Ich bin Mei Chen.",
+    "zh": "您好，Klein 先生。我是陳美。"
+   },
+   {
+    "speaker": "A",
+    "de": "Entschuldigung, wie heißen Sie?",
+    "zh": "不好意思，您叫什麼名字？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich heiße Mei Chen.",
+    "zh": "我叫陳美。"
+   },
+   {
+    "speaker": "A",
+    "de": "Freut mich, Frau Chen.",
+    "zh": "很高興認識您，陳女士。"
+   },
+   {
+    "speaker": "B",
+    "de": "Freut mich auch.",
+    "zh": "我也很高興認識您。"
+   }
+  ],
+  "voices": {
+   "A": "m",
+   "B": "f"
+  }
+ },
+ {
+  "id": "L1_D03",
+  "lektion": 1,
+  "week": 2,
+  "title": "自我介紹（非正式 du）",
+  "scene": "跟同學聊天",
   "lines": [
-   {"speaker": "A", "de": "Hallo! Ich bin Jonas. Und wie heißt du?", "zh": "哈囉！我是 Jonas。你叫什麼名字？"},
-   {"speaker": "B", "de": "Hallo, Jonas. Ich heiße Hai.", "zh": "哈囉，Jonas。我叫 Hai。"},
-   {"speaker": "A", "de": "Woher kommst du?", "zh": "你從哪裡來？"},
-   {"speaker": "B", "de": "Ich komme aus Taiwan, aus Taipei. Und du?", "zh": "我來自台灣，台北。你呢？"},
-   {"speaker": "A", "de": "Ich komme aus Deutschland, aus Berlin.", "zh": "我來自德國，柏林。"}
-  ]},
- {"id": "L1_D04", "lektion": 1, "week": 2, "title": "您從哪裡來？", "scene": "國際研討會上認識人",
+   {
+    "speaker": "A",
+    "de": "Hallo! Ich bin Jonas. Und wie heißt du?",
+    "zh": "哈囉！我是 Jonas。你叫什麼名字？"
+   },
+   {
+    "speaker": "B",
+    "de": "Hallo, Jonas. Ich heiße Hai.",
+    "zh": "哈囉，Jonas。我叫 Hai。"
+   },
+   {
+    "speaker": "A",
+    "de": "Woher kommst du?",
+    "zh": "你從哪裡來？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich komme aus Taiwan, aus Taipei. Und du?",
+    "zh": "我來自台灣，台北。你呢？"
+   },
+   {
+    "speaker": "A",
+    "de": "Ich komme aus Deutschland, aus Berlin.",
+    "zh": "我來自德國，柏林。"
+   }
+  ],
+  "voices": {
+   "A": "m",
+   "B": "f"
+  }
+ },
+ {
+  "id": "L1_D04",
+  "lektion": 1,
+  "week": 2,
+  "title": "您從哪裡來？",
+  "scene": "國際研討會上認識人",
   "lines": [
-   {"speaker": "A", "de": "Guten Tag! Wer sind Sie?", "zh": "您好！請問您是誰？"},
-   {"speaker": "B", "de": "Ich bin Anna Novak.", "zh": "我是 Anna Novak。"},
-   {"speaker": "A", "de": "Woher kommen Sie, Frau Novak?", "zh": "Novak 女士，您從哪裡來？"},
-   {"speaker": "B", "de": "Ich komme aus Österreich. Und Sie?", "zh": "我來自奧地利。您呢？"},
-   {"speaker": "A", "de": "Ich komme aus der Schweiz.", "zh": "我來自瑞士。"}
-  ]},
- {"id": "L1_D05", "lektion": 1, "week": 3, "title": "你會說什麼語言？", "scene": "用 du 聊語言能力",
+   {
+    "speaker": "A",
+    "de": "Guten Tag! Wer sind Sie?",
+    "zh": "您好！請問您是誰？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich bin Anna Novak.",
+    "zh": "我是 Anna Novak。"
+   },
+   {
+    "speaker": "A",
+    "de": "Woher kommen Sie, Frau Novak?",
+    "zh": "Novak 女士，您從哪裡來？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich komme aus Österreich. Und Sie?",
+    "zh": "我來自奧地利。您呢？"
+   },
+   {
+    "speaker": "A",
+    "de": "Ich komme aus der Schweiz.",
+    "zh": "我來自瑞士。"
+   }
+  ],
+  "voices": {
+   "A": "m",
+   "B": "f"
+  }
+ },
+ {
+  "id": "L1_D05",
+  "lektion": 1,
+  "week": 3,
+  "title": "你會說什麼語言？",
+  "scene": "用 du 聊語言能力",
   "lines": [
-   {"speaker": "A", "de": "Was sprichst du?", "zh": "你會說什麼語言？"},
-   {"speaker": "B", "de": "Ich spreche Chinesisch und Englisch.", "zh": "我會說中文和英文。"},
-   {"speaker": "A", "de": "Du sprichst gut Deutsch!", "zh": "你德文說得很好！"},
-   {"speaker": "B", "de": "Nein, nein. Nur ein bisschen.", "zh": "沒有啦，只會一點點。"},
-   {"speaker": "A", "de": "Und was sprechen Sie, Herr Meier?", "zh": "那 Meier 先生您會說什麼語言？"},
-   {"speaker": "C", "de": "Ich spreche Deutsch und Französisch.", "zh": "我會說德文和法文。"}
-  ]},
- {"id": "L1_D06", "lektion": 1, "week": 3, "title": "電話找人", "scene": "打電話到公司，對方不在",
+   {
+    "speaker": "A",
+    "de": "Was sprichst du?",
+    "zh": "你會說什麼語言？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich spreche Chinesisch und Englisch.",
+    "zh": "我會說中文和英文。"
+   },
+   {
+    "speaker": "A",
+    "de": "Du sprichst gut Deutsch!",
+    "zh": "你德文說得很好！"
+   },
+   {
+    "speaker": "B",
+    "de": "Nein, nein. Nur ein bisschen.",
+    "zh": "沒有啦，只會一點點。"
+   },
+   {
+    "speaker": "A",
+    "de": "Und was sprechen Sie, Herr Meier?",
+    "zh": "那 Meier 先生您會說什麼語言？"
+   },
+   {
+    "speaker": "C",
+    "de": "Ich spreche Deutsch und Französisch.",
+    "zh": "我會說德文和法文。"
+   }
+  ],
+  "voices": {
+   "A": "f",
+   "B": "f",
+   "C": "m"
+  }
+ },
+ {
+  "id": "L1_D06",
+  "lektion": 1,
+  "week": 3,
+  "title": "電話找人",
+  "scene": "打電話到公司，對方不在",
   "lines": [
-   {"speaker": "A", "de": "Firma Sonnenlicht, Petra Wolf, guten Tag.", "zh": "Sonnenlicht 公司，我是 Petra Wolf，您好。"},
-   {"speaker": "B", "de": "Guten Tag. Mein Name ist Lin. Ist Herr Bauer da, bitte?", "zh": "您好。我姓林。請問 Bauer 先生在嗎？"},
-   {"speaker": "A", "de": "Entschuldigung, wie ist Ihr Name?", "zh": "不好意思，您的名字是？"},
-   {"speaker": "B", "de": "Lin. Ich buchstabiere: L – I – N.", "zh": "林。我拼一下：L－I－N。"},
-   {"speaker": "A", "de": "Einen Moment, bitte … Tut mir leid, Herr Bauer ist nicht da.", "zh": "請稍等…很抱歉，Bauer 先生不在。"},
-   {"speaker": "B", "de": "Ja, gut. Vielen Dank. Auf Wiederhören!", "zh": "好的，非常感謝。再見！"},
-   {"speaker": "A", "de": "Auf Wiederhören!", "zh": "再見！"}
-  ]},
- {"id": "L1_D07", "lektion": 1, "week": 3, "title": "填表格：拼名字", "scene": "櫃台登記個人資料",
+   {
+    "speaker": "A",
+    "de": "Firma Sonnenlicht, Petra Wolf, guten Tag.",
+    "zh": "Sonnenlicht 公司，我是 Petra Wolf，您好。"
+   },
+   {
+    "speaker": "B",
+    "de": "Guten Tag. Mein Name ist Lin. Ist Herr Bauer da, bitte?",
+    "zh": "您好。我姓林。請問 Bauer 先生在嗎？"
+   },
+   {
+    "speaker": "A",
+    "de": "Entschuldigung, wie ist Ihr Name?",
+    "zh": "不好意思，您的名字是？"
+   },
+   {
+    "speaker": "B",
+    "de": "Lin. Ich buchstabiere: L – I – N.",
+    "zh": "林。我拼一下：L－I－N。"
+   },
+   {
+    "speaker": "A",
+    "de": "Einen Moment, bitte … Tut mir leid, Herr Bauer ist nicht da.",
+    "zh": "請稍等…很抱歉，Bauer 先生不在。"
+   },
+   {
+    "speaker": "B",
+    "de": "Ja, gut. Vielen Dank. Auf Wiederhören!",
+    "zh": "好的，非常感謝。再見！"
+   },
+   {
+    "speaker": "A",
+    "de": "Auf Wiederhören!",
+    "zh": "再見！"
+   }
+  ],
+  "voices": {
+   "A": "f",
+   "B": "m"
+  }
+ },
+ {
+  "id": "L1_D07",
+  "lektion": 1,
+  "week": 3,
+  "title": "填表格：拼名字",
+  "scene": "櫃台登記個人資料",
   "lines": [
-   {"speaker": "A", "de": "Wie ist Ihr Familienname?", "zh": "您姓什麼？"},
-   {"speaker": "B", "de": "Wegner. W – E – G – N – E – R.", "zh": "Wegner。W－E－G－N－E－R。"},
-   {"speaker": "A", "de": "Und Ihr Vorname?", "zh": "那您的名字呢？"},
-   {"speaker": "B", "de": "Marie.", "zh": "Marie。"},
-   {"speaker": "A", "de": "Woher kommen Sie?", "zh": "您從哪裡來？"},
-   {"speaker": "B", "de": "Aus der Schweiz, aus Freiburg.", "zh": "來自瑞士，Freiburg。"},
-   {"speaker": "A", "de": "Wie bitte? Buchstabieren Sie, bitte.", "zh": "什麼？請拼一下。"},
-   {"speaker": "B", "de": "F – R – E – I – B – U – R – G.", "zh": "F－R－E－I－B－U－R－G。"}
-  ]},
- {"id": "L1_D08", "lektion": 1, "week": 3, "title": "那是誰？", "scene": "看照片猜名人",
+   {
+    "speaker": "A",
+    "de": "Wie ist Ihr Familienname?",
+    "zh": "您姓什麼？"
+   },
+   {
+    "speaker": "B",
+    "de": "Wegner. W – E – G – N – E – R.",
+    "zh": "Wegner。W－E－G－N－E－R。"
+   },
+   {
+    "speaker": "A",
+    "de": "Und Ihr Vorname?",
+    "zh": "那您的名字呢？"
+   },
+   {
+    "speaker": "B",
+    "de": "Marie.",
+    "zh": "Marie。"
+   },
+   {
+    "speaker": "A",
+    "de": "Woher kommen Sie?",
+    "zh": "您從哪裡來？"
+   },
+   {
+    "speaker": "B",
+    "de": "Aus der Schweiz, aus Freiburg.",
+    "zh": "來自瑞士，Freiburg。"
+   },
+   {
+    "speaker": "A",
+    "de": "Wie bitte? Buchstabieren Sie, bitte.",
+    "zh": "什麼？請拼一下。"
+   },
+   {
+    "speaker": "B",
+    "de": "F – R – E – I – B – U – R – G.",
+    "zh": "F－R－E－I－B－U－R－G。"
+   }
+  ],
+  "voices": {
+   "A": "m",
+   "B": "f"
+  }
+ },
+ {
+  "id": "L1_D08",
+  "lektion": 1,
+  "week": 3,
+  "title": "那是誰？",
+  "scene": "看照片猜名人",
   "lines": [
-   {"speaker": "A", "de": "Wer ist das?", "zh": "那是誰？"},
-   {"speaker": "B", "de": "Das ist Mozart.", "zh": "那是莫札特。"},
-   {"speaker": "A", "de": "Ja, stimmt. Und wer ist das?", "zh": "對，沒錯。那這位是誰？"},
-   {"speaker": "B", "de": "Ich weiß es nicht.", "zh": "我不知道。"}
-  ]}
+   {
+    "speaker": "A",
+    "de": "Wer ist das?",
+    "zh": "那是誰？"
+   },
+   {
+    "speaker": "B",
+    "de": "Das ist Mozart.",
+    "zh": "那是莫札特。"
+   },
+   {
+    "speaker": "A",
+    "de": "Ja, stimmt. Und wer ist das?",
+    "zh": "對，沒錯。那這位是誰？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich weiß es nicht.",
+    "zh": "我不知道。"
+   }
+  ],
+  "voices": {
+   "A": "f",
+   "B": "m"
+  }
+ }
 ]

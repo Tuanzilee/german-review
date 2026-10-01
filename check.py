@@ -19,6 +19,14 @@ for d in dialogues:
     for l in d['lines']:
         if not (l.get('de') and l.get('zh') and l.get('speaker')):
             errors.append(f"{d['id']}：有一句缺欄位")
+import os
+for v in vocab:
+    for f in (v['id'], v['id'] + '_ex'):
+        if not os.path.exists(f'audio/{f}.mp3'): errors.append(f'缺音檔 audio/{f}.mp3（跑 tools/gen_audio.py）')
+for d in dialogues:
+    for i, l in enumerate(d['lines']):
+        if l['speaker'] not in d.get('voices', {}): errors.append(f"{d['id']}：角色 {l['speaker']} 沒有指定聲音（voices）")
+        if not os.path.exists(f"audio/{d['id']}_{i:02d}.mp3"): errors.append(f"缺音檔 audio/{d['id']}_{i:02d}.mp3（跑 tools/gen_audio.py）")
 print(f'單字 {len(vocab)}、會話 {len(dialogues)}')
 print('\n'.join(errors) if errors else '✅ 全部通過')
 sys.exit(1 if errors else 0)

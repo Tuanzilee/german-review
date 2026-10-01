@@ -150,9 +150,29 @@ if ('speechSynthesis' in window) {
   pickVoice();
   speechSynthesis.onvoiceschanged = pickVoice;
 }
-function speak(text, { rate = prefs.rate, onend } = {}) {
+// 優先播放預錄音檔（微軟神經語音，tools/gen_audio.py 產生）；載入失敗才退回裝置內建語音
+const player = new Audio();
+player.preload = 'auto';
+function speak(text, { rate = prefs.rate, onend, file } = {}) {
+  stopSpeak();
+  if (file) {
+    let done = false;
+    const finish = () => { if (done) return; done = true; player.onended = player.onerror = null; onend && onend(); };
+    player.onended = finish;
+    player.onerror = () => { if (done) return; done = true; player.onerror = null; synth(text, { rate, onend }); };
+    player.src = `audio/${file}.mp3`;
+    player.playbackRate = rate / 0.9; // 0.9 = 正常速度 → 1.0x
+    player.play().catch(err => {
+      // 自動播放被瀏覽器擋（尚未互動）時就不出聲，其它錯誤改用內建語音
+      if (err.name === 'NotAllowedError') { done = true; onend && onend(); }
+      else player.onerror();
+    });
+    return;
+  }
+  synth(text, { rate, onend });
+}
+function synth(text, { rate, onend }) {
   if (!('speechSynthesis' in window)) { toast('這個瀏覽器不支援語音'); onend && onend(); return; }
-  speechSynthesis.cancel(); clearTimeout(speakGuard);
   // 拼字句（L – I – N）念成單一字母較清楚
   const u = new SpeechSynthesisUtterance(text.replace(/\s[–-]\s/g, ', '));
   u.lang = 'de-DE'; u.rate = rate;
@@ -167,7 +187,11 @@ function speak(text, { rate = prefs.rate, onend } = {}) {
   }
   speechSynthesis.speak(u);
 }
-const stopSpeak = () => { clearTimeout(speakGuard); if ('speechSynthesis' in window) speechSynthesis.cancel(); };
+function stopSpeak() {
+  clearTimeout(speakGuard);
+  player.onended = player.onerror = null; player.pause();
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+}
 
 function toast(msg) {
   const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
@@ -246,7 +270,8 @@ function renderHome() {
     ${weak ? `<button class="btn ghost" id="goWeak" style="margin-top:10px">📕 錯題本（${weak}）</button>` : ''}
     <div class="card warn" id="voiceCard">
       <div><b>發音示範</b></div>
-      <div class="muted" id="voiceInfo">檢查中…</div>
+      <div class="muted">預錄真人感神經語音：單字 Seraphina（女），會話依角色分 Conrad（男）／Seraphina（女）。</div>
+      <div class="muted" id="voiceInfo" style="font-size:12px">檢查中…</div>
       <button class="btn ghost" id="testVoice" style="margin-top:10px">🔊 點我試聽：Guten Tag!</button>
     </div>
     <div class="muted" style="text-align:center;margin-top:16px">共 ${VOCAB.length} 個單字 · ${DIALOGUES.length} 段會話</div>`;
@@ -255,10 +280,10 @@ function renderHome() {
   $('#goTalk').onclick = () => go('talk');
   $('#goListen').onclick = () => go('listen');
   if (weak) $('#goWeak').onclick = () => go('weak');
-  $('#testVoice').onclick = () => speak('Guten Tag!');
+  $('#testVoice').onclick = () => speak('Guten Tag!', { file: 'L1_W1_V002' });
   const info = () => {
     $('#voiceInfo') && ($('#voiceInfo').textContent = voice
-      ? `使用語音：${voice.name}（${voice.lang}）`
+      ? `音檔載入失敗時改用裝置語音：${voice.name}`
       : '找不到德語語音。iPhone：設定 → 輔助使用 → 朗讀內容 → 聲音 → 德文，下載 Anna。');
   };
   info(); setTimeout(info, 800);
@@ -326,14 +351,14 @@ function renderCard() {
       <button class="btn good" data-r="2">記得</button></div>`
       : `<button class="btn" id="flipBtn">翻面</button>`}`;
   document.querySelectorAll('[data-d]').forEach(c => c.onclick = () => { prefs.dir = c.dataset.d; savePrefs(); flipped = false; renderCard(); });
-  const flip = () => { if (!flipped) { flipped = true; renderCard(); speak(v.de); } };
+  const flip = () => { if (!flipped) { flipped = true; renderCard(); speak(v.de, { file: v.id }); } };
   $('#flash').onclick = e => { if (!e.target.closest('button')) flip(); };
   $('#flipBtn') && ($('#flipBtn').onclick = flip);
-  $('#spkWord').onclick = () => speak(v.de);
-  $('#slowWord').onclick = () => speak(v.de, { rate: 0.6 });
-  $('#spkEx') && ($('#spkEx').onclick = () => speak(v.example_de));
+  $('#spkWord').onclick = () => speak(v.de, { file: v.id });
+  $('#slowWord').onclick = () => speak(v.de, { rate: 0.6, file: v.id });
+  $('#spkEx') && ($('#spkEx').onclick = () => speak(v.example_de, { file: v.id + '_ex' }));
   document.querySelectorAll('[data-r]').forEach(b => b.onclick = () => rate(v, +b.dataset.r));
-  if (de2zh && !flipped) speak(v.de);
+  if (de2zh && !flipped) speak(v.de, { file: v.id });
 }
 function rate(v, r) {
   const s = srs[v.id] || { box: 0, due: 0, weak: false };
@@ -357,6 +382,7 @@ function renderDialogue(id) {
   const d = DIALOGUES.find(x => x.id === id);
   const speakers = [...new Set(d.lines.map(l => l.speaker))];
   let me = null, hideDe = false, cur = -1, playing = false, timer = null;
+  const lineFile = i => `${d.id}_${String(i).padStart(2, '0')}`;
   const stop = () => { playing = false; clearTimeout(timer); stopSpeak(); };
   cleanup = stop;
   function draw() {
@@ -368,7 +394,7 @@ function renderDialogue(id) {
         <div class="chips">${['旁聽', ...speakers].map(s => `<button class="chip ${(me ?? '旁聽') === s ? 'on' : ''}" data-me="${s}">${s === '旁聽' ? '只聽' : s}</button>`).join('')}</div>
         <div class="chips" style="margin-top:10px">
           <button class="chip ${hideDe ? 'on' : ''}" id="hideBtn">${hideDe ? '🙈 德文已遮住' : '👀 顯示德文'}</button>
-          <button class="chip ${prefs.rate < 0.8 ? 'on' : ''}" id="rateBtn">${prefs.rate < 0.8 ? '🐢 慢速 0.7x' : '🐇 正常 0.9x'}</button>
+          <button class="chip ${prefs.rate < 0.8 ? 'on' : ''}" id="rateBtn">${prefs.rate < 0.8 ? '🐢 慢速' : '🐇 正常速度'}</button>
         </div>
       </div>
       <div class="card" id="lines">${d.lines.map((l, i) => {
@@ -383,7 +409,7 @@ function renderDialogue(id) {
     document.querySelectorAll('[data-me]').forEach(c => c.onclick = () => { me = c.dataset.me === '旁聽' ? null : c.dataset.me; draw(); });
     $('#hideBtn').onclick = () => { hideDe = !hideDe; draw(); };
     $('#rateBtn').onclick = () => { prefs.rate = prefs.rate < 0.8 ? 0.9 : 0.7; savePrefs(); draw(); };
-    document.querySelectorAll('[data-say]').forEach(b => b.onclick = () => { stop(); cur = +b.dataset.say; draw(); speak(d.lines[cur].de); });
+    document.querySelectorAll('[data-say]').forEach(b => b.onclick = () => { stop(); cur = +b.dataset.say; draw(); speak(d.lines[cur].de, { file: lineFile(cur) }); });
     document.querySelectorAll('.masked').forEach(m => m.onclick = () => m.classList.remove('masked'));
     $('#playBtn').onclick = () => { if (playing) { stop(); draw(); } else { playing = true; playFrom(0); } };
   }
@@ -396,10 +422,10 @@ function renderDialogue(id) {
     if (me === l.speaker) {
       // 輪到自己：依句長留時間開口，之後播標準答案對照
       const wait = 1500 + l.de.length * 90;
-      timer = setTimeout(() => speak(l.de, { onend: () => { timer = setTimeout(() => playFrom(i + 1), 600); } }), wait);
+      timer = setTimeout(() => speak(l.de, { file: lineFile(i), onend: () => { timer = setTimeout(() => playFrom(i + 1), 600); } }), wait);
     } else {
       // 旁聽模式：每句念完留跟讀時間
-      speak(l.de, { onend: () => { timer = setTimeout(() => playFrom(i + 1), me === null ? 800 + l.de.length * 60 : 500); } });
+      speak(l.de, { file: lineFile(i), onend: () => { timer = setTimeout(() => playFrom(i + 1), me === null ? 800 + l.de.length * 60 : 500); } });
     }
   }
   draw();
@@ -439,8 +465,8 @@ function renderQ() {
     </div>
     ${q.opts.map((o, i) => `<button class="opt ${q.answered ? (o === q.v ? 'right' : (q.answered === o ? 'wrong' : '')) : ''}" data-o="${i}">${esc(o.zh)}</button>`).join('')}
     ${q.answered ? `<button class="btn" id="next" style="margin-top:6px">下一題</button>` : ''}`;
-  $('#play').onclick = () => speak(q.v.de);
-  $('#slow').onclick = () => speak(q.v.de, { rate: 0.6 });
+  $('#play').onclick = () => speak(q.v.de, { file: q.v.id });
+  $('#slow').onclick = () => speak(q.v.de, { rate: 0.6, file: q.v.id });
   if (!q.answered) {
     document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => {
       const o = q.opts[+b.dataset.o]; q.answered = o;
@@ -448,7 +474,7 @@ function renderQ() {
       else { const s = srs[q.v.id] || { box: 1, due: Date.now() }; s.weak = true; srs[q.v.id] = s; saveSrs(); }
       renderQ();
     });
-    speak(q.v.de);
+    speak(q.v.de, { file: q.v.id });
   } else {
     $('#next').onclick = () => { qi++; renderQ(); };
   }
