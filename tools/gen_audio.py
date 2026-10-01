@@ -26,11 +26,12 @@ def jobs():
     vocab = json.load(open(os.path.join(ROOT, 'vocab.json')))
     dialogues = json.load(open(os.path.join(ROOT, 'dialogues.json')))
     for v in vocab:
-        yield f"{v['id']}.mp3", v['de'], WORD_VOICE
-        yield f"{v['id']}_ex.mp3", v['example_de'], WORD_VOICE
+        # tts / tts_ex：畫面顯示的拼法和要念的不同時才填（例：課本拼 Tschüs，音檔念短音 Tschüss）
+        yield f"{v['id']}.mp3", v.get('tts', v['de']), WORD_VOICE
+        yield f"{v['id']}_ex.mp3", v.get('tts_ex', v['example_de']), WORD_VOICE
     for d in dialogues:
         for i, line in enumerate(d['lines']):
-            yield f"{d['id']}_{i:02d}.mp3", line['de'], d['voices'][line['speaker']]
+            yield f"{d['id']}_{i:02d}.mp3", line.get('tts', line['de']), d['voices'][line['speaker']]
 
 
 async def main():

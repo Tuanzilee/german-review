@@ -29,6 +29,7 @@ plural      複數形或 null
 conj        動詞變位 {ich, du, er/sie/es, Sie} 或 null
 example_de / example_zh  例句
 tags        ["期中"] / ["期末"]
+tts / tts_ex  （選填）音檔要念的文字，跟畫面拼法不同時才填；會話每句也可加 tts
 ```
 `dialogues.json` 每筆：`id`（L1_D01）、`lektion`、`week`、`title`、`scene`、`voices`（每個角色的聲音，`m`＝Conrad 男聲、`f`＝Seraphina 女聲，依角色性別指定）、`lines[{speaker, de, zh}]`。
 
@@ -56,3 +57,4 @@ hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若�
 `index.html` 的 `SCOPES`：期中範圍 = Lektion 1–2（W8 期中），期末考 Lektion 2–3。加新週次時記得在 `SCOPES` 補 `w4`、`w5`… 的按鈕。
 
 > 踩坑：Seraphina 是多語語音，**單獨一個字**會自動判斷語言，Koreanisch、Englisch 這類字會念成英文腔。單字一律用純德語的 Katja；Seraphina 只用在整句會話。
+> 發音決策：Tschüs 畫面維持課本拼法，音檔念短音 Tschüss（hai 選定，對齊老師「ü 短促」）。

@@ -90,7 +90,7 @@
   "week": 1,
   "source": "both",
   "de": "Tschüs",
-  "zh": "掰掰（口語道別；也拼 Tschüss）",
+  "zh": "掰掰（口語道別；課本拼 Tschüs，也拼 Tschüss，ü 念短音）",
   "pos": "phrase",
   "article": null,
   "plural": null,
@@ -99,7 +99,9 @@
   "example_zh": "掰掰，Heike！",
   "tags": [
    "期中"
-  ]
+  ],
+  "tts": "Tschüss",
+  "tts_ex": "Tschüss, Heike!"
  },
  {
   "id": "L1_W1_V007",
@@ -388,7 +390,8 @@
   "example_zh": "掰，待會見！",
   "tags": [
    "期中"
-  ]
+  ],
+  "tts_ex": "Tschüss, bis später!"
  },
  {
   "id": "L1_W2_V007",

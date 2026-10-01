@@ -34,7 +34,8 @@
    {
     "speaker": "B",
     "de": "Tschüs! Bis später!",
-    "zh": "掰掰！待會見！"
+    "zh": "掰掰！待會見！",
+    "tts": "Tschüss! Bis später!"
    }
   ],
   "voices": {
