@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>德文複習</title>
+<meta name="description" content="Schritte A1.1 基礎德文：單字卡、會話跟讀、聽力辨識">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="德文複習">
+<meta name="theme-color" content="#1f2a44">
+<style>
+:root {
+  --bg: #f6f4ef; --card: #ffffff; --ink: #1d2230; --muted: #6b7080; --line: #e3e0d8;
+  --accent: #1f2a44; --accent-ink: #ffffff; --gold: #c9a227;
+  --der: #2f6fd6; --die: #d64563; --das: #2e9e6a;
+  --bad: #d64545; --mid: #d69a2e; --good: #2e9e6a;
+  --radius: 16px; --shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12151d; --card: #1c212c; --ink: #eceef3; --muted: #9aa0ae; --line: #2c3240;
+    --accent: #e4c45a; --accent-ink: #1a1a1a; --gold: #e4c45a;
+    --der: #6fa3ff; --die: #ff7d98; --das: #5fd39d; --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12151d; --card: #1c212c; --ink: #eceef3; --muted: #9aa0ae; --line: #2c3240;
+  --accent: #e4c45a; --accent-ink: #1a1a1a; --gold: #e4c45a;
+  --der: #6fa3ff; --die: #ff7d98; --das: #5fd39d; --shadow: none;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif;
+  padding: env(safe-area-inset-top) 16px calc(88px + env(safe-area-inset-bottom));
+  max-width: 560px; margin: 0 auto; min-height: 100vh;
+}
+header { display: flex; align-items: center; justify-content: space-between; padding: 14px 0 8px; }
+header h1 { font-size: 20px; margin: 0; }
+header .sub { color: var(--muted); font-size: 13px; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+.card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); padding: 16px; margin: 12px 0; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-size: 14px; }
+.chip.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn { display: block; width: 100%; padding: 14px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 16px; text-align: center; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.row { display: flex; gap: 10px; }
+.row > * { flex: 1; }
+.stat { text-align: center; }
+.stat b { display: block; font-size: 26px; }
+.stat span { color: var(--muted); font-size: 12px; }
+.muted { color: var(--muted); font-size: 14px; }
+h2 { font-size: 17px; margin: 18px 0 6px; }
+nav.tabs {
+  position: fixed; left: 0; right: 0; bottom: 0; display: flex; justify-content: center;
+  background: var(--card); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); z-index: 10;
+}
+nav.tabs .inner { display: flex; width: 100%; max-width: 560px; }
+nav.tabs button { flex: 1; padding: 10px 0 12px; font-size: 12px; color: var(--muted); }
+nav.tabs button .ic { display: block; font-size: 20px; line-height: 1.2; }
+nav.tabs button.on { color: var(--ink); font-weight: 600; }
+/* flashcard */
+.flash { min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 8px; user-select: none; }
+.flash .word { font-size: 32px; font-weight: 700; line-height: 1.25; }
+.flash .zh { font-size: 22px; }
+.flash .hint { color: var(--muted); font-size: 13px; }
+.art-der { color: var(--der); } .art-die { color: var(--die); } .art-das { color: var(--das); }
+.conj { display: grid; grid-template-columns: auto auto; gap: 2px 16px; font-size: 15px; margin-top: 6px; }
+.conj span:nth-child(odd) { color: var(--muted); text-align: right; }
+.conj span:nth-child(even) { text-align: left; font-weight: 600; }
+.example { font-size: 15px; margin-top: 8px; border-top: 1px dashed var(--line); padding-top: 10px; width: 100%; }
+.rate .btn { font-size: 15px; padding: 12px 4px; }
+.rate .bad { background: var(--bad); color: #fff; } .rate .mid { background: var(--mid); color: #fff; } .rate .good { background: var(--good); color: #fff; }
+.spk { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); font-size: 18px; flex: none; }
+.progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin: 6px 0 2px; }
+.progress div { height: 100%; background: var(--gold); transition: width .3s; }
+/* dialogue */
+.dlist button { display: flex; width: 100%; text-align: left; justify-content: space-between; align-items: center; padding: 14px 16px; }
+.line { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.line:last-child { border-bottom: 0; }
+.line .who { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 700; background: var(--line); }
+.line.me .who { background: var(--accent); color: var(--accent-ink); }
+.line .txt { flex: 1; }
+.line .de { font-size: 17px; font-weight: 600; }
+.line .zhl { color: var(--muted); font-size: 14px; }
+.line.now { background: color-mix(in srgb, var(--gold) 15%, transparent); border-radius: 10px; }
+.line .masked { color: transparent; text-shadow: 0 0 9px var(--muted); cursor: pointer; }
+/* quiz */
+.opt { display: block; width: 100%; text-align: left; padding: 14px 16px; margin: 8px 0; border-radius: 12px; border: 1px solid var(--line); background: var(--card); font-size: 17px; }
+.opt.right { border-color: var(--good); background: color-mix(in srgb, var(--good) 15%, var(--card)); }
+.opt.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 15%, var(--card)); }
+.big-spk { width: 96px; height: 96px; font-size: 40px; border-radius: 50%; margin: 10px auto; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); }
+.toast { position: fixed; left: 50%; top: 16px; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 10px; font-size: 14px; z-index: 20; }
+.warn { border-left: 4px solid var(--mid); }
+</style>
+</head>
+<body>
+<header>
+  <div><h1>德文複習</h1><div class="sub">Schritte A1.1 · 基礎德文</div></div>
+  <button class="spk" id="themeBtn" aria-label="切換深淺色">◐</button>
+</header>
+<main id="app"></main>
+<nav class="tabs"><div class="inner">
+  <button data-tab="home"><span class="ic">🏠</span>首頁</button>
+  <button data-tab="cards"><span class="ic">🃏</span>單字卡</button>
+  <button data-tab="talk"><span class="ic">💬</span>會話</button>
+  <button data-tab="listen"><span class="ic">🎧</span>聽力</button>
+  <button data-tab="weak"><span class="ic">📕</span>錯題</button>
+</div></nav>
+
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+const app = $('#app');
+const DAY = 864e5;
+const INTERVALS = [1, 2, 4, 7, 14]; // Leitner 1–5 盒對應天數
+
+// ---------- 儲存 ----------
+function load(key, fallback) {
+  try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
+}
+function save(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch {} }
+let srs = load('gr_srs', {});        // id -> {box, due, weak}
+let prefs = load('gr_prefs', { scope: 'all', dir: 'de2zh', rate: 0.9 });
+const savePrefs = () => save('gr_prefs', prefs);
+const saveSrs = () => save('gr_srs', srs);
+
+let theme = load('gr_theme', null);
+if (theme) document.documentElement.dataset.theme = theme;
+$('#themeBtn').onclick = () => {
+  const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  const cur = document.documentElement.dataset.theme || (dark ? 'dark' : 'light');
+  theme = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = theme; save('gr_theme', theme);
+};
+
+// ---------- 語音 ----------
+let voice = null, speakGuard = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+  const prefer = ['Anna', 'Helena', 'Petra', 'Google Deutsch', 'Markus', 'Yannick'];
+  voice = prefer.map(n => vs.find(v => v.name.includes(n))).find(Boolean)
+    || vs.find(v => v.lang === 'de-DE') || vs[0] || null;
+}
+if ('speechSynthesis' in window) {
+  pickVoice();
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+function speak(text, { rate = prefs.rate, onend } = {}) {
+  if (!('speechSynthesis' in window)) { toast('這個瀏覽器不支援語音'); onend && onend(); return; }
+  speechSynthesis.cancel(); clearTimeout(speakGuard);
+  // 拼字句（L – I – N）念成單一字母較清楚
+  const u = new SpeechSynthesisUtterance(text.replace(/\s[–-]\s/g, ', '));
+  u.lang = 'de-DE'; u.rate = rate;
+  if (voice) u.voice = voice;
+  if (onend) {
+    // 有些瀏覽器偶爾不觸發 onend，用估計時長當保底，確保自動播放不會卡住
+    let done = false;
+    const finish = () => { if (done) return; done = true; clearTimeout(guard); onend(); };
+    const guard = setTimeout(finish, (2000 + text.length * 110) / rate);
+    u.onend = finish; u.onerror = finish;
+    speakGuard = guard;
+  }
+  speechSynthesis.speak(u);
+}
+const stopSpeak = () => { clearTimeout(speakGuard); if ('speechSynthesis' in window) speechSynthesis.cancel(); };
+
+function toast(msg) {
+  const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), 1800);
+}
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+// ---------- 資料 ----------
+let VOCAB = [], DIALOGUES = [];
+const SCOPES = [
+  { key: 'all', label: '全部', test: () => true },
+  { key: 'mid', label: '期中範圍', test: v => v.lektion <= 2 },
+  { key: 'w1', label: 'W1', test: v => v.week === 1 },
+  { key: 'w2', label: 'W2', test: v => v.week === 2 },
+  { key: 'w3', label: 'W3', test: v => v.week === 3 },
+];
+function inScope(list) {
+  const s = SCOPES.find(s => s.key === prefs.scope) || SCOPES[0];
+  return list.filter(s.test);
+}
+const isDue = v => !srs[v.id] || srs[v.id].due <= Date.now();
+const isNew = v => !srs[v.id];
+
+function deHtml(v) {
+  // 名詞冠詞上色：der 藍、die 紅、das 綠
+  if (v.article && v.de.startsWith(v.article + ' ')) {
+    return `<span class="art-${v.article}">${v.article}</span> ${esc(v.de.slice(v.article.length + 1))}`;
+  }
+  return esc(v.de);
+}
+
+// ---------- 路由 ----------
+let tab = 'home', cleanup = null;
+function go(t, arg) {
+  stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
+  tab = t;
+  document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue })[t](arg);
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
+
+function scopeChips(onChange) {
+  return `<div class="chips" id="scopeChips">${SCOPES.map(s =>
+    `<button class="chip ${prefs.scope === s.key ? 'on' : ''}" data-k="${s.key}">${s.label}</button>`).join('')}</div>`;
+}
+function bindScope(onChange) {
+  document.querySelectorAll('#scopeChips .chip').forEach(c => c.onclick = () => {
+    prefs.scope = c.dataset.k; savePrefs(); onChange();
+  });
+}
+
+// ---------- 首頁 ----------
+function renderHome() {
+  const list = inScope(VOCAB);
+  const due = list.filter(v => !isNew(v) && isDue(v)).length;
+  const fresh = list.filter(isNew).length;
+  const learned = list.filter(v => srs[v.id] && srs[v.id].box >= 3).length;
+  const weak = VOCAB.filter(v => srs[v.id]?.weak).length;
+  app.innerHTML = `
+    <div class="card">
+      <div class="muted" style="margin-bottom:8px">複習範圍</div>
+      ${scopeChips()}
+    </div>
+    <div class="card row">
+      <div class="stat"><b>${due}</b><span>今天到期</span></div>
+      <div class="stat"><b>${fresh}</b><span>還沒學</span></div>
+      <div class="stat"><b>${learned}</b><span>已熟（3 盒以上）</span></div>
+    </div>
+    <button class="btn" id="goCards">開始單字卡（${Math.min(due + fresh, 20)} 張）</button>
+    <div class="row" style="margin-top:10px">
+      <button class="btn ghost" id="goTalk">💬 會話跟讀</button>
+      <button class="btn ghost" id="goListen">🎧 聽力 10 題</button>
+    </div>
+    ${weak ? `<button class="btn ghost" id="goWeak" style="margin-top:10px">📕 錯題本（${weak}）</button>` : ''}
+    <div class="card warn" id="voiceCard">
+      <div><b>發音示範</b></div>
+      <div class="muted" id="voiceInfo">檢查中…</div>
+      <button class="btn ghost" id="testVoice" style="margin-top:10px">🔊 點我試聽：Guten Tag!</button>
+    </div>
+    <div class="muted" style="text-align:center;margin-top:16px">共 ${VOCAB.length} 個單字 · ${DIALOGUES.length} 段會話</div>`;
+  bindScope(renderHome);
+  $('#goCards').onclick = () => go('cards');
+  $('#goTalk').onclick = () => go('talk');
+  $('#goListen').onclick = () => go('listen');
+  if (weak) $('#goWeak').onclick = () => go('weak');
+  $('#testVoice').onclick = () => speak('Guten Tag!');
+  const info = () => {
+    $('#voiceInfo') && ($('#voiceInfo').textContent = voice
+      ? `使用語音：${voice.name}（${voice.lang}）`
+      : '找不到德語語音。iPhone：設定 → 輔助使用 → 朗讀內容 → 聲音 → 德文，下載 Anna。');
+  };
+  info(); setTimeout(info, 800);
+}
+
+// ---------- 單字卡 ----------
+let deck = [], idx = 0, flipped = false, weakMode = false;
+function startCards(weak) {
+  weakMode = weak;
+  if (weak) {
+    deck = shuffle(VOCAB.filter(v => srs[v.id]?.weak));
+  } else {
+    const list = inScope(VOCAB);
+    const due = shuffle(list.filter(v => !isNew(v) && isDue(v)));
+    const fresh = list.filter(isNew); // 新卡照課堂順序出
+    deck = due.concat(fresh).slice(0, 20);
+  }
+  idx = 0; flipped = false;
+  renderCard();
+}
+function renderCard() {
+  if (!deck.length) {
+    app.innerHTML = `<div class="card" style="text-align:center">
+      <p style="font-size:40px;margin:8px">🎉</p>
+      <p>${weakMode ? '錯題本是空的！' : '這個範圍今天沒有要複習的卡片了。'}</p>
+      ${weakMode ? '' : `<p class="muted">想多練可以換範圍：</p>${scopeChips()}`}
+      <button class="btn" style="margin-top:14px" onclick="go('listen')">去做聽力練習</button></div>`;
+    if (!weakMode) bindScope(() => startCards(false));
+    return;
+  }
+  if (idx >= deck.length) {
+    app.innerHTML = `<div class="card" style="text-align:center"><p style="font-size:40px;margin:8px">✅</p>
+      <p>這一輪 ${deck.length} 張完成！</p>
+      <button class="btn" onclick="go('${weakMode ? 'weak' : 'cards'}')">再來一輪</button>
+      <button class="btn ghost" style="margin-top:10px" onclick="go('home')">回首頁</button></div>`;
+    return;
+  }
+  const v = deck[idx];
+  const de2zh = prefs.dir === 'de2zh';
+  const front = de2zh
+    ? `<div class="word">${deHtml(v)}</div><div class="hint">想想中文意思，點卡片翻面</div>`
+    : `<div class="zh">${esc(v.zh)}</div><div class="hint">說出德文，點卡片翻面</div>`;
+  const conj = v.conj ? `<div class="conj">${Object.entries(v.conj).map(([k, f]) => `<span>${k}</span><span>${esc(f)}</span>`).join('')}</div>` : '';
+  const back = `<div class="word">${deHtml(v)}</div>
+    ${v.plural ? `<div class="muted">複數：${esc(v.plural)}</div>` : ''}
+    <div class="zh">${esc(v.zh)}</div>${conj}
+    <div class="example"><div style="display:flex;gap:8px;align-items:center;justify-content:center">
+      <span><b>${esc(v.example_de)}</b><br><span class="muted">${esc(v.example_zh)}</span></span>
+      <button class="spk" id="spkEx">🔊</button></div></div>`;
+  app.innerHTML = `
+    <div class="row" style="align-items:center">
+      <div class="muted">${weakMode ? '📕 錯題本' : '🃏 單字卡'} · ${idx + 1} / ${deck.length}</div>
+      <div class="chips" style="justify-content:flex-end;flex:none">
+        <button class="chip ${de2zh ? 'on' : ''}" data-d="de2zh">德→中</button>
+        <button class="chip ${!de2zh ? 'on' : ''}" data-d="zh2de">中→德</button>
+      </div>
+    </div>
+    <div class="progress"><div style="width:${idx / deck.length * 100}%"></div></div>
+    <div class="card flash" id="flash">${flipped ? back : front}</div>
+    <div class="row" style="margin-bottom:10px"><button class="btn ghost" id="spkWord">🔊 念單字</button>
+      <button class="btn ghost" id="slowWord">🐢 慢速</button></div>
+    ${flipped ? `<div class="row rate">
+      <button class="btn bad" data-r="0">忘了</button>
+      <button class="btn mid" data-r="1">模糊</button>
+      <button class="btn good" data-r="2">記得</button></div>`
+      : `<button class="btn" id="flipBtn">翻面</button>`}`;
+  document.querySelectorAll('[data-d]').forEach(c => c.onclick = () => { prefs.dir = c.dataset.d; savePrefs(); flipped = false; renderCard(); });
+  const flip = () => { if (!flipped) { flipped = true; renderCard(); speak(v.de); } };
+  $('#flash').onclick = e => { if (!e.target.closest('button')) flip(); };
+  $('#flipBtn') && ($('#flipBtn').onclick = flip);
+  $('#spkWord').onclick = () => speak(v.de);
+  $('#slowWord').onclick = () => speak(v.de, { rate: 0.6 });
+  $('#spkEx') && ($('#spkEx').onclick = () => speak(v.example_de));
+  document.querySelectorAll('[data-r]').forEach(b => b.onclick = () => rate(v, +b.dataset.r));
+  if (de2zh && !flipped) speak(v.de);
+}
+function rate(v, r) {
+  const s = srs[v.id] || { box: 0, due: 0, weak: false };
+  if (r === 0) { s.box = 1; s.due = Date.now(); s.weak = true; deck.push(v); } // 忘了：這輪最後再出一次
+  else if (r === 1) { s.box = Math.max(1, s.box); s.due = Date.now() + DAY; }
+  else { s.box = Math.min(5, s.box + 1); s.due = Date.now() + INTERVALS[s.box - 1] * DAY; if (weakMode) s.weak = false; }
+  srs[v.id] = s; saveSrs();
+  idx++; flipped = false; renderCard();
+}
+
+// ---------- 會話 ----------
+function renderTalkList() {
+  app.innerHTML = `<h2>會話跟讀</h2><p class="muted">逐句播放，聽完跟著念；熟了就遮住德文，看中文自己說。</p>
+    <div class="card dlist" style="padding:0">${DIALOGUES.map(d => `
+      <button data-id="${d.id}" style="border-bottom:1px solid var(--line)">
+        <span><b>${esc(d.title)}</b><br><span class="muted">W${d.week} · ${esc(d.scene)}</span></span><span>›</span>
+      </button>`).join('')}</div>`;
+  document.querySelectorAll('.dlist button').forEach(b => b.onclick = () => go('dialogue', b.dataset.id));
+}
+function renderDialogue(id) {
+  const d = DIALOGUES.find(x => x.id === id);
+  const speakers = [...new Set(d.lines.map(l => l.speaker))];
+  let me = null, hideDe = false, cur = -1, playing = false, timer = null;
+  const stop = () => { playing = false; clearTimeout(timer); stopSpeak(); };
+  cleanup = stop;
+  function draw() {
+    app.innerHTML = `
+      <button class="muted" id="back" style="padding:8px 0">‹ 會話列表</button>
+      <h2 style="margin-top:0">${esc(d.title)}</h2><div class="muted">${esc(d.scene)}</div>
+      <div class="card">
+        <div class="muted" style="margin-bottom:6px">我扮演</div>
+        <div class="chips">${['旁聽', ...speakers].map(s => `<button class="chip ${(me ?? '旁聽') === s ? 'on' : ''}" data-me="${s}">${s === '旁聽' ? '只聽' : s}</button>`).join('')}</div>
+        <div class="chips" style="margin-top:10px">
+          <button class="chip ${hideDe ? 'on' : ''}" id="hideBtn">${hideDe ? '🙈 德文已遮住' : '👀 顯示德文'}</button>
+          <button class="chip ${prefs.rate < 0.8 ? 'on' : ''}" id="rateBtn">${prefs.rate < 0.8 ? '🐢 慢速 0.7x' : '🐇 正常 0.9x'}</button>
+        </div>
+      </div>
+      <div class="card" id="lines">${d.lines.map((l, i) => {
+        const mine = me === l.speaker, mask = hideDe && (me === null || mine);
+        return `<div class="line ${mine ? 'me' : ''} ${i === cur ? 'now' : ''}" data-i="${i}">
+          <div class="who">${l.speaker}</div>
+          <div class="txt"><div class="de ${mask ? 'masked' : ''}">${esc(l.de)}</div><div class="zhl">${esc(l.zh)}</div></div>
+          <button class="spk" data-say="${i}">🔊</button></div>`;
+      }).join('')}</div>
+      <button class="btn" id="playBtn">${playing ? '⏸ 停止' : '▶️ 從頭播放（輪到我時會停下讓我說）'}</button>`;
+    $('#back').onclick = () => go('talk');
+    document.querySelectorAll('[data-me]').forEach(c => c.onclick = () => { me = c.dataset.me === '旁聽' ? null : c.dataset.me; draw(); });
+    $('#hideBtn').onclick = () => { hideDe = !hideDe; draw(); };
+    $('#rateBtn').onclick = () => { prefs.rate = prefs.rate < 0.8 ? 0.9 : 0.7; savePrefs(); draw(); };
+    document.querySelectorAll('[data-say]').forEach(b => b.onclick = () => { stop(); cur = +b.dataset.say; draw(); speak(d.lines[cur].de); });
+    document.querySelectorAll('.masked').forEach(m => m.onclick = () => m.classList.remove('masked'));
+    $('#playBtn').onclick = () => { if (playing) { stop(); draw(); } else { playing = true; playFrom(0); } };
+  }
+  function playFrom(i) {
+    if (!playing) return;
+    if (i >= d.lines.length) { playing = false; cur = -1; draw(); return; }
+    cur = i; draw();
+    $('#lines .now')?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    const l = d.lines[i];
+    if (me === l.speaker) {
+      // 輪到自己：依句長留時間開口，之後播標準答案對照
+      const wait = 1500 + l.de.length * 90;
+      timer = setTimeout(() => speak(l.de, { onend: () => { timer = setTimeout(() => playFrom(i + 1), 600); } }), wait);
+    } else {
+      // 旁聽模式：每句念完留跟讀時間
+      speak(l.de, { onend: () => { timer = setTimeout(() => playFrom(i + 1), me === null ? 800 + l.de.length * 60 : 500); } });
+    }
+  }
+  draw();
+}
+
+// ---------- 聽力 ----------
+let quiz = [], qi = 0, score = 0;
+function startListen() {
+  const pool = inScope(VOCAB);
+  if (pool.length < 4) { app.innerHTML = `<div class="card">這個範圍單字太少，換個範圍吧。</div>`; return; }
+  quiz = shuffle(pool).slice(0, 10).map(v => {
+    // 干擾項優先挑同詞性，比較不會一眼看穿
+    const same = shuffle(VOCAB.filter(x => x.id !== v.id && x.pos === v.pos && x.zh !== v.zh));
+    const other = shuffle(VOCAB.filter(x => x.id !== v.id && x.zh !== v.zh && !same.includes(x)));
+    const opts = shuffle([v, ...same.concat(other).slice(0, 3)]);
+    return { v, opts, answered: null };
+  });
+  qi = 0; score = 0; renderQ();
+}
+function renderQ() {
+  if (qi >= quiz.length) {
+    app.innerHTML = `<div class="card" style="text-align:center"><p style="font-size:40px;margin:8px">🎧</p>
+      <p style="font-size:22px"><b>${score} / ${quiz.length}</b></p>
+      <p class="muted">答錯的已加入錯題本</p>
+      <button class="btn" onclick="go('listen')">再來 10 題</button>
+      <button class="btn ghost" style="margin-top:10px" onclick="go('home')">回首頁</button></div>`;
+    return;
+  }
+  const q = quiz[qi];
+  app.innerHTML = `
+    <div class="muted">🎧 聽力 · ${qi + 1} / ${quiz.length} · 答對 ${score}</div>
+    <div class="progress"><div style="width:${qi / quiz.length * 100}%"></div></div>
+    <div class="card" style="text-align:center">
+      <button class="big-spk" id="play">🔊</button>
+      <div class="row" style="max-width:260px;margin:0 auto"><button class="btn ghost" id="slow">🐢 慢速再聽</button></div>
+      <div id="reveal" style="margin-top:12px;min-height:30px">${q.answered ? `<div class="word" style="font-size:24px;font-weight:700">${deHtml(q.v)}</div>` : '<span class="muted">聽到的是什麼意思？</span>'}</div>
+    </div>
+    ${q.opts.map((o, i) => `<button class="opt ${q.answered ? (o === q.v ? 'right' : (q.answered === o ? 'wrong' : '')) : ''}" data-o="${i}">${esc(o.zh)}</button>`).join('')}
+    ${q.answered ? `<button class="btn" id="next" style="margin-top:6px">下一題</button>` : ''}`;
+  $('#play').onclick = () => speak(q.v.de);
+  $('#slow').onclick = () => speak(q.v.de, { rate: 0.6 });
+  if (!q.answered) {
+    document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => {
+      const o = q.opts[+b.dataset.o]; q.answered = o;
+      if (o === q.v) score++;
+      else { const s = srs[q.v.id] || { box: 1, due: Date.now() }; s.weak = true; srs[q.v.id] = s; saveSrs(); }
+      renderQ();
+    });
+    speak(q.v.de);
+  } else {
+    $('#next').onclick = () => { qi++; renderQ(); };
+  }
+}
+
+// ---------- 啟動 ----------
+Promise.all([fetch('vocab.json').then(r => r.json()), fetch('dialogues.json').then(r => r.json())])
+  .then(([v, d]) => { VOCAB = v; DIALOGUES = d; go('home'); })
+  .catch(e => { app.innerHTML = `<div class="card">資料載入失敗：${esc(e.message)}</div>`; });
+
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

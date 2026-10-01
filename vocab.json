@@ -1,0 +1,1506 @@
+[
+ {
+  "id": "L1_W1_V001",
+  "lektion": 1,
+  "week": 1,
+  "source": "both",
+  "de": "Guten Morgen",
+  "zh": "早安（約 12 點前）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Guten Morgen, Frau Eco.",
+  "example_zh": "早安，Eco 女士。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V002",
+  "lektion": 1,
+  "week": 1,
+  "source": "both",
+  "de": "Guten Tag",
+  "zh": "日安／您好（白天通用，較正式）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Guten Tag, Herr Yulu.",
+  "example_zh": "您好，Yulu 先生。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V003",
+  "lektion": 1,
+  "week": 1,
+  "source": "both",
+  "de": "Guten Abend",
+  "zh": "晚上好（見面時）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Guten Abend, Alexander.",
+  "example_zh": "晚上好，Alexander。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V004",
+  "lektion": 1,
+  "week": 1,
+  "source": "both",
+  "de": "Gute Nacht",
+  "zh": "晚安（睡前／道別）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Gute Nacht, Herr Schröder.",
+  "example_zh": "晚安，Schröder 先生。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V005",
+  "lektion": 1,
+  "week": 1,
+  "source": "both",
+  "de": "Hallo",
+  "zh": "哈囉（口語）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Hallo, ich bin Lili.",
+  "example_zh": "哈囉，我是 Lili。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V006",
+  "lektion": 1,
+  "week": 1,
+  "source": "both",
+  "de": "Tschüs",
+  "zh": "掰掰（口語道別；也拼 Tschüss）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Tschüs, Heike!",
+  "example_zh": "掰掰，Heike！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V007",
+  "lektion": 1,
+  "week": 1,
+  "source": "both",
+  "de": "Auf Wiedersehen",
+  "zh": "再見（正式；wieder 再＋sehen 看）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Auf Wiedersehen, Frau Fleckenstein.",
+  "example_zh": "再見，Fleckenstein 女士。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V008",
+  "lektion": 1,
+  "week": 1,
+  "source": "plaud",
+  "de": "der Morgen",
+  "zh": "早晨",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Morgen",
+  "conj": null,
+  "example_de": "Guten Morgen!",
+  "example_zh": "早安！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V009",
+  "lektion": 1,
+  "week": 1,
+  "source": "plaud",
+  "de": "der Tag",
+  "zh": "白天；日",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Tage",
+  "conj": null,
+  "example_de": "Guten Tag!",
+  "example_zh": "日安！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V010",
+  "lektion": 1,
+  "week": 1,
+  "source": "plaud",
+  "de": "der Abend",
+  "zh": "晚上",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Abende",
+  "conj": null,
+  "example_de": "Guten Abend!",
+  "example_zh": "晚上好！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V011",
+  "lektion": 1,
+  "week": 1,
+  "source": "plaud",
+  "de": "die Nacht",
+  "zh": "夜晚",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Nächte",
+  "conj": null,
+  "example_de": "Gute Nacht!",
+  "example_zh": "晚安！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V012",
+  "lektion": 1,
+  "week": 1,
+  "source": "plaud",
+  "de": "der Student",
+  "zh": "（男）大學生",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Studenten",
+  "conj": null,
+  "example_de": "Ich bin Student.",
+  "example_zh": "我是大學生。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V013",
+  "lektion": 1,
+  "week": 1,
+  "source": "plaud",
+  "de": "die Universität",
+  "zh": "大學",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Universitäten",
+  "conj": null,
+  "example_de": "Die Universität ist in Taipei.",
+  "example_zh": "大學在台北。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V014",
+  "lektion": 1,
+  "week": 1,
+  "source": "plaud",
+  "de": "die Melone",
+  "zh": "甜瓜",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Melonen",
+  "conj": null,
+  "example_de": "Die Melone ist gut.",
+  "example_zh": "這顆甜瓜很好吃。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V015",
+  "lektion": 1,
+  "week": 1,
+  "source": "plaud",
+  "de": "die Minute",
+  "zh": "分鐘",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Minuten",
+  "conj": null,
+  "example_de": "Einen Moment, fünf Minuten!",
+  "example_zh": "等一下，五分鐘！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V016",
+  "lektion": 1,
+  "week": 1,
+  "source": "textbook",
+  "de": "das Alphabet",
+  "zh": "字母表",
+  "pos": "noun",
+  "article": "das",
+  "plural": "die Alphabete",
+  "conj": null,
+  "example_de": "Das Alphabet hat 30 Buchstaben.",
+  "example_zh": "字母表有 30 個字母。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W1_V017",
+  "lektion": 1,
+  "week": 1,
+  "source": "textbook",
+  "de": "der Buchstabe",
+  "zh": "字母",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Buchstaben",
+  "conj": null,
+  "example_de": "ß ist ein Buchstabe.",
+  "example_zh": "ß 是一個字母。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V001",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "bitte",
+  "zh": "請；不客氣",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Buchstabieren Sie, bitte.",
+  "example_zh": "請拼一下。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V002",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "danke",
+  "zh": "謝謝",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Guten Morgen. Oh, danke.",
+  "example_zh": "早安。喔，謝謝。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V003",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "Entschuldigung",
+  "zh": "抱歉；不好意思",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Entschuldigung, wie heißen Sie?",
+  "example_zh": "不好意思，您叫什麼名字？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V004",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "ja",
+  "zh": "是；對",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ja, stimmt.",
+  "example_zh": "對，沒錯。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V005",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "nein",
+  "zh": "不；不是（ei 念 ai）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Nein, nur ein bisschen.",
+  "example_zh": "不，只會一點點。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V006",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "Bis später",
+  "zh": "待會見",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Tschüs, bis später!",
+  "example_zh": "掰，待會見！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V007",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "Herzlich willkommen",
+  "zh": "熱烈歡迎",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Herzlich willkommen im Park-Klinikum.",
+  "example_zh": "歡迎來到 Park 醫院。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V008",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "Freut mich",
+  "zh": "很高興認識你／您",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Guten Tag, Frau Deiser, freut mich.",
+  "example_zh": "您好，Deiser 女士，很高興認識您。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V009",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "der Herr",
+  "zh": "先生（Herr＋姓氏）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Herren",
+  "conj": null,
+  "example_de": "Guten Tag, Herr Yulu.",
+  "example_zh": "您好，Yulu 先生。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V010",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "die Frau",
+  "zh": "女士（Frau＋姓氏）；女人",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Frauen",
+  "conj": null,
+  "example_de": "Ist Frau Beck da?",
+  "example_zh": "Beck 女士在嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V011",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "der Name",
+  "zh": "名字",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Namen",
+  "conj": null,
+  "example_de": "Mein Name ist Richard Yulu.",
+  "example_zh": "我的名字是 Richard Yulu。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V012",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "wer",
+  "zh": "誰",
+  "pos": "question",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wer ist das?",
+  "example_zh": "那是誰？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V013",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "wie",
+  "zh": "如何；怎樣（問名字用）",
+  "pos": "question",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie heißen Sie?",
+  "example_zh": "您叫什麼名字？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V014",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "woher",
+  "zh": "從哪裡",
+  "pos": "question",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Woher kommen Sie?",
+  "example_zh": "您從哪裡來？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V015",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "was",
+  "zh": "什麼",
+  "pos": "question",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Was sprechen Sie?",
+  "example_zh": "您說什麼語言？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V016",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "ich",
+  "zh": "我",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich bin Lili.",
+  "example_zh": "我是 Lili。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V017",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "du",
+  "zh": "你（熟人、平輩、小孩）",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie heißt du?",
+  "example_zh": "你叫什麼名字？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V018",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "Sie",
+  "zh": "您（尊稱，S 永遠大寫）",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wer sind Sie?",
+  "example_zh": "您是誰？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V019",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "sein",
+  "zh": "是",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "bin",
+   "du": "bist",
+   "er/sie/es": "ist",
+   "Sie": "sind"
+  },
+  "example_de": "Ich bin Helga Weber.",
+  "example_zh": "我是 Helga Weber。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V020",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "heißen",
+  "zh": "叫做（名字）",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "heiße",
+   "du": "heißt",
+   "er/sie/es": "heißt",
+   "Sie": "heißen"
+  },
+  "example_de": "Ich heiße Lara Nowak.",
+  "example_zh": "我叫 Lara Nowak。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V021",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "kommen",
+  "zh": "來",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "komme",
+   "du": "kommst",
+   "er/sie/es": "kommt",
+   "Sie": "kommen"
+  },
+  "example_de": "Ich komme aus Polen.",
+  "example_zh": "我來自波蘭。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V022",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "sprechen",
+  "zh": "說（語言）；不規則 e→i",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "spreche",
+   "du": "sprichst",
+   "er/sie/es": "spricht",
+   "Sie": "sprechen"
+  },
+  "example_de": "Ich spreche Deutsch und Englisch.",
+  "example_zh": "我會說德文和英文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V023",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "aus",
+  "zh": "從…（來自）",
+  "pos": "prep",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich komme aus Taiwan.",
+  "example_zh": "我來自台灣。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V024",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "Und du? / Und Sie?",
+  "zh": "那你呢？／那您呢？",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich komme aus Taipei. Und du?",
+  "example_zh": "我來自台北。你呢？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W2_V025",
+  "lektion": 1,
+  "week": 2,
+  "source": "both",
+  "de": "Das ist …",
+  "zh": "這是…（介紹別人）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Das ist Herr Yulu.",
+  "example_zh": "這位是 Yulu 先生。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V001",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "die Sprache",
+  "zh": "語言",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Sprachen",
+  "conj": null,
+  "example_de": "Welche Sprachen sprichst du?",
+  "example_zh": "你會說哪些語言？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V002",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Deutsch",
+  "zh": "德文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Du sprichst gut Deutsch.",
+  "example_zh": "你德文說得很好。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V003",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Englisch",
+  "zh": "英文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich spreche Englisch.",
+  "example_zh": "我會說英文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V004",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Chinesisch",
+  "zh": "中文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich spreche Chinesisch.",
+  "example_zh": "我會說中文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V005",
+  "lektion": 1,
+  "week": 3,
+  "source": "plaud",
+  "de": "Japanisch",
+  "zh": "日文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sprichst du Japanisch?",
+  "example_zh": "你會說日文嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V006",
+  "lektion": 1,
+  "week": 3,
+  "source": "plaud",
+  "de": "Koreanisch",
+  "zh": "韓文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich spreche ein bisschen Koreanisch.",
+  "example_zh": "我會說一點韓文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V007",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Französisch",
+  "zh": "法文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sie spricht Französisch.",
+  "example_zh": "她會說法文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V008",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Italienisch",
+  "zh": "義大利文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich spreche Italienisch.",
+  "example_zh": "我會說義大利文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V009",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Spanisch",
+  "zh": "西班牙文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Nico spricht Spanisch.",
+  "example_zh": "Nico 會說西班牙文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V010",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Russisch",
+  "zh": "俄文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sprechen Sie Russisch?",
+  "example_zh": "您會說俄文嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V011",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Türkisch",
+  "zh": "土耳其文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich spreche Deutsch und Türkisch.",
+  "example_zh": "我會說德文和土耳其文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V012",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Arabisch",
+  "zh": "阿拉伯文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sprichst du Arabisch?",
+  "example_zh": "你會說阿拉伯文嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V013",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Polnisch",
+  "zh": "波蘭文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich spreche Polnisch.",
+  "example_zh": "我會說波蘭文。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V014",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Griechisch",
+  "zh": "希臘文",
+  "pos": "lang",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sprechen Sie Griechisch?",
+  "example_zh": "您會說希臘文嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V015",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "ein bisschen",
+  "zh": "一點點",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Nein, nur ein bisschen.",
+  "example_zh": "不，只會一點點。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V016",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "gut",
+  "zh": "好；很好",
+  "pos": "adj",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Du sprichst gut Deutsch.",
+  "example_zh": "你德文說得很好。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V017",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Deutschland",
+  "zh": "德國",
+  "pos": "country",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich komme aus Deutschland.",
+  "example_zh": "我來自德國。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V018",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Österreich",
+  "zh": "奧地利",
+  "pos": "country",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich bin aus Österreich.",
+  "example_zh": "我來自奧地利。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V019",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "die Schweiz",
+  "zh": "瑞士（要加冠詞：aus der Schweiz）",
+  "pos": "country",
+  "article": "die",
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich komme aus der Schweiz.",
+  "example_zh": "我來自瑞士。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V020",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Liechtenstein",
+  "zh": "列支敦斯登",
+  "pos": "country",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich komme aus Liechtenstein.",
+  "example_zh": "我來自列支敦斯登。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V021",
+  "lektion": 1,
+  "week": 3,
+  "source": "textbook",
+  "de": "Polen",
+  "zh": "波蘭",
+  "pos": "country",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich komme aus Polen.",
+  "example_zh": "我來自波蘭。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V022",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Spanien",
+  "zh": "西班牙",
+  "pos": "country",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Nico kommt aus Spanien.",
+  "example_zh": "Nico 來自西班牙。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V023",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "das Land",
+  "zh": "國家",
+  "pos": "noun",
+  "article": "das",
+  "plural": "die Länder",
+  "conj": null,
+  "example_de": "Land: Deutschland",
+  "example_zh": "國家：德國",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V024",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "die Stadt",
+  "zh": "城市",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Städte",
+  "conj": null,
+  "example_de": "Stadt: Berlin",
+  "example_zh": "城市：柏林",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V025",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "der Vorname",
+  "zh": "名（first name）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Vornamen",
+  "conj": null,
+  "example_de": "Vorname: Marie",
+  "example_zh": "名：Marie",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V026",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "der Familienname",
+  "zh": "姓（＝Nachname）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Familiennamen",
+  "conj": null,
+  "example_de": "Familienname: Wegner",
+  "example_zh": "姓：Wegner",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V027",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "die Straße",
+  "zh": "街道",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Straßen",
+  "conj": null,
+  "example_de": "Ich wohne in der Schneiderstraße.",
+  "example_zh": "我住在 Schneider 街。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V028",
+  "lektion": 1,
+  "week": 3,
+  "source": "textbook",
+  "de": "die Hausnummer",
+  "zh": "門牌號碼",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Hausnummern",
+  "conj": null,
+  "example_de": "Hausnummer: 144",
+  "example_zh": "門牌：144",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V029",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "die Postleitzahl",
+  "zh": "郵遞區號",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Postleitzahlen",
+  "conj": null,
+  "example_de": "Postleitzahl: 1700",
+  "example_zh": "郵遞區號：1700",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V030",
+  "lektion": 1,
+  "week": 3,
+  "source": "textbook",
+  "de": "die Adresse",
+  "zh": "地址",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Adressen",
+  "conj": null,
+  "example_de": "Wie ist Ihre Adresse?",
+  "example_zh": "您的地址是？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V031",
+  "lektion": 1,
+  "week": 3,
+  "source": "textbook",
+  "de": "die Visitenkarte",
+  "zh": "名片",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Visitenkarten",
+  "conj": null,
+  "example_de": "Das ist meine Visitenkarte.",
+  "example_zh": "這是我的名片。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V032",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "die Firma",
+  "zh": "公司",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Firmen",
+  "conj": null,
+  "example_de": "Firma Microlab, Tina Schwarz, guten Tag.",
+  "example_zh": "Microlab 公司，我是 Tina Schwarz，您好。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V033",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "buchstabieren",
+  "zh": "拼字（逐字母念）",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "buchstabiere",
+   "du": "buchstabierst",
+   "er/sie/es": "buchstabiert",
+   "Sie": "buchstabieren"
+  },
+  "example_de": "Buchstabieren Sie, bitte.",
+  "example_zh": "請拼一下。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V034",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Wie bitte?",
+  "zh": "什麼？請再說一次",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie bitte? Buchstabieren Sie, bitte.",
+  "example_zh": "什麼？請拼一下。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V035",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Einen Moment, bitte.",
+  "zh": "請稍等",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Einen Moment, bitte … Herr Takishima?",
+  "example_zh": "請稍等…Takishima 先生？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V036",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Tut mir leid.",
+  "zh": "很遺憾／很抱歉（無能為力時）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Tut mir leid, Frau Beck ist nicht da.",
+  "example_zh": "很抱歉，Beck 女士不在。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V037",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Vielen Dank.",
+  "zh": "非常感謝",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ja, gut. Vielen Dank.",
+  "example_zh": "好的，非常感謝。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V038",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Auf Wiederhören",
+  "zh": "再見（電話用；hören＝聽）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Auf Wiederhören, Herr Takishima.",
+  "example_zh": "再見，Takishima 先生。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V039",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Ich weiß es nicht.",
+  "zh": "我不知道",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wer ist das? – Ich weiß es nicht.",
+  "example_zh": "那是誰？－我不知道。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V040",
+  "lektion": 1,
+  "week": 3,
+  "source": "plaud",
+  "de": "Keine Ahnung.",
+  "zh": "不知道（口語）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wo ist Nico? – Keine Ahnung.",
+  "example_zh": "Nico 在哪？－不知道。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V041",
+  "lektion": 1,
+  "week": 3,
+  "source": "both",
+  "de": "Ja, stimmt.",
+  "zh": "對，沒錯",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Das ist Mozart. – Ja, stimmt.",
+  "example_zh": "這是莫札特。－對，沒錯。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V042",
+  "lektion": 1,
+  "week": 3,
+  "source": "textbook",
+  "de": "Aha!",
+  "zh": "原來如此！",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Aha! Und Sie? Wer sind Sie?",
+  "example_zh": "原來！那您呢？您是誰？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V043",
+  "lektion": 1,
+  "week": 3,
+  "source": "plaud",
+  "de": "Moin",
+  "zh": "你好（北德口語）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Moin, Max!",
+  "example_zh": "嗨，Max！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V044",
+  "lektion": 1,
+  "week": 3,
+  "source": "plaud",
+  "de": "Servus",
+  "zh": "你好／再見（南德、奧地利）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Servus, Lisa!",
+  "example_zh": "嗨，Lisa！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W3_V045",
+  "lektion": 1,
+  "week": 3,
+  "source": "textbook",
+  "de": "Grüezi",
+  "zh": "您好（瑞士德語）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Grüezi, ich komme aus der Schweiz.",
+  "example_zh": "您好，我來自瑞士。",
+  "tags": [
+   "期中"
+  ]
+ }
+]
