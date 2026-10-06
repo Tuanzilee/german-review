@@ -60,11 +60,11 @@ hai 選定：單字／例句用 Katja（`de-DE-KatjaNeural`），會話依角色
    新動詞要填 `conj`，必要時在 `index.html` 的 `conjWhy` 補例外說明
 6. 跑檢查：`python3 check.py`（會檢查音檔齊全）
 7. bump `sw.js` 的 `CACHE` 版本號
-8. commit & push（Pages 1–2 分鐘後更新）
+8. commit 後**先問 hai，得到「可以 push」才 push**（hai 2026-10-06 規定每次都要問；Pages 1–2 分鐘後更新）
 9. 把不確定的條目列給 hai 確認
 
 ## 勘誤
-hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若改到德文就重跑 `tools/gen_audio.py` → bump `sw.js` → commit「修正 L1_W2_V007 …」→ push。
+hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若改到德文就重跑 `tools/gen_audio.py` → bump `sw.js` → commit「修正 L1_W2_V007 …」→ 問 hai 後才 push。
 
 ## 範圍設定
 `index.html` 的 `SCOPES`：期中範圍 = Lektion 1–2（W8 期中），期末考 Lektion 2–3。加新週次時記得在 `SCOPES` 補 `w4`、`w5`… 的按鈕。
