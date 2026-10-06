@@ -339,5 +339,53 @@
    "A": "f",
    "B": "m"
   }
+ },
+ {
+  "id": "L1_D09",
+  "lektion": 1,
+  "week": 4,
+  "title": "你是誰？（du）",
+  "scene": "新生說明會上跟同學互相認識",
+  "lines": [
+   {
+    "speaker": "A",
+    "de": "Hallo! Wer bist du?",
+    "zh": "哈囉！你是誰？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich bin Lena. Und wer bist du?",
+    "zh": "我是 Lena。那你是誰？"
+   },
+   {
+    "speaker": "A",
+    "de": "Ich bin Max. Woher kommst du, Lena?",
+    "zh": "我是 Max。Lena，你從哪裡來？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich komme aus Österreich. Und du?",
+    "zh": "我來自奧地利。你呢？"
+   },
+   {
+    "speaker": "A",
+    "de": "Ich bin aus Deutschland, aus Berlin.",
+    "zh": "我來自德國，柏林。"
+   },
+   {
+    "speaker": "B",
+    "de": "Du bist aus Berlin? Was sprichst du?",
+    "zh": "你是柏林人？你會說什麼語言？"
+   },
+   {
+    "speaker": "A",
+    "de": "Ich spreche Deutsch und Englisch.",
+    "zh": "我會說德文和英文。"
+   }
+  ],
+  "voices": {
+   "A": "m",
+   "B": "f"
+  }
  }
 ]

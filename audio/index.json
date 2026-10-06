@@ -187,6 +187,34 @@
   "text": "Ich weiß es nicht.",
   "voice": "de-DE-ConradNeural"
  },
+ "L1_D09_00.mp3": {
+  "text": "Hallo! Wer bist du?",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L1_D09_01.mp3": {
+  "text": "Ich bin Lena. Und wer bist du?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D09_02.mp3": {
+  "text": "Ich bin Max. Woher kommst du, Lena?",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L1_D09_03.mp3": {
+  "text": "Ich komme aus Österreich. Und du?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D09_04.mp3": {
+  "text": "Ich bin aus Deutschland, aus Berlin.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L1_D09_05.mp3": {
+  "text": "Du bist aus Berlin? Was sprichst du?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D09_06.mp3": {
+  "text": "Ich spreche Deutsch und Englisch.",
+  "voice": "de-DE-ConradNeural"
+ },
  "L1_W1_V001.mp3": {
   "text": "Guten Morgen",
   "voice": "de-DE-KatjaNeural"
@@ -471,12 +499,44 @@
   "text": "sein",
   "voice": "de-DE-KatjaNeural"
  },
+ "L1_W2_V019_c_Sie.mp3": {
+  "text": "Sie sind",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V019_c_du.mp3": {
+  "text": "du bist",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V019_c_er.mp3": {
+  "text": "er ist",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V019_c_ich.mp3": {
+  "text": "ich bin",
+  "voice": "de-DE-KatjaNeural"
+ },
  "L1_W2_V019_ex.mp3": {
   "text": "Ich bin Helga Weber.",
   "voice": "de-DE-KatjaNeural"
  },
  "L1_W2_V020.mp3": {
   "text": "heißen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V020_c_Sie.mp3": {
+  "text": "Sie heißen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V020_c_du.mp3": {
+  "text": "du heißt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V020_c_er.mp3": {
+  "text": "er heißt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V020_c_ich.mp3": {
+  "text": "ich heiße",
   "voice": "de-DE-KatjaNeural"
  },
  "L1_W2_V020_ex.mp3": {
@@ -487,12 +547,44 @@
   "text": "kommen",
   "voice": "de-DE-KatjaNeural"
  },
+ "L1_W2_V021_c_Sie.mp3": {
+  "text": "Sie kommen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V021_c_du.mp3": {
+  "text": "du kommst",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V021_c_er.mp3": {
+  "text": "er kommt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V021_c_ich.mp3": {
+  "text": "ich komme",
+  "voice": "de-DE-KatjaNeural"
+ },
  "L1_W2_V021_ex.mp3": {
   "text": "Ich komme aus Polen.",
   "voice": "de-DE-KatjaNeural"
  },
  "L1_W2_V022.mp3": {
   "text": "sprechen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V022_c_Sie.mp3": {
+  "text": "Sie sprechen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V022_c_du.mp3": {
+  "text": "du sprichst",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V022_c_er.mp3": {
+  "text": "er spricht",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V022_c_ich.mp3": {
+  "text": "ich spreche",
   "voice": "de-DE-KatjaNeural"
  },
  "L1_W2_V022_ex.mp3": {
@@ -783,6 +875,22 @@
   "text": "buchstabieren",
   "voice": "de-DE-KatjaNeural"
  },
+ "L1_W3_V033_c_Sie.mp3": {
+  "text": "Sie buchstabieren",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W3_V033_c_du.mp3": {
+  "text": "du buchstabierst",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W3_V033_c_er.mp3": {
+  "text": "er buchstabiert",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W3_V033_c_ich.mp3": {
+  "text": "ich buchstabiere",
+  "voice": "de-DE-KatjaNeural"
+ },
  "L1_W3_V033_ex.mp3": {
   "text": "Buchstabieren Sie, bitte.",
   "voice": "de-DE-KatjaNeural"
@@ -881,6 +989,30 @@
  },
  "L1_W3_V045_ex.mp3": {
   "text": "Grüezi, ich komme aus der Schweiz.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V001.mp3": {
+  "text": "Wer bist du?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V001_ex.mp3": {
+  "text": "Wer bist du? – Ich bin Lena.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V002.mp3": {
+  "text": "Wer sind Sie?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V002_ex.mp3": {
+  "text": "Wer sind Sie? – Ich bin Frau Weber.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V003.mp3": {
+  "text": "Du bist …",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V003_ex.mp3": {
+  "text": "Du bist Max. Und ich bin Lena.",
   "voice": "de-DE-KatjaNeural"
  }
 }

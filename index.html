@@ -95,6 +95,16 @@ nav.tabs button.on { color: var(--ink); font-weight: 600; }
 .opt.right { border-color: var(--good); background: color-mix(in srgb, var(--good) 15%, var(--card)); }
 .opt.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 15%, var(--card)); }
 .big-spk { width: 96px; height: 96px; font-size: 40px; border-radius: 50%; margin: 10px auto; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); }
+/* 拼字／變位 */
+.answer { width: 100%; font: inherit; font-size: 22px; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--line); background: var(--card); color: var(--ink); text-align: center; }
+.answer:focus { outline: none; border-color: var(--gold); }
+.answer.ok { border-color: var(--good); } .answer.ng { border-color: var(--bad); }
+.keys { display: flex; gap: 8px; justify-content: center; margin: 10px 0; }
+.keys button { width: 52px; height: 44px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); font-size: 20px; }
+.diff { font-size: 24px; font-weight: 700; letter-spacing: 1px; }
+.diff .x { color: var(--bad); text-decoration: underline; }
+.prompt { font-size: 24px; font-weight: 700; text-align: center; }
+.why { font-size: 14px; background: color-mix(in srgb, var(--gold) 14%, transparent); border-radius: 10px; padding: 8px 12px; margin-top: 10px; }
 .toast { position: fixed; left: 50%; top: 16px; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 10px; font-size: 14px; z-index: 20; }
 .warn { border-left: 4px solid var(--mid); }
 </style>
@@ -108,9 +118,10 @@ nav.tabs button.on { color: var(--ink); font-weight: 600; }
 <nav class="tabs"><div class="inner">
   <button data-tab="home"><span class="ic">🏠</span>首頁</button>
   <button data-tab="cards"><span class="ic">🃏</span>單字卡</button>
+  <button data-tab="spell"><span class="ic">✍️</span>拼字</button>
+  <button data-tab="conj"><span class="ic">🔤</span>變位</button>
   <button data-tab="talk"><span class="ic">💬</span>會話</button>
   <button data-tab="listen"><span class="ic">🎧</span>聽力</button>
-  <button data-tab="weak"><span class="ic">📕</span>錯題</button>
 </div></nav>
 
 <script>
@@ -208,6 +219,7 @@ const SCOPES = [
   { key: 'w1', label: 'W1', test: v => v.week === 1 },
   { key: 'w2', label: 'W2', test: v => v.week === 2 },
   { key: 'w3', label: 'W3', test: v => v.week === 3 },
+  { key: 'w4', label: 'W4', test: v => v.week === 4 },
 ];
 function inScope(list) {
   const s = SCOPES.find(s => s.key === prefs.scope) || SCOPES[0];
@@ -230,7 +242,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -267,6 +279,10 @@ function renderHome() {
       <button class="btn ghost" id="goTalk">💬 會話跟讀</button>
       <button class="btn ghost" id="goListen">🎧 聽力 10 題</button>
     </div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn ghost" id="goSpell">✍️ 拼字 10 題</button>
+      <button class="btn ghost" id="goConj">🔤 動詞變位</button>
+    </div>
     ${weak ? `<button class="btn ghost" id="goWeak" style="margin-top:10px">📕 錯題本（${weak}）</button>` : ''}
     <div class="card warn" id="voiceCard">
       <div><b>發音示範</b></div>
@@ -279,6 +295,8 @@ function renderHome() {
   $('#goCards').onclick = () => go('cards');
   $('#goTalk').onclick = () => go('talk');
   $('#goListen').onclick = () => go('listen');
+  $('#goSpell').onclick = () => go('spell');
+  $('#goConj').onclick = () => go('conj');
   if (weak) $('#goWeak').onclick = () => go('weak');
   $('#testVoice').onclick = () => speak('Guten Tag!', { file: 'L1_W1_V002' });
   const info = () => {
@@ -367,6 +385,136 @@ function rate(v, r) {
   else { s.box = Math.min(5, s.box + 1); s.due = Date.now() + INTERVALS[s.box - 1] * DAY; if (weakMode) s.weak = false; }
   srs[v.id] = s; saveSrs();
   idx++; flipped = false; renderCard();
+}
+
+// ---------- 拼字／變位共用 ----------
+const norm = t => t.trim().replace(/\s+/g, ' ').replace(/[.!?]+$/, '');
+// 逐字母比對，標出寫錯或漏掉的位置（簡易版：同位置比對）
+function diffHtml(correct, typed) {
+  return [...correct].map((c, i) => c === (typed[i] ?? '') ? esc(c) : `<span class="x">${esc(c)}</span>`).join('');
+}
+function bindKeys(input) {
+  document.querySelectorAll('.keys button').forEach(b => b.onclick = () => {
+    const [a, z] = [input.selectionStart ?? input.value.length, input.selectionEnd ?? input.value.length];
+    input.value = input.value.slice(0, a) + b.textContent + input.value.slice(z);
+    input.focus(); input.setSelectionRange(a + 1, a + 1);
+  });
+}
+const KEYS = `<div class="keys">${['ä', 'ö', 'ü', 'ß'].map(k => `<button type="button">${k}</button>`).join('')}</div>`;
+function markWeak(v) { const s = srs[v.id] || { box: 1, due: Date.now() }; s.weak = true; srs[v.id] = s; saveSrs(); }
+function roundEnd(score, total, again, note) {
+  app.innerHTML = `<div class="card" style="text-align:center"><p style="font-size:40px;margin:8px">✍️</p>
+    <p style="font-size:22px"><b>${score} / ${total}</b></p><p class="muted">${note}</p>
+    <button class="btn" onclick="go('${again}')">再來一輪</button>
+    <button class="btn ghost" style="margin-top:10px" onclick="go('home')">回首頁</button></div>`;
+}
+
+// ---------- 拼字 ----------
+// 有「…」或「/」的是句型框架，不適合拼字
+const spellable = v => !/[…\/]/.test(v.de);
+let spellQ = [], si = 0, sScore = 0;
+function startSpell() {
+  const pool = inScope(VOCAB).filter(spellable);
+  if (!pool.length) { app.innerHTML = `<div class="card">這個範圍沒有可以拼的單字，換個範圍吧。</div>`; return; }
+  // 錯題本裡的字優先出
+  const weakFirst = shuffle(pool.filter(v => srs[v.id]?.weak)).concat(shuffle(pool.filter(v => !srs[v.id]?.weak)));
+  spellQ = weakFirst.slice(0, 10).map(v => ({ v, typed: null }));
+  si = 0; sScore = 0; renderSpell();
+}
+function renderSpell() {
+  if (si >= spellQ.length) return roundEnd(sScore, spellQ.length, 'spell', '拼錯的已加入錯題本');
+  const q = spellQ[si], v = q.v;
+  const answered = q.typed !== null;
+  const ok = answered && [v.de, ...(v.accept || [])].some(a => norm(a) === norm(q.typed));
+  app.innerHTML = `
+    <div class="muted">✍️ 拼字 · ${si + 1} / ${spellQ.length} · 答對 ${sScore}</div>
+    <div class="progress"><div style="width:${si / spellQ.length * 100}%"></div></div>
+    <div class="card">
+      <div class="prompt">${esc(v.zh)}</div>
+      ${v.article ? '<div class="muted" style="text-align:center">名詞：連冠詞一起拼，名詞字首大寫</div>' : ''}
+      <div class="row" style="max-width:260px;margin:12px auto"><button class="btn ghost" id="sp">🔊 聽</button><button class="btn ghost" id="spSlow">🐢 慢速</button></div>
+      <input class="answer ${answered ? (ok ? 'ok' : 'ng') : ''}" id="ans" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+        placeholder="打出德文" value="${esc(q.typed ?? '')}" ${answered ? 'readonly' : ''}>
+      ${answered ? '' : KEYS}
+      ${answered ? `<div style="text-align:center;margin-top:12px">
+          ${ok ? '<div style="font-size:20px">✅ 正確</div>' : `<div class="muted">正確拼法（紅色是你錯的地方）</div><div class="diff">${diffHtml(v.de, q.typed)}</div>`}
+          ${v.accept ? `<div class="muted">也可以拼：${v.accept.map(esc).join('、')}</div>` : ''}
+          <div class="muted" style="margin-top:6px">${esc(v.example_de)}</div></div>` : ''}
+    </div>
+    ${answered ? `<button class="btn" id="next">下一題</button>`
+      : `<div class="row"><button class="btn ghost" id="hint">💡 提示首字母</button><button class="btn" id="check">檢查</button></div>`}`;
+  const input = $('#ans');
+  $('#sp').onclick = () => speak(v.de, { file: v.id });
+  $('#spSlow').onclick = () => speak(v.de, { rate: 0.6, file: v.id });
+  if (answered) { $('#next').onclick = () => { si++; renderSpell(); }; return; }
+  bindKeys(input);
+  const check = () => {
+    if (!input.value.trim()) { input.focus(); return; }
+    q.typed = input.value;
+    if ([v.de, ...(v.accept || [])].some(a => norm(a) === norm(q.typed))) sScore++; else markWeak(v);
+    renderSpell(); speak(v.de, { file: v.id });
+  };
+  $('#check').onclick = check;
+  input.onkeydown = e => { if (e.key === 'Enter') check(); };
+  $('#hint').onclick = () => { if (!input.value) input.value = v.de[0]; input.focus(); };
+  speak(v.de, { file: v.id });
+  setTimeout(() => input.focus(), 50);
+}
+
+// ---------- 動詞變位 ----------
+// 老師強調的規則與例外：說明在答完後顯示
+function conjWhy(verb, p) {
+  if (verb === 'sein') return 'sein 是不規則動詞：ich bin、du bist、er/sie/es ist、Sie sind，整組背起來。';
+  if (verb === 'heißen' && (p === 'du' || p === 'er/sie/es')) return 'heißen 的字幹已經有 ß（s 音），du 不再加 s，只加 -t → du heißt。';
+  if (verb === 'sprechen' && (p === 'du' || p === 'er/sie/es')) return 'sprechen 是強變化：du、er/sie/es 的母音 e → i → du sprichst、er spricht。';
+  return { ich: 'ich：去掉 -en，加 -e。', du: 'du：去掉 -en，加 -st。', 'er/sie/es': 'er/sie/es：去掉 -en，加 -t。', Sie: 'Sie（您）：照抄原形，不用變。' }[p];
+}
+const PRON_ZH = { ich: '我', du: '你', 'er/sie/es': '他／她／它', Sie: '您' };
+let conjQ = [], ci = 0, cScore = 0;
+function startConj() {
+  const verbs = VOCAB.filter(v => v.conj);
+  const all = verbs.flatMap(v => Object.keys(v.conj).map(p => ({ v, p, typed: null })));
+  // 老師點名的例外一定出；其餘隨機補滿 12 題
+  const must = all.filter(q => (q.v.de === 'heißen' || q.v.de === 'sprechen') && q.p === 'du' || q.v.de === 'sein' && q.p === 'du');
+  conjQ = shuffle(must.concat(shuffle(all.filter(q => !must.includes(q))).slice(0, 12 - must.length)));
+  ci = 0; cScore = 0; renderConj();
+}
+function renderConj() {
+  if (ci >= conjQ.length) return roundEnd(cScore, conjQ.length, 'conj', '答錯的動詞已加入錯題本，單字卡背面有完整變位表');
+  const q = conjQ[ci], v = q.v, right = v.conj[q.p];
+  const answered = q.typed !== null, ok = answered && norm(q.typed) === right;
+  const sentence = `${q.p === 'er/sie/es' ? 'er' : q.p} ${right}`;
+  app.innerHTML = `
+    <div class="muted">🔤 動詞變位 · ${ci + 1} / ${conjQ.length} · 答對 ${cScore}</div>
+    <div class="progress"><div style="width:${ci / conjQ.length * 100}%"></div></div>
+    <div class="card">
+      <div class="prompt">${esc(q.p)} ＋ ${esc(v.de)}</div>
+      <div class="muted" style="text-align:center">${PRON_ZH[q.p]}＋${esc(v.zh.split('；')[0])}</div>
+      <div style="display:flex;gap:8px;align-items:center;margin-top:14px">
+        <span style="font-size:22px;font-weight:700;flex:none">${esc(q.p === 'er/sie/es' ? 'er' : q.p)}</span>
+        <input class="answer ${answered ? (ok ? 'ok' : 'ng') : ''}" id="ans" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+          placeholder="動詞形式" value="${esc(q.typed ?? '')}" ${answered ? 'readonly' : ''}>
+      </div>
+      ${answered ? '' : KEYS}
+      ${answered ? `<div style="text-align:center;margin-top:12px">
+          ${ok ? '<div style="font-size:20px">✅ 正確</div>' : `<div class="muted">正確答案</div><div class="diff">${diffHtml(right, q.typed)}</div>`}
+          <div class="why">${conjWhy(v.de, q.p)}</div>
+          <div class="conj" style="justify-content:center;margin-top:10px">${Object.entries(v.conj).map(([k, f]) =>
+            `<span>${k}</span><span style="${k === q.p ? 'color:var(--gold)' : ''}">${esc(f)}</span>`).join('')}</div></div>` : ''}
+    </div>
+    ${answered ? `<button class="btn" id="next">下一題</button>` : `<button class="btn" id="check">檢查</button>`}`;
+  const input = $('#ans');
+  if (answered) { $('#next').onclick = () => { ci++; renderConj(); }; return; }
+  bindKeys(input);
+  const check = () => {
+    if (!input.value.trim()) { input.focus(); return; }
+    q.typed = input.value;
+    if (norm(q.typed) === right) cScore++; else markWeak(v);
+    renderConj(); speak(sentence, { file: `${v.id}_c_${q.p === 'er/sie/es' ? 'er' : q.p}` });
+  };
+  $('#check').onclick = check;
+  input.onkeydown = e => { if (e.key === 'Enter') check(); };
+  setTimeout(() => input.focus(), 50);
 }
 
 // ---------- 會話 ----------

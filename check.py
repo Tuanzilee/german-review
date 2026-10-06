@@ -23,6 +23,10 @@ import os
 for v in vocab:
     for f in (v['id'], v['id'] + '_ex'):
         if not os.path.exists(f'audio/{f}.mp3'): errors.append(f'缺音檔 audio/{f}.mp3（跑 tools/gen_audio.py）')
+for v in vocab:
+    for p in (v['conj'] or {}):
+        f = f"{v['id']}_c_{'er' if p == 'er/sie/es' else p}"
+        if not os.path.exists(f'audio/{f}.mp3'): errors.append(f'缺音檔 audio/{f}.mp3（跑 tools/gen_audio.py）')
 for d in dialogues:
     for i, l in enumerate(d['lines']):
         if l['speaker'] not in d.get('voices', {}): errors.append(f"{d['id']}：角色 {l['speaker']} 沒有指定聲音（voices）")

@@ -10,7 +10,7 @@ vocab.json      ← 單字庫
 dialogues.json  ← 會話庫
 sw.js           ← Service Worker（網路優先 + 離線快取）
 manifest.json / icon-192.png / icon-512.png
-audio/          ← 預錄音檔（{id}.mp3 單字、{id}_ex.mp3 例句、{會話id}_{兩位數行號}.mp3）＋ index.json
+audio/          ← 預錄音檔（{id}.mp3 單字、{id}_ex.mp3 例句、{id}_c_{人稱}.mp3 變位、{會話id}_{兩位數行號}.mp3）＋ index.json
 tools/gen_audio.py ← 產生音檔（edge-tts 微軟神經語音，只補新增／改過文字的）
 ```
 
@@ -30,7 +30,14 @@ conj        動詞變位 {ich, du, er/sie/es, Sie} 或 null
 example_de / example_zh  例句
 tags        ["期中"] / ["期末"]
 tts / tts_ex  （選填）音檔要念的文字，跟畫面拼法不同時才填；會話每句也可加 tts
+accept      （選填）拼字練習也算對的其他正確拼法，例 Tschüs 的 ["Tschüss"]
 ```
+
+## 練習模式
+- 單字卡（Leitner 5 盒）、聽力 4 選 1、會話跟讀
+- ✍️ 拼字：看中文＋聽音檔 → 打德文；大小寫要對（老師強調名詞大寫），忽略句尾標點；`de` 含「…」或「/」的句型框架不出題；錯題本裡的字優先
+- 🔤 動詞變位：所有有 `conj` 的動詞 × 人稱，du heißt／du sprichst／du bist 每輪必出；答完顯示規則說明（`conjWhy`）與音檔 `{id}_c_{ich|du|er|Sie}.mp3`
+- 老師 W4 說必背三樣：單字拼字、代名詞＋動詞搭配（du bist）、一般動詞詞尾變化（考前要整理）→ 對應拼字、變位兩個模式
 `dialogues.json` 每筆：`id`（L1_D01）、`lektion`、`week`、`title`、`scene`、`voices`（每個角色的聲音，`m`＝Conrad 男聲、`f`＝Seraphina 女聲，依角色性別指定）、`lines[{speaker, de, zh}]`。
 
 ## 語音
@@ -39,12 +46,13 @@ hai 選定：單字／例句用 Katja（`de-DE-KatjaNeural`），會話依角色
 產生音檔：`~/.venvs/tts/bin/python tools/gen_audio.py`（venv 不存在就先 `python3 -m venv ~/.venvs/tts && ~/.venvs/tts/bin/pip install edge-tts`）。edge-tts 借用 Edge 朗讀服務、非正式 API，若失效要告訴 hai，不要自己換別的付費服務。
 
 ## 每週新增內容（hai 說「更新德文 W{n}」）
-1. 用 Plaud 連接器找當週德語錄音（名稱含「德語」），讀 note 摘要；需要細節再讀 transcript
+1. 用 Plaud 連接器找當週德語錄音（名稱含「德語」或「德文」）。**Plaud 常把德文聽成英文，摘要不可信**：讀逐字稿，靠老師的中文講解＋課本還原德文；hai 錄音時按的 Highlights 最可靠
 2. 課本 PDF：`~/Desktop/P. 進行中專案/FJU psy/02_修課/1151/_課本/Schritte-International-Neu-A1-1（大二德文）.pdf`
    - 掃描檔，要 `pdftoppm -f N -l N -r 75 -png` 轉圖再讀；**PDF 頁碼 = 課本頁碼 + 2**
 3. 錄音抓「老師教了什麼」，課本校正拼字／冠詞／複數；追加到 JSON 尾端，id 接續編號
 4. 會話：依課堂情境自己改寫短對話，**不要逐字搬課本對話**（repo 公開、課綱禁止非法重製）
 5. 產生音檔：`~/.venvs/tts/bin/python tools/gen_audio.py`；新會話記得填 `voices`
+   新動詞要填 `conj`，必要時在 `index.html` 的 `conjWhy` 補例外說明
 6. 跑檢查：`python3 check.py`（會檢查音檔齊全）
 7. bump `sw.js` 的 `CACHE` 版本號
 8. commit & push（Pages 1–2 分鐘後更新）

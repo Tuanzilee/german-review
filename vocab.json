@@ -101,7 +101,10 @@
    "期中"
   ],
   "tts": "Tschüss",
-  "tts_ex": "Tschüss, Heike!"
+  "tts_ex": "Tschüss, Heike!",
+  "accept": [
+   "Tschüss"
+  ]
  },
  {
   "id": "L1_W1_V007",
@@ -1502,6 +1505,57 @@
   "conj": null,
   "example_de": "Grüezi, ich komme aus der Schweiz.",
   "example_zh": "您好，我來自瑞士。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W4_V001",
+  "lektion": 1,
+  "week": 4,
+  "source": "plaud",
+  "de": "Wer bist du?",
+  "zh": "你是誰？（du：熟人、平輩、小孩）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wer bist du? – Ich bin Lena.",
+  "example_zh": "你是誰？－我是 Lena。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W4_V002",
+  "lektion": 1,
+  "week": 4,
+  "source": "both",
+  "de": "Wer sind Sie?",
+  "zh": "您是誰？（Sie：尊稱）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wer sind Sie? – Ich bin Frau Weber.",
+  "example_zh": "您是誰？－我是 Weber 女士。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W4_V003",
+  "lektion": 1,
+  "week": 4,
+  "source": "plaud",
+  "de": "Du bist …",
+  "zh": "你是…（du 一定配 bist）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Du bist Max. Und ich bin Lena.",
+  "example_zh": "你是 Max。而我是 Lena。",
   "tags": [
    "期中"
   ]
