@@ -212,7 +212,7 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
 // ---------- 資料 ----------
-let VOCAB = [], DIALOGUES = [];
+let VOCAB = [], DIALOGUES = [], WFRAGEN = [];
 const SCOPES = [
   { key: 'all', label: '全部', test: () => true },
   { key: 'mid', label: '期中範圍', test: v => v.lektion <= 2 },
@@ -220,6 +220,7 @@ const SCOPES = [
   { key: 'w2', label: 'W2', test: v => v.week === 2 },
   { key: 'w3', label: 'W3', test: v => v.week === 3 },
   { key: 'w4', label: 'W4', test: v => v.week === 4 },
+  { key: 'hard', label: '⚠️ 考卷易錯', test: v => v.tags.includes('易錯') },
 ];
 function inScope(list) {
   const s = SCOPES.find(s => s.key === prefs.scope) || SCOPES[0];
@@ -242,7 +243,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -283,6 +284,7 @@ function renderHome() {
       <button class="btn ghost" id="goSpell">✍️ 拼字 10 題</button>
       <button class="btn ghost" id="goConj">🔤 動詞變位</button>
     </div>
+    <button class="btn ghost" id="goWq" style="margin-top:10px">❓ 疑問詞配對 Wie / Was / Woher / Wer</button>
     ${weak ? `<button class="btn ghost" id="goWeak" style="margin-top:10px">📕 錯題本（${weak}）</button>` : ''}
     <div class="card warn" id="voiceCard">
       <div><b>發音示範</b></div>
@@ -297,6 +299,7 @@ function renderHome() {
   $('#goListen').onclick = () => go('listen');
   $('#goSpell').onclick = () => go('spell');
   $('#goConj').onclick = () => go('conj');
+  $('#goWq').onclick = () => go('wq');
   if (weak) $('#goWeak').onclick = () => go('weak');
   $('#testVoice').onclick = () => speak('Guten Tag!', { file: 'L1_W1_V002' });
   const info = () => {
@@ -438,6 +441,7 @@ function renderSpell() {
       ${answered ? '' : KEYS}
       ${answered ? `<div style="text-align:center;margin-top:12px">
           ${ok ? '<div style="font-size:20px">✅ 正確</div>' : `<div class="muted">正確拼法（紅色是你錯的地方）</div><div class="diff">${diffHtml(v.de, q.typed)}</div>`}
+          ${!ok && v.spell_tip ? `<div class="why">💡 ${esc(v.spell_tip)}</div>` : ''}
           ${v.accept ? `<div class="muted">也可以拼：${v.accept.map(esc).join('、')}</div>` : ''}
           <div class="muted" style="margin-top:6px">${esc(v.example_de)}</div></div>` : ''}
     </div>
@@ -515,6 +519,37 @@ function renderConj() {
   $('#check').onclick = check;
   input.onkeydown = e => { if (e.key === 'Enter') check(); };
   setTimeout(() => input.focus(), 50);
+}
+
+// ---------- 疑問詞配對 ----------
+const WQ_WORDS = ['Wie', 'Was', 'Woher', 'Wer'];
+const WQ_WHY = { Wie: 'Wie（如何）＋ heißen：問名字', Woher: 'Woher（從哪裡）＋ kommen：問來自哪裡', Was: 'Was（什麼）＋ sprechen：問說什麼語言', Wer: 'Wer（誰）＋ sein：問是誰' };
+let wqQ = [], wi = 0, wScore = 0;
+function startWq() { wqQ = shuffle(WFRAGEN).slice(0, 10).map(w => ({ w, pick: null })); wi = 0; wScore = 0; renderWq(); }
+function renderWq() {
+  if (wi >= wqQ.length) return roundEnd(wScore, wqQ.length, 'wq', '記法：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein');
+  const q = wqQ[wi], w = q.w, rest = w.q.slice(w.answer.length);
+  app.innerHTML = `
+    <div class="muted">❓ 疑問詞配對 · ${wi + 1} / ${wqQ.length} · 答對 ${wScore}</div>
+    <div class="progress"><div style="width:${wi / wqQ.length * 100}%"></div></div>
+    <div class="card" style="text-align:center">
+      <div class="prompt">${q.pick ? `<span style="color:var(--gold)">${esc(w.answer)}</span>` : '_____'}${esc(rest)}</div>
+      <div class="muted">${q.pick ? esc(w.zh) : '看動詞，選對的疑問詞'}</div>
+      ${q.pick ? `<div class="why">${WQ_WHY[w.answer]}</div><button class="spk" id="say" style="margin-top:10px">🔊</button>` : ''}
+    </div>
+    ${WQ_WORDS.map(x => `<button class="opt ${q.pick ? (x === w.answer ? 'right' : (x === q.pick ? 'wrong' : '')) : ''}" data-x="${x}" style="text-align:center">${x}</button>`).join('')}
+    ${q.pick ? `<button class="btn" id="next" style="margin-top:6px">下一題</button>` : ''}`;
+  if (q.pick) {
+    $('#say').onclick = () => speak(w.q, { file: w.id });
+    $('#next').onclick = () => { wi++; renderWq(); };
+    return;
+  }
+  document.querySelectorAll('[data-x]').forEach(b => b.onclick = () => {
+    q.pick = b.dataset.x;
+    if (q.pick === w.answer) wScore++;
+    else { const v = VOCAB.find(x => x.de === w.answer.toLowerCase()); if (v) markWeak(v); }
+    renderWq(); speak(w.q, { file: w.id });
+  });
 }
 
 // ---------- 會話 ----------
@@ -629,8 +664,8 @@ function renderQ() {
 }
 
 // ---------- 啟動 ----------
-Promise.all([fetch('vocab.json').then(r => r.json()), fetch('dialogues.json').then(r => r.json())])
-  .then(([v, d]) => { VOCAB = v; DIALOGUES = d; go('home'); })
+Promise.all(['vocab.json', 'dialogues.json', 'wfragen.json'].map(f => fetch(f).then(r => r.json())))
+  .then(([v, d, w]) => { VOCAB = v; DIALOGUES = d; WFRAGEN = w; go('home'); })
   .catch(e => { app.innerHTML = `<div class="card">資料載入失敗：${esc(e.message)}</div>`; });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});

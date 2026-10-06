@@ -1,0 +1,68 @@
+[
+ {
+  "id": "WF01",
+  "q": "Wie heißen Sie?",
+  "zh": "您叫什麼名字？",
+  "answer": "Wie"
+ },
+ {
+  "id": "WF02",
+  "q": "Wie heißt du?",
+  "zh": "你叫什麼名字？",
+  "answer": "Wie"
+ },
+ {
+  "id": "WF03",
+  "q": "Wie ist Ihr Name?",
+  "zh": "您的名字是？",
+  "answer": "Wie"
+ },
+ {
+  "id": "WF04",
+  "q": "Woher kommen Sie?",
+  "zh": "您從哪裡來？",
+  "answer": "Woher"
+ },
+ {
+  "id": "WF05",
+  "q": "Woher kommst du?",
+  "zh": "你從哪裡來？",
+  "answer": "Woher"
+ },
+ {
+  "id": "WF06",
+  "q": "Was sprechen Sie?",
+  "zh": "您會說什麼語言？",
+  "answer": "Was"
+ },
+ {
+  "id": "WF07",
+  "q": "Was sprichst du?",
+  "zh": "你會說什麼語言？",
+  "answer": "Was"
+ },
+ {
+  "id": "WF08",
+  "q": "Wer sind Sie?",
+  "zh": "您是誰？",
+  "answer": "Wer"
+ },
+ {
+  "id": "WF09",
+  "q": "Wer bist du?",
+  "zh": "你是誰？",
+  "answer": "Wer"
+ },
+ {
+  "id": "WF10",
+  "q": "Wer ist das?",
+  "zh": "那是誰？",
+  "answer": "Wer"
+ },
+ {
+  "id": "WF11",
+  "q": "Wer ist Anna?",
+  "zh": "Anna 是誰？",
+  "answer": "Wer"
+ }
+]

@@ -387,5 +387,67 @@
    "A": "m",
    "B": "f"
   }
+ },
+ {
+  "id": "L1_D10",
+  "lektion": 1,
+  "week": 4,
+  "title": "Ming 的自我介紹",
+  "scene": "獨白・期末 200 字自我介紹的初稿（仿老師的 Marie 範文結構）",
+  "voices": {
+   "M": "f"
+  },
+  "lines": [
+   {
+    "speaker": "M",
+    "de": "Hallo! Ich heiße Ming, M – I – N – G.",
+    "zh": "哈囉！我叫 Ming，M－I－N－G。"
+   },
+   {
+    "speaker": "M",
+    "de": "Ich bin über 30 Jahre alt.",
+    "zh": "我三十多歲。（über＝超過；30 念 dreißig）"
+   },
+   {
+    "speaker": "M",
+    "de": "Ich komme aus Taiwan und wohne in Neu-Taipeh.",
+    "zh": "我來自台灣，住在新北。"
+   },
+   {
+    "speaker": "M",
+    "de": "Ich bin Studentin und studiere Psychologie an der Universität.",
+    "zh": "我是（女）大學生，在大學念心理學。"
+   },
+   {
+    "speaker": "M",
+    "de": "Ich spreche Chinesisch und Englisch. Ich spreche auch ein bisschen Deutsch.",
+    "zh": "我會說中文和英文，也會說一點德文。"
+   },
+   {
+    "speaker": "M",
+    "de": "Chinesisch ist meine Muttersprache.",
+    "zh": "中文是我的母語。"
+   },
+   {
+    "speaker": "M",
+    "de": "In meiner Freizeit lerne ich gern.",
+    "zh": "空閒時我喜歡學習。"
+   },
+   {
+    "speaker": "M",
+    "de": "Ich mache gern Vibe-Coding mit KI.",
+    "zh": "我喜歡用 AI 做 vibe coding。（KI＝AI）"
+   },
+   {
+    "speaker": "M",
+    "de": "Ich höre auch gern Vorträge.",
+    "zh": "我也喜歡聽演講。"
+   },
+   {
+    "speaker": "M",
+    "de": "Und du? Wie heißt du? Woher kommst du? Was sprichst du?",
+    "zh": "那你呢？你叫什麼？你從哪裡來？你會說什麼語言？"
+   }
+  ]
  }
 ]

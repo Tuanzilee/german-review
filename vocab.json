@@ -495,8 +495,10 @@
   "example_de": "Wer ist das?",
   "example_zh": "那是誰？",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "固定搭配：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein"
  },
  {
   "id": "L1_W2_V013",
@@ -512,8 +514,10 @@
   "example_de": "Wie heißen Sie?",
   "example_zh": "您叫什麼名字？",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "固定搭配：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein"
  },
  {
   "id": "L1_W2_V014",
@@ -529,8 +533,10 @@
   "example_de": "Woher kommen Sie?",
   "example_zh": "您從哪裡來？",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "固定搭配：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein"
  },
  {
   "id": "L1_W2_V015",
@@ -546,8 +552,10 @@
   "example_de": "Was sprechen Sie?",
   "example_zh": "您說什麼語言？",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "固定搭配：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein"
  },
  {
   "id": "L1_W2_V016",
@@ -770,8 +778,10 @@
   "example_de": "Du sprichst gut Deutsch.",
   "example_zh": "你德文說得很好。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "「ㄑ」的音德文寫 tsch，t 不能省：D-e-u-t-s-c-h"
  },
  {
   "id": "L1_W3_V003",
@@ -787,8 +797,10 @@
   "example_de": "Ich spreche Englisch.",
   "example_zh": "我會說英文。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V004",
@@ -804,8 +816,10 @@
   "example_de": "Ich spreche Chinesisch.",
   "example_zh": "我會說中文。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V005",
@@ -821,8 +835,10 @@
   "example_de": "Sprichst du Japanisch?",
   "example_zh": "你會說日文嗎？",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V006",
@@ -838,8 +854,10 @@
   "example_de": "Ich spreche ein bisschen Koreanisch.",
   "example_zh": "我會說一點韓文。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V007",
@@ -855,8 +873,10 @@
   "example_de": "Sie spricht Französisch.",
   "example_zh": "她會說法文。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V008",
@@ -872,8 +892,10 @@
   "example_de": "Ich spreche Italienisch.",
   "example_zh": "我會說義大利文。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V009",
@@ -889,8 +911,10 @@
   "example_de": "Nico spricht Spanisch.",
   "example_zh": "Nico 會說西班牙文。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V010",
@@ -906,8 +930,10 @@
   "example_de": "Sprechen Sie Russisch?",
   "example_zh": "您會說俄文嗎？",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V011",
@@ -923,8 +949,10 @@
   "example_de": "Ich spreche Deutsch und Türkisch.",
   "example_zh": "我會說德文和土耳其文。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V012",
@@ -940,8 +968,10 @@
   "example_de": "Sprichst du Arabisch?",
   "example_zh": "你會說阿拉伯文嗎？",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V013",
@@ -957,8 +987,10 @@
   "example_de": "Ich spreche Polnisch.",
   "example_zh": "我會說波蘭文。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V014",
@@ -974,8 +1006,10 @@
   "example_de": "Sprechen Sie Griechisch?",
   "example_zh": "您會說希臘文嗎？",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish"
  },
  {
   "id": "L1_W3_V015",
@@ -1025,8 +1059,10 @@
   "example_de": "Ich komme aus Deutschland.",
   "example_zh": "我來自德國。",
   "tags": [
+   "易錯",
    "期中"
-  ]
+  ],
+  "spell_tip": "「ㄑ」的音德文寫 tsch，t 不能省：D-e-u-t-s-c-h"
  },
  {
   "id": "L1_W3_V018",
@@ -1559,5 +1595,43 @@
   "tags": [
    "期中"
   ]
+ },
+ {
+  "id": "L1_W4_V004",
+  "lektion": 1,
+  "week": 4,
+  "source": "plaud",
+  "de": "Katja",
+  "zh": "（人名）卡蒂雅",
+  "pos": "name",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich heiße Katja, K – A – T – J – A.",
+  "example_zh": "我叫 Katja，K－A－T－J－A。",
+  "tags": [
+   "期中",
+   "易錯"
+  ],
+  "spell_tip": "德文的 j 念「ㄧ」，聽到「ㄧ」的音寫 j，不是英文的 y"
+ },
+ {
+  "id": "L1_W4_V005",
+  "lektion": 1,
+  "week": 4,
+  "source": "plaud",
+  "de": "Maja",
+  "zh": "（人名）瑪雅",
+  "pos": "name",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Das ist Maja.",
+  "example_zh": "這是 Maja。",
+  "tags": [
+   "期中",
+   "易錯"
+  ],
+  "spell_tip": "德文的 j 念「ㄧ」，聽到「ㄧ」的音寫 j，不是英文的 y"
  }
 ]

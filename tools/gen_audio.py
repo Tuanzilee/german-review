@@ -33,6 +33,9 @@ def jobs():
         for p, form in (v.get('conj') or {}).items():
             pron = 'er' if p == 'er/sie/es' else p
             yield f"{v['id']}_c_{pron}.mp3", f"{pron} {form}", WORD_VOICE
+    # 疑問詞配對練習的整句
+    for w in json.load(open(os.path.join(ROOT, 'wfragen.json'))):
+        yield f"{w['id']}.mp3", w['q'], WORD_VOICE
     for d in dialogues:
         for i, line in enumerate(d['lines']):
             yield f"{d['id']}_{i:02d}.mp3", line.get('tts', line['de']), d['voices'][line['speaker']]

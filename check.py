@@ -31,6 +31,9 @@ for d in dialogues:
     for i, l in enumerate(d['lines']):
         if l['speaker'] not in d.get('voices', {}): errors.append(f"{d['id']}：角色 {l['speaker']} 沒有指定聲音（voices）")
         if not os.path.exists(f"audio/{d['id']}_{i:02d}.mp3"): errors.append(f"缺音檔 audio/{d['id']}_{i:02d}.mp3（跑 tools/gen_audio.py）")
+for w in json.load(open('wfragen.json')):
+    if not os.path.exists(f"audio/{w['id']}.mp3"): errors.append(f"缺音檔 audio/{w['id']}.mp3（跑 tools/gen_audio.py）")
+    if w['answer'] not in ('Wie', 'Was', 'Woher', 'Wer'): errors.append(f"{w['id']}：answer 不是四個疑問詞之一")
 print(f'單字 {len(vocab)}、會話 {len(dialogues)}')
 print('\n'.join(errors) if errors else '✅ 全部通過')
 sys.exit(1 if errors else 0)

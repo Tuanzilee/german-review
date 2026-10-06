@@ -215,6 +215,46 @@
   "text": "Ich spreche Deutsch und Englisch.",
   "voice": "de-DE-ConradNeural"
  },
+ "L1_D10_00.mp3": {
+  "text": "Hallo! Ich heiße Ming, M – I – N – G.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_01.mp3": {
+  "text": "Ich bin über 30 Jahre alt.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_02.mp3": {
+  "text": "Ich komme aus Taiwan und wohne in Neu-Taipeh.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_03.mp3": {
+  "text": "Ich bin Studentin und studiere Psychologie an der Universität.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_04.mp3": {
+  "text": "Ich spreche Chinesisch und Englisch. Ich spreche auch ein bisschen Deutsch.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_05.mp3": {
+  "text": "Chinesisch ist meine Muttersprache.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_06.mp3": {
+  "text": "In meiner Freizeit lerne ich gern.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_07.mp3": {
+  "text": "Ich mache gern Vibe-Coding mit KI.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_08.mp3": {
+  "text": "Ich höre auch gern Vorträge.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L1_D10_09.mp3": {
+  "text": "Und du? Wie heißt du? Woher kommst du? Was sprichst du?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
  "L1_W1_V001.mp3": {
   "text": "Guten Morgen",
   "voice": "de-DE-KatjaNeural"
@@ -1013,6 +1053,66 @@
  },
  "L1_W4_V003_ex.mp3": {
   "text": "Du bist Max. Und ich bin Lena.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V004.mp3": {
+  "text": "Katja",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V004_ex.mp3": {
+  "text": "Ich heiße Katja, K – A – T – J – A.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V005.mp3": {
+  "text": "Maja",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V005_ex.mp3": {
+  "text": "Das ist Maja.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF01.mp3": {
+  "text": "Wie heißen Sie?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF02.mp3": {
+  "text": "Wie heißt du?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF03.mp3": {
+  "text": "Wie ist Ihr Name?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF04.mp3": {
+  "text": "Woher kommen Sie?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF05.mp3": {
+  "text": "Woher kommst du?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF06.mp3": {
+  "text": "Was sprechen Sie?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF07.mp3": {
+  "text": "Was sprichst du?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF08.mp3": {
+  "text": "Wer sind Sie?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF09.mp3": {
+  "text": "Wer bist du?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF10.mp3": {
+  "text": "Wer ist das?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF11.mp3": {
+  "text": "Wer ist Anna?",
   "voice": "de-DE-KatjaNeural"
  }
 }

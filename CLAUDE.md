@@ -8,6 +8,7 @@ hai 的基礎德文複習 PWA（手機為主）。單頁 `index.html` + runtime 
 index.html      ← 全部 UI 與邏輯（源 = 部署檔，直接改）
 vocab.json      ← 單字庫
 dialogues.json  ← 會話庫
+wfragen.json    ← 疑問詞配對題
 sw.js           ← Service Worker（網路優先 + 離線快取）
 manifest.json / icon-192.png / icon-512.png
 audio/          ← 預錄音檔（{id}.mp3 單字、{id}_ex.mp3 例句、{id}_c_{人稱}.mp3 變位、{會話id}_{兩位數行號}.mp3）＋ index.json
@@ -31,12 +32,16 @@ example_de / example_zh  例句
 tags        ["期中"] / ["期末"]
 tts / tts_ex  （選填）音檔要念的文字，跟畫面拼法不同時才填；會話每句也可加 tts
 accept      （選填）拼字練習也算對的其他正確拼法，例 Tschüs 的 ["Tschüss"]
+spell_tip   （選填）拼錯時顯示的規則提示；tags 含「易錯」的會進首頁「⚠️ 考卷易錯」範圍
 ```
 
 ## 練習模式
 - 單字卡（Leitner 5 盒）、聽力 4 選 1、會話跟讀
 - ✍️ 拼字：看中文＋聽音檔 → 打德文；大小寫要對（老師強調名詞大寫），忽略句尾標點；`de` 含「…」或「/」的句型框架不出題；錯題本裡的字優先
 - 🔤 動詞變位：所有有 `conj` 的動詞 × 人稱，du heißt／du sprichst／du bist 每輪必出；答完顯示規則說明（`conjWhy`）與音檔 `{id}_c_{ich|du|er|Sie}.mp3`
+- ❓ 疑問詞配對：`wfragen.json`（id WF01…、q、zh、answer），音檔 `WF01.mp3`
+- 考卷易錯（2026-10-06 W4 學習單）：-isch 寫成 -ish、Deutsch 漏 t、j 寫成 y、疑問詞配錯動詞 → 對應易錯範圍＋spell_tip＋疑問詞配對
+- 會話 L1_D10 是 hai 的自我介紹稿（Ming、über 30、Neu-Taipeh、Psychologie、Vibe-Coding mit KI、Vorträge），期末 200 字作業初稿；老師的 Marie 範文是老師自編教材，**不要原文放進公開 repo**
 - 老師 W4 說必背三樣：單字拼字、代名詞＋動詞搭配（du bist）、一般動詞詞尾變化（考前要整理）→ 對應拼字、變位兩個模式
 `dialogues.json` 每筆：`id`（L1_D01）、`lektion`、`week`、`title`、`scene`、`voices`（每個角色的聲音，`m`＝Conrad 男聲、`f`＝Seraphina 女聲，依角色性別指定）、`lines[{speaker, de, zh}]`。
 
