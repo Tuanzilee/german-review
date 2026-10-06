@@ -71,3 +71,4 @@ hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若�
 
 > 踩坑：Seraphina 是多語語音，**單獨一個字**會自動判斷語言，Koreanisch、Englisch 這類字會念成英文腔。單字一律用純德語的 Katja；Seraphina 只用在整句會話。
 > 發音決策：Tschüs 畫面維持課本拼法，音檔念短音 Tschüss（hai 選定，對齊老師「ü 短促」）。
+> Nicos Weg（DW 影集，老師 W3 起分段播放）：首頁只放官方連結 https://learngerman.dw.com/en/nicos-weg/c-36519789 ，**不要把影片台詞抄進公開 repo**（DW 版權）。hai 2026-10-06 決定暫不加數字／同情境會話，等老師放完再說。
