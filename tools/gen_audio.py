@@ -1,13 +1,30 @@
-"""產生 App 用的預錄音檔（微軟神經語音，透過 edge-tts）。
+"""產生 App 用的預錄音檔（微軟神經語音）。
 
-用法（第一次要先裝 edge-tts）：
-    python3 -m venv ~/.venvs/tts && ~/.venvs/tts/bin/pip install edge-tts
+優先用 Azure 語音正式服務（跟 edge-tts 是同一套聲音）；沒有金鑰時才退回 edge-tts。
+Azure 金鑰放在 repo 外的 ~/.config/german-review/azure.env（不要 commit、不要貼到對話）：
+    AZURE_SPEECH_KEY=…
+    AZURE_SPEECH_REGION=eastasia
+
+用法：
     ~/.venvs/tts/bin/python tools/gen_audio.py
+（edge-tts 備援要先 python3 -m venv ~/.venvs/tts && ~/.venvs/tts/bin/pip install edge-tts）
 
 只會產生「新增或文字有改過」的音檔；audio/index.json 記錄每個檔案當初念的文字和聲音。
 """
-import asyncio, json, os, re
-import edge_tts
+import asyncio, json, os, re, urllib.request
+from xml.sax.saxutils import escape
+
+# 讀 repo 外的 Azure 設定檔
+ENV_FILE = os.path.expanduser('~/.config/german-review/azure.env')
+if os.path.exists(ENV_FILE):
+    for line in open(ENV_FILE):
+        if '=' in line and not line.lstrip().startswith('#'):
+            k, val = line.strip().split('=', 1)
+            os.environ.setdefault(k.strip(), val.strip())
+AZURE_KEY = os.environ.get('AZURE_SPEECH_KEY')
+AZURE_REGION = os.environ.get('AZURE_SPEECH_REGION', 'eastasia')
+if not AZURE_KEY:
+    import edge_tts
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUDIO = os.path.join(ROOT, 'audio')
@@ -41,6 +58,21 @@ def jobs():
             yield f"{d['id']}_{i:02d}.mp3", line.get('tts', line['de']), d['voices'][line['speaker']]
 
 
+def azure_save(text, voice, path):
+    ssml = (f"<speak version='1.0' xml:lang='de-DE'><voice name='{voice}'>"
+            f"<prosody rate='{RATE}'>{escape(text)}</prosody></voice></speak>")
+    req = urllib.request.Request(
+        f'https://{AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1',
+        data=ssml.encode('utf-8'), method='POST',
+        headers={'Ocp-Apim-Subscription-Key': AZURE_KEY, 'Content-Type': 'application/ssml+xml',
+                 'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3', 'User-Agent': 'german-review'})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        data = r.read()
+    if not data:
+        raise RuntimeError('Azure 回傳空音檔')
+    open(path, 'wb').write(data)
+
+
 async def main():
     os.makedirs(AUDIO, exist_ok=True)
     index_path = os.path.join(AUDIO, 'index.json')
@@ -50,11 +82,16 @@ async def main():
     print(f'需要產生 {len(todo)} 個音檔')
     sem = asyncio.Semaphore(4)
 
+    print('使用 Azure 語音正式服務' if AZURE_KEY else '沒有 Azure 金鑰，改用 edge-tts')
+
     async def one(f, text, v):
         async with sem:
             for attempt in range(3):
                 try:
-                    await edge_tts.Communicate(tts_text(text), VOICES[v], rate=RATE).save(os.path.join(AUDIO, f))
+                    if AZURE_KEY:
+                        await asyncio.to_thread(azure_save, tts_text(text), VOICES[v], os.path.join(AUDIO, f))
+                    else:
+                        await edge_tts.Communicate(tts_text(text), VOICES[v], rate=RATE).save(os.path.join(AUDIO, f))
                     index[f] = {'text': text, 'voice': VOICES[v]}
                     return
                 except Exception as e:

@@ -48,7 +48,7 @@ spell_tip   （選填）拼錯時顯示的規則提示；tags 含「易錯」的
 ## 語音
 hai 選定：單字／例句用 Katja（`de-DE-KatjaNeural`），會話依角色分 Conrad（`de-DE-ConradNeural`）／Seraphina（`de-DE-SeraphinaMultilingualNeural`），整體 `-10%` 語速。App 先播 `audio/` 的 mp3，載入失敗才退回裝置內建語音。
 
-產生音檔：`~/.venvs/tts/bin/python tools/gen_audio.py`（venv 不存在就先 `python3 -m venv ~/.venvs/tts && ~/.venvs/tts/bin/pip install edge-tts`）。edge-tts 借用 Edge 朗讀服務、非正式 API，若失效要告訴 hai，不要自己換別的付費服務。
+產生音檔：`~/.venvs/tts/bin/python tools/gen_audio.py`。**2026-10-13 起 hai 選定改用 Azure 語音正式服務**（同一套 Katja/Conrad/Seraphina 聲音，Free F0 方案）。金鑰放在 repo 外的 `~/.config/german-review/azure.env`（`AZURE_SPEECH_KEY`、`AZURE_SPEECH_REGION`），**絕不 commit、不要求 hai 貼到對話**；沒有金鑰時程式才退回 edge-tts（已於 10/13 被微軟擋 403）。
 
 ## 每週新增內容（hai 說「更新德文 W{n}」）
 1. 用 Plaud 連接器找當週德語錄音（名稱含「德語」或「德文」）。**Plaud 常把德文聽成英文，摘要不可信**：讀逐字稿，靠老師的中文講解＋課本還原德文；hai 錄音時按的 Highlights 最可靠
