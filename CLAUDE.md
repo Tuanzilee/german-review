@@ -27,7 +27,7 @@ zh          中文意思
 pos         noun / verb / phrase / question / pronoun / prep / adj / lang / country
 article     der | die | das | null（名詞必填）
 plural      複數形或 null
-conj        動詞變位 {ich, du, er/sie/es, Sie} 或 null
+conj        動詞變位六人稱 {ich, du, er/sie/es, wir, ihr, sie/Sie} 或 null（W5 起；音檔代號 er/sie/es→er、sie/Sie→Sie）
 example_de / example_zh  例句
 tags        ["期中"] / ["期末"]
 tts / tts_ex  （選填）音檔要念的文字，跟畫面拼法不同時才填；會話每句也可加 tts
@@ -38,7 +38,7 @@ spell_tip   （選填）拼錯時顯示的規則提示；tags 含「易錯」的
 ## 練習模式
 - 單字卡（Leitner 5 盒）、聽力 4 選 1、會話跟讀
 - ✍️ 拼字：看中文＋聽音檔 → 打德文；大小寫要對（老師強調名詞大寫），忽略句尾標點；`de` 含「…」或「/」的句型框架不出題；錯題本裡的字優先
-- 🔤 動詞變位：所有有 `conj` 的動詞 × 人稱，du heißt／du sprichst／du bist 每輪必出；答完顯示規則說明（`conjWhy`）與音檔 `{id}_c_{ich|du|er|Sie}.mp3`
+- 🔤 動詞變位：所有有 `conj` 的動詞 × 人稱，每輪 16 題，必出：du heißt、du/er sprichst/spricht、ihr sprecht、du bist、ihr seid、du hast、er hat、ihr habt、er kommt、er lebt（hai 10/13 在 GPT 做題錯在 er/sie/es 寫成 -e）；答完顯示規則說明（`conjWhy`）與音檔 `{id}_c_{ich|du|er|Sie}.mp3`
 - ❓ 疑問詞配對：`wfragen.json`（id WF01…、q、zh、answer），音檔 `WF01.mp3`
 - 考卷易錯（2026-10-06 W4 學習單）：-isch 寫成 -ish、Deutsch 漏 t、j 寫成 y、疑問詞配錯動詞 → 對應易錯範圍＋spell_tip＋疑問詞配對
 - 會話 L1_D10 是 hai 的自我介紹稿（Ming、über 30、Neu-Taipeh、Psychologie、Vibe-Coding mit KI、Vorträge），期末 200 字作業初稿；老師的 Marie 範文是老師自編教材，**不要原文放進公開 repo**
@@ -72,3 +72,5 @@ hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若�
 > 踩坑：Seraphina 是多語語音，**單獨一個字**會自動判斷語言，Koreanisch、Englisch 這類字會念成英文腔。單字一律用純德語的 Katja；Seraphina 只用在整句會話。
 > 發音決策：Tschüs 畫面維持課本拼法，音檔念短音 Tschüss（hai 選定，對齊老師「ü 短促」）。
 > Nicos Weg（DW 影集，老師 W3 起分段播放）：首頁只放官方連結 https://learngerman.dw.com/en/nicos-weg/c-36519789 ，**不要把影片台詞抄進公開 repo**（DW 版權）。hai 2026-10-06 決定暫不加數字／同情境會話，等老師放完再說。
+> ⚠️ 2026-10-13：edge-tts 7.2.8（最新版）連線 403，微軟擋掉了，110 個新音檔（W4 下、W5、wir/ihr 變位）沒產生；App 會改用裝置語音。gen_audio.py 失敗時會刪掉空檔，check.py 把缺音檔列為警告。等 hai 決定替代方案前不要自己換服務。
+> 上課討論軌跡：hai 會在 ChatGPT 開「YYYYMMDD 德文 …」對話做課本題；hai 同意時用 Claude in Chrome 搜尋「德」讀取（只讀不送出）。

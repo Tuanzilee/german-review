@@ -1,8 +1,8 @@
 """資料檢查：python3 check.py"""
-import json, sys
+import json, os, sys
 vocab = json.load(open('vocab.json'))
 dialogues = json.load(open('dialogues.json'))
-errors = []
+errors, warnings = [], []
 ids = [v['id'] for v in vocab] + [d['id'] for d in dialogues]
 dup = {i for i in ids if ids.count(i) > 1}
 if dup: errors.append(f'重複 id：{dup}')
@@ -22,18 +22,24 @@ for d in dialogues:
 import os
 for v in vocab:
     for f in (v['id'], v['id'] + '_ex'):
-        if not os.path.exists(f'audio/{f}.mp3'): errors.append(f'缺音檔 audio/{f}.mp3（跑 tools/gen_audio.py）')
+        if not os.path.exists(f'audio/{f}.mp3'): warnings.append(f'缺音檔 audio/{f}.mp3（跑 tools/gen_audio.py）')
 for v in vocab:
     for p in (v['conj'] or {}):
-        f = f"{v['id']}_c_{'er' if p == 'er/sie/es' else p}"
-        if not os.path.exists(f'audio/{f}.mp3'): errors.append(f'缺音檔 audio/{f}.mp3（跑 tools/gen_audio.py）')
+        f = f"{v['id']}_c_" + {'er/sie/es': 'er', 'sie/Sie': 'Sie'}.get(p, p)
+        if not os.path.exists(f'audio/{f}.mp3'): warnings.append(f'缺音檔 audio/{f}.mp3（跑 tools/gen_audio.py）')
 for d in dialogues:
     for i, l in enumerate(d['lines']):
         if l['speaker'] not in d.get('voices', {}): errors.append(f"{d['id']}：角色 {l['speaker']} 沒有指定聲音（voices）")
-        if not os.path.exists(f"audio/{d['id']}_{i:02d}.mp3"): errors.append(f"缺音檔 audio/{d['id']}_{i:02d}.mp3（跑 tools/gen_audio.py）")
+        if not os.path.exists(f"audio/{d['id']}_{i:02d}.mp3"): warnings.append(f"缺音檔 audio/{d['id']}_{i:02d}.mp3（跑 tools/gen_audio.py）")
 for w in json.load(open('wfragen.json')):
-    if not os.path.exists(f"audio/{w['id']}.mp3"): errors.append(f"缺音檔 audio/{w['id']}.mp3（跑 tools/gen_audio.py）")
+    if not os.path.exists(f"audio/{w['id']}.mp3"): warnings.append(f"缺音檔 audio/{w['id']}.mp3（跑 tools/gen_audio.py）")
     if w['answer'] not in ('Wie', 'Was', 'Woher', 'Wer'): errors.append(f"{w['id']}：answer 不是四個疑問詞之一")
+for v in vocab:
+    if v['conj'] and list(v['conj']) != ['ich', 'du', 'er/sie/es', 'wir', 'ihr', 'sie/Sie']:
+        errors.append(f"{v['id']} {v['de']}：conj 要有六個人稱 ich/du/er/sie/es/wir/ihr/sie/Sie")
 print(f'單字 {len(vocab)}、會話 {len(dialogues)}')
-print('\n'.join(errors) if errors else '✅ 全部通過')
+if warnings: print(f'⚠️ 缺 {len(warnings)} 個音檔（App 會改用裝置語音），例如：{warnings[0]}')
+empty = [f for f in os.listdir('audio') if f.endswith('.mp3') and os.path.getsize(f'audio/{f}') == 0]
+if empty: errors.append(f'有 {len(empty)} 個 0 位元組的空音檔，要刪掉')
+print('\n'.join(errors) if errors else '✅ 資料檢查通過')
 sys.exit(1 if errors else 0)

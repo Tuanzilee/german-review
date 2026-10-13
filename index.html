@@ -220,6 +220,7 @@ const SCOPES = [
   { key: 'w2', label: 'W2', test: v => v.week === 2 },
   { key: 'w3', label: 'W3', test: v => v.week === 3 },
   { key: 'w4', label: 'W4', test: v => v.week === 4 },
+  { key: 'w5', label: 'W5', test: v => v.week === 5 },
   { key: 'hard', label: '⚠️ 考卷易錯', test: v => v.tags.includes('易錯') },
 ];
 function inScope(list) {
@@ -291,6 +292,13 @@ function renderHome() {
       <div><b>🎬 Nicos Weg A1（老師課堂播的影片）</b></div>
       <div class="muted">德國之聲免費影集：Nico 從西班牙到德國的基礎對話，真人原音＋字幕＋單字表＋練習題 ›</div>
     </a>
+    <div class="card">
+      <div><b>📖 老師推薦的線上字典</b>（會標出 der/die/das）</div>
+      <div class="row" style="margin-top:10px">
+        <a class="btn ghost" href="https://dict.leo.org/chinesisch-deutsch/" target="_blank" rel="noopener" style="text-decoration:none">LEO 德中</a>
+        <a class="btn ghost" href="https://www.dict.cc/" target="_blank" rel="noopener" style="text-decoration:none">dict.cc 德英</a>
+      </div>
+    </div>
     <div class="card warn" id="voiceCard">
       <div><b>發音示範</b></div>
       <div class="muted">預錄神經語音：單字和例句 Katja（女），會話依角色分 Conrad（男）／Seraphina（女）。</div>
@@ -473,26 +481,34 @@ function renderSpell() {
 // ---------- 動詞變位 ----------
 // 老師強調的規則與例外：說明在答完後顯示
 function conjWhy(verb, p) {
-  if (verb === 'sein') return 'sein 是不規則動詞：ich bin、du bist、er/sie/es ist、Sie sind，整組背起來。';
-  if (verb === 'heißen' && (p === 'du' || p === 'er/sie/es')) return 'heißen 的字幹已經有 ß（s 音），du 不再加 s，只加 -t → du heißt。';
-  if (verb === 'sprechen' && (p === 'du' || p === 'er/sie/es')) return 'sprechen 是強變化：du、er/sie/es 的母音 e → i → du sprichst、er spricht。';
-  return { ich: 'ich：去掉 -en，加 -e。', du: 'du：去掉 -en，加 -st。', 'er/sie/es': 'er/sie/es：去掉 -en，加 -t。', Sie: 'Sie（您）：照抄原形，不用變。' }[p];
+  if (verb === 'sein') return 'sein 是特殊不規則動詞，六個整組背：bin、bist、ist／sind、seid、sind。最容易混：ihr seid、wir sind。';
+  if (verb === 'haben' && ['du', 'er/sie/es'].includes(p)) return 'haben 是強變化：du、er/sie/es 的 b 不見了 → du hast、er hat。';
+  if (verb === 'haben' && p === 'ihr') return 'ihr 回到原形字幹 hab- 再加 -t → ihr habt（b 會出現）。';
+  if (verb === 'heißen' && ['du', 'er/sie/es', 'ihr'].includes(p)) return 'heißen 的字幹已經有 ß（s 音），du 不再加 s → du heißt；er/sie/es、ihr 加 -t 也是 heißt。';
+  if (verb === 'sprechen' && ['du', 'er/sie/es'].includes(p)) return 'sprechen 是強變化：du、er/sie/es 的母音 e → i → du sprichst、er spricht。';
+  if (verb === 'sprechen' && p === 'ihr') return 'ihr 不換母音：回到原形字幹 sprech- 加 -t → ihr sprecht（跟 er spricht 不一樣！）。';
+  return { ich: 'ich：去掉 -en，加 -e。', du: 'du：去掉 -en，加 -st。',
+    'er/sie/es': 'er/sie/es：去掉 -en，加 -t。⚠️ 你做 Lara 和 Tim 那題時寫成 Sie komme、Vater lebe，那是 ich 的形式。',
+    wir: 'wir：用原形，不用變。', ihr: 'ihr：去掉 -en，加 -t（跟 er/sie/es 一樣）。', 'sie/Sie': 'sie（他們）和 Sie（您）：都用原形。' }[p];
 }
-const PRON_ZH = { ich: '我', du: '你', 'er/sie/es': '他／她／它', Sie: '您' };
+const PRON_ZH = { ich: '我', du: '你', 'er/sie/es': '他／她／它', wir: '我們', ihr: '你們', 'sie/Sie': '他們／您' };
+const pronKey = p => ({ 'er/sie/es': 'er', 'sie/Sie': 'Sie' })[p] || p;
 let conjQ = [], ci = 0, cScore = 0;
 function startConj() {
   const verbs = VOCAB.filter(v => v.conj);
   const all = verbs.flatMap(v => Object.keys(v.conj).map(p => ({ v, p, typed: null })));
   // 老師點名的例外一定出；其餘隨機補滿 12 題
-  const must = all.filter(q => (q.v.de === 'heißen' || q.v.de === 'sprechen') && q.p === 'du' || q.v.de === 'sein' && q.p === 'du');
-  conjQ = shuffle(must.concat(shuffle(all.filter(q => !must.includes(q))).slice(0, 12 - must.length)));
+  const MUST = ['heißen du', 'sprechen du', 'sprechen er/sie/es', 'sprechen ihr', 'sein du', 'sein ihr',
+    'haben du', 'haben er/sie/es', 'haben ihr', 'kommen er/sie/es', 'leben er/sie/es'];
+  const must = all.filter(q => MUST.includes(`${q.v.de} ${q.p}`));
+  conjQ = shuffle(must.concat(shuffle(all.filter(q => !must.includes(q))).slice(0, 16 - must.length)));
   ci = 0; cScore = 0; renderConj();
 }
 function renderConj() {
-  if (ci >= conjQ.length) return roundEnd(cScore, conjQ.length, 'conj', '答錯的動詞已加入錯題本，單字卡背面有完整變位表');
+  if (ci >= conjQ.length) return roundEnd(cScore, conjQ.length, 'conj', '口訣：ich -e｜du -st｜er/sie/es -t｜wir 原形｜ihr -t｜sie/Sie 原形');
   const q = conjQ[ci], v = q.v, right = v.conj[q.p];
   const answered = q.typed !== null, ok = answered && norm(q.typed) === right;
-  const sentence = `${q.p === 'er/sie/es' ? 'er' : q.p} ${right}`;
+  const sentence = `${pronKey(q.p)} ${right}`;
   app.innerHTML = `
     <div class="muted">🔤 動詞變位 · ${ci + 1} / ${conjQ.length} · 答對 ${cScore}</div>
     <div class="progress"><div style="width:${ci / conjQ.length * 100}%"></div></div>
@@ -500,7 +516,7 @@ function renderConj() {
       <div class="prompt">${esc(q.p)} ＋ ${esc(v.de)}</div>
       <div class="muted" style="text-align:center">${PRON_ZH[q.p]}＋${esc(v.zh.split('；')[0])}</div>
       <div style="display:flex;gap:8px;align-items:center;margin-top:14px">
-        <span style="font-size:22px;font-weight:700;flex:none">${esc(q.p === 'er/sie/es' ? 'er' : q.p)}</span>
+        <span style="font-size:22px;font-weight:700;flex:none">${esc(q.p)}</span>
         <input class="answer ${answered ? (ok ? 'ok' : 'ng') : ''}" id="ans" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
           placeholder="動詞形式" value="${esc(q.typed ?? '')}" ${answered ? 'readonly' : ''}>
       </div>
@@ -519,7 +535,7 @@ function renderConj() {
     if (!input.value.trim()) { input.focus(); return; }
     q.typed = input.value;
     if (norm(q.typed) === right) cScore++; else markWeak(v);
-    renderConj(); speak(sentence, { file: `${v.id}_c_${q.p === 'er/sie/es' ? 'er' : q.p}` });
+    renderConj(); speak(sentence, { file: `${v.id}_c_${pronKey(q.p)}` });
   };
   $('#check').onclick = check;
   input.onkeydown = e => { if (e.key === 'Enter') check(); };

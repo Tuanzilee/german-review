@@ -31,7 +31,7 @@ def jobs():
         yield f"{v['id']}_ex.mp3", v.get('tts_ex', v['example_de']), WORD_VOICE
         # 動詞變位練習用：「du kommst」這種代名詞＋動詞
         for p, form in (v.get('conj') or {}).items():
-            pron = 'er' if p == 'er/sie/es' else p
+            pron = {'er/sie/es': 'er', 'sie/Sie': 'Sie'}.get(p, p)
             yield f"{v['id']}_c_{pron}.mp3", f"{pron} {form}", WORD_VOICE
     # 疑問詞配對練習的整句
     for w in json.load(open(os.path.join(ROOT, 'wfragen.json'))):
@@ -58,8 +58,12 @@ async def main():
                     index[f] = {'text': text, 'voice': VOICES[v]}
                     return
                 except Exception as e:
+                    # 失敗時 edge-tts 會留下 0 位元組的空檔，要刪掉，App 才會改用裝置語音
+                    path = os.path.join(AUDIO, f)
+                    if os.path.exists(path) and os.path.getsize(path) == 0:
+                        os.remove(path)
                     if attempt == 2:
-                        print(f'失敗：{f}（{e}）')
+                        print(f'失敗：{f}（{str(e)[:60]}）')
                     await asyncio.sleep(2)
 
     await asyncio.gather(*(one(*j) for j in todo))

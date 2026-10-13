@@ -622,7 +622,9 @@
    "ich": "bin",
    "du": "bist",
    "er/sie/es": "ist",
-   "Sie": "sind"
+   "wir": "sind",
+   "ihr": "seid",
+   "sie/Sie": "sind"
   },
   "example_de": "Ich bin Helga Weber.",
   "example_zh": "我是 Helga Weber。",
@@ -644,7 +646,9 @@
    "ich": "heiße",
    "du": "heißt",
    "er/sie/es": "heißt",
-   "Sie": "heißen"
+   "wir": "heißen",
+   "ihr": "heißt",
+   "sie/Sie": "heißen"
   },
   "example_de": "Ich heiße Lara Nowak.",
   "example_zh": "我叫 Lara Nowak。",
@@ -666,7 +670,9 @@
    "ich": "komme",
    "du": "kommst",
    "er/sie/es": "kommt",
-   "Sie": "kommen"
+   "wir": "kommen",
+   "ihr": "kommt",
+   "sie/Sie": "kommen"
   },
   "example_de": "Ich komme aus Polen.",
   "example_zh": "我來自波蘭。",
@@ -688,7 +694,9 @@
    "ich": "spreche",
    "du": "sprichst",
    "er/sie/es": "spricht",
-   "Sie": "sprechen"
+   "wir": "sprechen",
+   "ihr": "sprecht",
+   "sie/Sie": "sprechen"
   },
   "example_de": "Ich spreche Deutsch und Englisch.",
   "example_zh": "我會說德文和英文。",
@@ -1333,7 +1341,9 @@
    "ich": "buchstabiere",
    "du": "buchstabierst",
    "er/sie/es": "buchstabiert",
-   "Sie": "buchstabieren"
+   "wir": "buchstabieren",
+   "ihr": "buchstabiert",
+   "sie/Sie": "buchstabieren"
   },
   "example_de": "Buchstabieren Sie, bitte.",
   "example_zh": "請拼一下。",
@@ -1633,5 +1643,606 @@
    "易錯"
   ],
   "spell_tip": "德文的 j 念「ㄧ」，聽到「ㄧ」的音寫 j，不是英文的 y"
+ },
+ {
+  "id": "L1_W4_V006",
+  "lektion": 1,
+  "week": 4,
+  "source": "both",
+  "de": "die Studentin",
+  "zh": "（女）大學生；男生是 der Student",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Studentinnen",
+  "conj": null,
+  "example_de": "Bist du Student oder Studentin?",
+  "example_zh": "你是男學生還是女學生？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W4_V007",
+  "lektion": 1,
+  "week": 4,
+  "source": "plaud",
+  "de": "gern",
+  "zh": "喜歡（做某事）；放在動詞後面",
+  "pos": "adv",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich lerne gern Sprachen.",
+  "example_zh": "我喜歡學語言。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L1_W4_V008",
+  "lektion": 1,
+  "week": 4,
+  "source": "plaud",
+  "de": "die Muttersprache",
+  "zh": "母語（Mutter 母親＋Sprache 語言）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Muttersprachen",
+  "conj": null,
+  "example_de": "Chinesisch ist meine Muttersprache.",
+  "example_zh": "中文是我的母語。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V001",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "er",
+  "zh": "他（陽性）；動詞配 -t",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er wohnt in Deutschland.",
+  "example_zh": "他住在德國。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V002",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "sie",
+  "zh": "她（陰性）；動詞配 -t → sie wohnt",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sie kommt aus Polen.",
+  "example_zh": "她來自波蘭。",
+  "tags": [
+   "期中"
+  ],
+  "spell_tip": "判斷 sie／Sie：動詞是 -t 結尾就是「她」，原形就是「他們」或「您」"
+ },
+ {
+  "id": "L2_W5_V003",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "es",
+  "zh": "它（中性）；例：das Baby → es",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Das ist das Baby. Es heißt Lena.",
+  "example_zh": "這是那個嬰兒。她叫 Lena。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V004",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "wir",
+  "zh": "我們；動詞用原形",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wir wohnen in Deutschland.",
+  "example_zh": "我們住在德國。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V005",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "ihr",
+  "zh": "你們；動詞用原形字幹＋-t",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ihr wohnt in Deutschland.",
+  "example_zh": "你們住在德國。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V006",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "sie",
+  "zh": "他們／她們；動詞用原形（跟尊稱 Sie 一樣）",
+  "pos": "pronoun",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sie wohnen in Deutschland.",
+  "example_zh": "他們住在德國。",
+  "tags": [
+   "期中"
+  ],
+  "spell_tip": "判斷 sie／Sie：動詞是 -t 結尾就是「她」，原形就是「他們」或「您」"
+ },
+ {
+  "id": "L2_W5_V007",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "wohnen",
+  "zh": "居住（住在某地）",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "wohne",
+   "du": "wohnst",
+   "er/sie/es": "wohnt",
+   "wir": "wohnen",
+   "ihr": "wohnt",
+   "sie/Sie": "wohnen"
+  },
+  "example_de": "Ich wohne in Neu-Taipeh.",
+  "example_zh": "我住在新北。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V008",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "leben",
+  "zh": "生活（也可表示住在某地）",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "lebe",
+   "du": "lebst",
+   "er/sie/es": "lebt",
+   "wir": "leben",
+   "ihr": "lebt",
+   "sie/Sie": "leben"
+  },
+  "example_de": "Laras Vater lebt in Posen.",
+  "example_zh": "Lara 的爸爸住在波茲南。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V009",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "haben",
+  "zh": "有；強變化：du hast、er hat、ihr habt",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "habe",
+   "du": "hast",
+   "er/sie/es": "hat",
+   "wir": "haben",
+   "ihr": "habt",
+   "sie/Sie": "haben"
+  },
+  "example_de": "Lara hat ein Baby.",
+  "example_zh": "Lara 有一個嬰兒。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V010",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "der Vater",
+  "zh": "爸爸、父親",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Väter",
+  "conj": null,
+  "example_de": "Das ist mein Vater.",
+  "example_zh": "這是我爸爸。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V011",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "die Mutter",
+  "zh": "媽媽、母親",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Mütter",
+  "conj": null,
+  "example_de": "Meine Mutter kommt aus Taiwan.",
+  "example_zh": "我媽媽來自台灣。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V012",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "die Eltern",
+  "zh": "父母（只有複數）",
+  "pos": "noun",
+  "article": "die",
+  "plural": null,
+  "conj": null,
+  "example_de": "Meine Eltern wohnen in Taipei.",
+  "example_zh": "我父母住在台北。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V013",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "der Sohn",
+  "zh": "兒子",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Söhne",
+  "conj": null,
+  "example_de": "Das ist mein Sohn.",
+  "example_zh": "這是我兒子。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V014",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "die Tochter",
+  "zh": "女兒",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Töchter",
+  "conj": null,
+  "example_de": "Meine Tochter heißt Anna.",
+  "example_zh": "我女兒叫 Anna。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V015",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "der Bruder",
+  "zh": "哥哥／弟弟（不分長幼）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Brüder",
+  "conj": null,
+  "example_de": "Mein Bruder wohnt in Berlin.",
+  "example_zh": "我兄弟住在柏林。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V016",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "die Schwester",
+  "zh": "姊姊／妹妹（不分長幼）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Schwestern",
+  "conj": null,
+  "example_de": "Meine Schwester ist Studentin.",
+  "example_zh": "我姊妹是大學生。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V017",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "der Großvater",
+  "zh": "爺爺／外公（groß-＝祖輩）；口語 der Opa",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Großväter",
+  "conj": null,
+  "example_de": "Das ist mein Großvater.",
+  "example_zh": "這是我爺爺。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V018",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "die Großmutter",
+  "zh": "奶奶／外婆；口語 die Oma",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Großmütter",
+  "conj": null,
+  "example_de": "Meine Großmutter lebt in Tainan.",
+  "example_zh": "我奶奶住在台南。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V019",
+  "lektion": 2,
+  "week": 5,
+  "source": "textbook",
+  "de": "die Großeltern",
+  "zh": "祖父母（只有複數）",
+  "pos": "noun",
+  "article": "die",
+  "plural": null,
+  "conj": null,
+  "example_de": "Das sind meine Großeltern.",
+  "example_zh": "這是我的祖父母。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V020",
+  "lektion": 2,
+  "week": 5,
+  "source": "textbook",
+  "de": "das Kind",
+  "zh": "小孩",
+  "pos": "noun",
+  "article": "das",
+  "plural": "die Kinder",
+  "conj": null,
+  "example_de": "Das ist Laras Kind.",
+  "example_zh": "這是 Lara 的小孩。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V021",
+  "lektion": 2,
+  "week": 5,
+  "source": "plaud",
+  "de": "das Baby",
+  "zh": "嬰兒（中性，代名詞用 es）",
+  "pos": "noun",
+  "article": "das",
+  "plural": "die Babys",
+  "conj": null,
+  "example_de": "Das Baby heißt Mia. Es ist süß.",
+  "example_zh": "嬰兒叫 Mia。她很可愛。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V022",
+  "lektion": 2,
+  "week": 5,
+  "source": "textbook",
+  "de": "mein / meine",
+  "zh": "我的：陽性、中性用 mein；陰性、複數用 meine",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "mein Vater, meine Mutter, meine Eltern",
+  "example_zh": "我爸爸、我媽媽、我父母",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V023",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "geschieden",
+  "zh": "離婚的",
+  "pos": "adj",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sie sind geschieden.",
+  "example_zh": "他們離婚了。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V024",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "Wie geht's?",
+  "zh": "你好嗎？（口語）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Hallo Tim, wie geht's?",
+  "example_zh": "嗨 Tim，你好嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V025",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "Wie geht es dir?",
+  "zh": "你好嗎？（du）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie geht es dir, Lara?",
+  "example_zh": "Lara，你好嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V026",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "Wie geht es Ihnen?",
+  "zh": "您好嗎？（Sie）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Guten Tag, Frau Weber! Wie geht es Ihnen?",
+  "example_zh": "Weber 女士您好！您好嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V027",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "Super!",
+  "zh": "超好！（最強的肯定）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Danke, super!",
+  "example_zh": "謝謝，超好！",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V028",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "Gut, danke.",
+  "zh": "很好，謝謝。",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sehr gut, danke.",
+  "example_zh": "非常好，謝謝。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V029",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "Es geht.",
+  "zh": "還可以、過得去",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Na ja, es geht.",
+  "example_zh": "嗯，還過得去。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V030",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "Nicht so gut.",
+  "zh": "不太好",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ach, nicht so gut.",
+  "example_zh": "唉，不太好。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W5_V031",
+  "lektion": 2,
+  "week": 5,
+  "source": "both",
+  "de": "Und dir? / Und Ihnen?",
+  "zh": "那你呢？／那您呢？（回問對方過得如何）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Gut, danke. Und dir? – Auch gut, danke.",
+  "example_zh": "很好，謝謝。你呢？－也很好，謝謝。",
+  "tags": [
+   "期中"
+  ]
  }
 ]

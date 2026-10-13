@@ -449,5 +449,102 @@
     "zh": "那你呢？你叫什麼？你從哪裡來？你會說什麼語言？"
    }
   ]
+ },
+ {
+  "id": "L2_D01",
+  "lektion": 2,
+  "week": 5,
+  "title": "你好嗎？（du 和 Sie）",
+  "scene": "在學校遇到同學，再遇到老師",
+  "voices": {
+   "A": "f",
+   "B": "m",
+   "C": "f"
+  },
+  "lines": [
+   {
+    "speaker": "A",
+    "de": "Hallo Max! Wie geht's?",
+    "zh": "嗨 Max！你好嗎？"
+   },
+   {
+    "speaker": "B",
+    "de": "Danke, super! Und dir?",
+    "zh": "謝謝，超好！你呢？"
+   },
+   {
+    "speaker": "A",
+    "de": "Na ja, es geht.",
+    "zh": "嗯，還過得去。"
+   },
+   {
+    "speaker": "B",
+    "de": "Oh, guten Tag, Frau Weber! Wie geht es Ihnen?",
+    "zh": "喔，Weber 老師您好！您好嗎？"
+   },
+   {
+    "speaker": "C",
+    "de": "Sehr gut, danke. Und Ihnen?",
+    "zh": "非常好，謝謝。那你呢？"
+   },
+   {
+    "speaker": "B",
+    "de": "Auch gut, danke.",
+    "zh": "也很好，謝謝。"
+   }
+  ]
+ },
+ {
+  "id": "L2_D02",
+  "lektion": 2,
+  "week": 5,
+  "title": "介紹我的家人",
+  "scene": "看照片聊家人（練 er/sie/wir 的動詞）",
+  "voices": {
+   "A": "f",
+   "B": "m"
+  },
+  "lines": [
+   {
+    "speaker": "A",
+    "de": "Wer ist das?",
+    "zh": "這是誰？"
+   },
+   {
+    "speaker": "B",
+    "de": "Das ist mein Bruder. Er heißt Jan.",
+    "zh": "這是我兄弟，他叫 Jan。"
+   },
+   {
+    "speaker": "A",
+    "de": "Wohnt er auch in München?",
+    "zh": "他也住在慕尼黑嗎？"
+   },
+   {
+    "speaker": "B",
+    "de": "Nein, er wohnt in Hamburg. Er spricht gut Englisch.",
+    "zh": "不，他住在漢堡。他英文說得很好。"
+   },
+   {
+    "speaker": "A",
+    "de": "Und das? Sind das deine Eltern?",
+    "zh": "那這個呢？這是你父母嗎？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ja. Meine Mutter kommt aus Polen und mein Vater kommt aus Kanada.",
+    "zh": "對。我媽媽來自波蘭，我爸爸來自加拿大。"
+   },
+   {
+    "speaker": "A",
+    "de": "Und wo lebt ihr?",
+    "zh": "那你們住在哪裡？"
+   },
+   {
+    "speaker": "B",
+    "de": "Wir leben jetzt alle in Deutschland.",
+    "zh": "我們現在全都住在德國。"
+   }
+  ]
  }
 ]
