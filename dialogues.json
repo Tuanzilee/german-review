@@ -546,5 +546,91 @@
     "zh": "我們現在全都住在德國。"
    }
   ]
+ },
+ {
+  "id": "L2_D03",
+  "lektion": 2,
+  "week": 6,
+  "title": "這是你的哥哥嗎？（du）",
+  "scene": "跟同學看手機裡的家庭照",
+  "voices": {
+   "A": "f",
+   "B": "m"
+  },
+  "lines": [
+   {
+    "speaker": "A",
+    "de": "Wer ist das? Dein Bruder?",
+    "zh": "這是誰？你的兄弟嗎？"
+   },
+   {
+    "speaker": "B",
+    "de": "Nein, das ist mein Vater.",
+    "zh": "不是，這是我爸爸。"
+   },
+   {
+    "speaker": "A",
+    "de": "Und das? Ist das deine Mutter?",
+    "zh": "那這個呢？是你媽媽嗎？"
+   },
+   {
+    "speaker": "B",
+    "de": "Nein, das ist meine Schwester. Und das sind meine Großeltern.",
+    "zh": "不是，這是我姊姊。這些是我的祖父母。"
+   },
+   {
+    "speaker": "A",
+    "de": "Und wer ist das?",
+    "zh": "那這是誰？"
+   },
+   {
+    "speaker": "B",
+    "de": "Das bin ich!",
+    "zh": "這是我！"
+   }
+  ]
+ },
+ {
+  "id": "L2_D04",
+  "lektion": 2,
+  "week": 6,
+  "title": "這是您的太太嗎？（Sie）",
+  "scene": "在派對上認識鄰居 Herr Klein",
+  "voices": {
+   "A": "f",
+   "B": "m"
+  },
+  "lines": [
+   {
+    "speaker": "A",
+    "de": "Guten Abend, Herr Klein. Wer ist das? Ihre Frau?",
+    "zh": "晚安，Klein 先生。這是誰？您的太太嗎？"
+   },
+   {
+    "speaker": "B",
+    "de": "Meine Frau? Nein, das ist meine Tochter Anna.",
+    "zh": "我太太？不是，這是我女兒 Anna。"
+   },
+   {
+    "speaker": "A",
+    "de": "Ah, Ihre Tochter! Und das Kind?",
+    "zh": "喔，您的女兒！那這個小孩呢？"
+   },
+   {
+    "speaker": "B",
+    "de": "Das ist mein Enkel Tim.",
+    "zh": "這是我孫子 Tim。"
+   },
+   {
+    "speaker": "A",
+    "de": "Und das? Ist das Ihre Frau?",
+    "zh": "那這位呢？是您的太太嗎？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ja, das ist meine Frau Maria. Und das sind meine Kinder.",
+    "zh": "對，這是我太太 Maria。這些是我的孩子們。"
+   }
+  ]
  }
 ]

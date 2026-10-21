@@ -453,7 +453,7 @@
   "week": 2,
   "source": "both",
   "de": "die Frau",
-  "zh": "女士（Frau＋姓氏）；女人",
+  "zh": "女士（Frau＋姓氏）；太太、妻子；女人",
   "pos": "noun",
   "article": "die",
   "plural": "die Frauen",
@@ -461,6 +461,7 @@
   "example_de": "Ist Frau Beck da?",
   "example_zh": "Beck 女士在嗎？",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -1885,6 +1886,7 @@
   "example_de": "Das ist mein Vater.",
   "example_zh": "這是我爸爸。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -1902,6 +1904,7 @@
   "example_de": "Meine Mutter kommt aus Taiwan.",
   "example_zh": "我媽媽來自台灣。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -1919,6 +1922,7 @@
   "example_de": "Meine Eltern wohnen in Taipei.",
   "example_zh": "我父母住在台北。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -1936,6 +1940,7 @@
   "example_de": "Das ist mein Sohn.",
   "example_zh": "這是我兒子。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -1953,6 +1958,7 @@
   "example_de": "Meine Tochter heißt Anna.",
   "example_zh": "我女兒叫 Anna。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -1970,6 +1976,7 @@
   "example_de": "Mein Bruder wohnt in Berlin.",
   "example_zh": "我兄弟住在柏林。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -1987,6 +1994,7 @@
   "example_de": "Meine Schwester ist Studentin.",
   "example_zh": "我姊妹是大學生。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -2004,6 +2012,7 @@
   "example_de": "Das ist mein Großvater.",
   "example_zh": "這是我爺爺。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -2021,6 +2030,7 @@
   "example_de": "Meine Großmutter lebt in Tainan.",
   "example_zh": "我奶奶住在台南。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -2038,6 +2048,7 @@
   "example_de": "Das sind meine Großeltern.",
   "example_zh": "這是我的祖父母。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -2055,6 +2066,7 @@
   "example_de": "Das ist Laras Kind.",
   "example_zh": "這是 Lara 的小孩。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -2072,6 +2084,7 @@
   "example_de": "Das Baby heißt Mia. Es ist süß.",
   "example_zh": "嬰兒叫 Mia。她很可愛。",
   "tags": [
+   "家人",
    "期中"
   ]
  },
@@ -2243,6 +2256,237 @@
   "example_zh": "很好，謝謝。你呢？－也很好，謝謝。",
   "tags": [
    "期中"
+  ]
+ },
+ {
+  "id": "L2_W6_V001",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "der Mann",
+  "zh": "男人；丈夫（我先生＝mein Mann）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Männer",
+  "conj": null,
+  "example_de": "Das ist mein Mann.",
+  "example_zh": "這是我先生。",
+  "tags": [
+   "期中",
+   "家人"
+  ]
+ },
+ {
+  "id": "L2_W6_V002",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "der Enkel",
+  "zh": "孫子／外孫",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Enkel",
+  "conj": null,
+  "example_de": "Das ist mein Enkel Tim.",
+  "example_zh": "這是我孫子 Tim。",
+  "tags": [
+   "期中",
+   "家人"
+  ]
+ },
+ {
+  "id": "L2_W6_V003",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "die Enkelin",
+  "zh": "孫女／外孫女（-in 是女性）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Enkelinnen",
+  "conj": null,
+  "example_de": "Das ist meine Enkelin Lily.",
+  "example_zh": "這是我孫女 Lily。",
+  "tags": [
+   "期中",
+   "家人"
+  ]
+ },
+ {
+  "id": "L2_W6_V004",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "die Geschwister",
+  "zh": "兄弟姊妹（只有複數）",
+  "pos": "noun",
+  "article": "die",
+  "plural": null,
+  "conj": null,
+  "example_de": "Das sind meine Geschwister.",
+  "example_zh": "這是我的兄弟姊妹。",
+  "tags": [
+   "期中",
+   "家人"
+  ]
+ },
+ {
+  "id": "L2_W6_V005",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "der Opa",
+  "zh": "爺爺／外公（口語；正式 der Großvater）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Opas",
+  "conj": null,
+  "example_de": "Das ist mein Opa.",
+  "example_zh": "這是我爺爺。",
+  "tags": [
+   "期中",
+   "家人"
+  ]
+ },
+ {
+  "id": "L2_W6_V006",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "die Oma",
+  "zh": "奶奶／外婆（口語；正式 die Großmutter）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Omas",
+  "conj": null,
+  "example_de": "Das ist meine Oma.",
+  "example_zh": "這是我奶奶。",
+  "tags": [
+   "期中",
+   "家人"
+  ]
+ },
+ {
+  "id": "L2_W6_V007",
+  "lektion": 2,
+  "week": 6,
+  "source": "textbook",
+  "de": "die Familie",
+  "zh": "家庭（陰性單數！代名詞用 sie、動詞用 ist）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Familien",
+  "conj": null,
+  "example_de": "Das ist meine Familie. Sie ist international.",
+  "example_zh": "這是我的家庭。它很國際化。",
+  "tags": [
+   "期中",
+   "家人"
+  ]
+ },
+ {
+  "id": "L2_W6_V008",
+  "lektion": 2,
+  "week": 6,
+  "source": "textbook",
+  "de": "der Nachname",
+  "zh": "姓（＝Familienname）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Nachnamen",
+  "conj": null,
+  "example_de": "Mein Nachname ist Peters.",
+  "example_zh": "我姓 Peters。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W6_V009",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "dein / deine",
+  "zh": "你的：陽性、中性用 dein；陰性、複數用 deine",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "dein Bruder, deine Schwester, deine Eltern",
+  "example_zh": "你的兄弟、你的姊妹、你的父母",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W6_V010",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "Ihr / Ihre",
+  "zh": "您的（I 永遠大寫）：陽性、中性用 Ihr；陰性、複數用 Ihre",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ah, Ihr Mann! Und das ist Ihre Tochter?",
+  "example_zh": "啊，您先生！那這是您女兒嗎？",
+  "tags": [
+   "期中",
+   "易錯"
+  ],
+  "spell_tip": "Mann 是 der → Ihr Mann（不加 -e）；你在 12a 寫成 Ihre Mann"
+ },
+ {
+  "id": "L2_W6_V011",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "Das ist …",
+  "zh": "這是…（單數 → ist）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Das ist mein Bruder.",
+  "example_zh": "這是我的兄弟。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W6_V012",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "Das sind …",
+  "zh": "這些是…（複數或兩個人以上 → sind）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Das sind mein Vater und meine Mutter.",
+  "example_zh": "這是我爸爸和我媽媽。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W6_V013",
+  "lektion": 2,
+  "week": 6,
+  "source": "both",
+  "de": "Das bin ich.",
+  "zh": "這是我。（ich → bin，不是 ist）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Das bin ich und das sind meine Eltern.",
+  "example_zh": "這是我，這些是我的父母。",
+  "tags": [
+   "期中",
+   "易錯"
   ]
  }
 ]

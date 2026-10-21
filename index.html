@@ -221,6 +221,7 @@ const SCOPES = [
   { key: 'w3', label: 'W3', test: v => v.week === 3 },
   { key: 'w4', label: 'W4', test: v => v.week === 4 },
   { key: 'w5', label: 'W5', test: v => v.week === 5 },
+  { key: 'w6', label: 'W6', test: v => v.week === 6 },
   { key: 'hard', label: '⚠️ 考卷易錯', test: v => v.tags.includes('易錯') },
 ];
 function inScope(list) {
@@ -244,7 +245,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -266,7 +267,10 @@ function renderHome() {
   const fresh = list.filter(isNew).length;
   const learned = list.filter(v => srs[v.id] && srs[v.id].box >= 3).length;
   const weak = VOCAB.filter(v => srs[v.id]?.weak).length;
+  const examDays = Math.ceil((new Date('2026-11-03T14:00:00+08:00') - Date.now()) / DAY);
   app.innerHTML = `
+    ${examDays > 0 ? `<div class="card warn"><b>📅 期中考倒數 ${examDays} 天</b>（11/3，範圍 Lektion 1–2）
+      <div class="muted">老師提醒：人稱代名詞、動詞變化、所有格要背熟。首頁選「期中範圍」練習。</div></div>` : ''}
     <div class="card">
       <div class="muted" style="margin-bottom:8px">複習範圍</div>
       ${scopeChips()}
@@ -286,6 +290,7 @@ function renderHome() {
       <button class="btn ghost" id="goConj">🔤 動詞變位</button>
     </div>
     <button class="btn ghost" id="goWq" style="margin-top:10px">❓ 疑問詞配對 Wie / Was / Woher / Wer</button>
+    <button class="btn ghost" id="goPoss" style="margin-top:10px">👪 所有格 mein / dein / Ihr ＋ ist / sind</button>
     ${weak ? `<button class="btn ghost" id="goWeak" style="margin-top:10px">📕 錯題本（${weak}）</button>` : ''}
     <a class="card" href="https://learngerman.dw.com/en/nicos-weg/c-36519789" target="_blank" rel="noopener"
        style="display:block;text-decoration:none;color:inherit">
@@ -313,6 +318,7 @@ function renderHome() {
   $('#goSpell').onclick = () => go('spell');
   $('#goConj').onclick = () => go('conj');
   $('#goWq').onclick = () => go('wq');
+  $('#goPoss').onclick = () => go('poss');
   if (weak) $('#goWeak').onclick = () => go('weak');
   $('#testVoice').onclick = () => speak('Guten Tag!', { file: 'L1_W1_V002' });
   const info = () => {
@@ -570,6 +576,69 @@ function renderWq() {
     if (q.pick === w.answer) wScore++;
     else { const v = VOCAB.find(x => x.de === w.answer.toLowerCase()); if (v) markWeak(v); }
     renderWq(); speak(w.q, { file: w.id });
+  });
+}
+
+// ---------- 所有格＋ist/sind ----------
+// 老師口訣：遇到 die（陰性或複數）就加 -e；陽性 der、中性 das 不加
+const OWNERS = [{ who: 'ich', zh: '我的', base: 'mein' }, { who: 'du', zh: '你的', base: 'dein' }, { who: 'Sie', zh: '您的', base: 'Ihr' }];
+const nounOnly = de => de.replace(/^(der|die|das) /, '');
+function possItem(v, owner, plural) {
+  const pluralOnly = !v.plural && v.article === 'die' && /Eltern|Geschwister/.test(v.de);
+  const pl = plural || pluralOnly;
+  const noun = pl && !pluralOnly ? nounOnly(v.plural) : nounOnly(v.de);
+  const addE = pl || v.article === 'die';
+  const answer = owner.base + (addE ? 'e' : '');
+  const other = OWNERS.find(o => o !== owner && o.base !== owner.base);
+  const opts = shuffle([...new Set([owner.base, owner.base + 'e', other.base + (addE ? 'e' : '')])]);
+  const gender = pl ? '複數（die）' : { der: '陽性 der', die: '陰性 die', das: '中性 das' }[v.article];
+  return { kind: 'poss', text: `Das ${pl ? 'sind' : 'ist'} ___ ${noun}.`, answer, opts,
+    zh: `${owner.zh}${({ 'die Frau': '太太', 'der Mann': '先生（丈夫）' })[v.de] || v.zh.split(/[（；、]/)[0]}${pl && !pluralOnly ? '（複數）' : ''}`,
+    why: `擁有者「${owner.zh}」→ ${owner.base}；${noun} 是${gender} → ${addE ? '加 -e' : '不加 -e'} → ${answer}` };
+}
+const VERB_ITEMS = [
+  ['Das ___ ich.', 'bin', '這是我。', '主詞其實是 ich → bin（不是 ist）'],
+  ['Das ___ ich und das sind meine Eltern.', 'bin', '這是我，這些是我的父母。', '前半句說的是 ich → bin；後半句 Eltern 複數 → sind'],
+  ['Das ___ mein Bruder.', 'ist', '這是我的兄弟。', '一個人（單數）→ ist'],
+  ['Das ___ meine Eltern.', 'sind', '這些是我的父母。', 'Eltern 是複數 → sind'],
+  ['Das ___ mein Vater und meine Mutter.', 'sind', '這是我爸爸和我媽媽。', '兩個人 → sind；但所有格要各自看名詞：mein Vater、meine Mutter'],
+  ['Das ___ meine Familie.', 'ist', '這是我的家庭。', 'Familie 是陰性單數 → ist（雖然有很多人）'],
+  ['Das ___ meine Geschwister.', 'sind', '這是我的兄弟姊妹。', 'Geschwister 只有複數 → sind'],
+  ['Das ist meine Tochter und das ___ mein Sohn.', 'ist', '這是我女兒，那是我兒子。', '每個 das 各自看後面：mein Sohn 單數 → ist'],
+].map(([text, answer, zh, why]) => ({ kind: 'verb', text, answer, zh, why, opts: ['bin', 'ist', 'sind'] }));
+let possQ = [], pi = 0, pScore = 0;
+function startPoss() {
+  const fam = VOCAB.filter(v => v.tags.includes('家人') && v.article);
+  const by = de => fam.find(v => v.de === de);
+  // 必出：你在 GPT 12a 寫錯的 Ihr Mann、複數的 meine Eltern
+  const must = [possItem(by('der Mann'), OWNERS[2], false), possItem(by('die Eltern'), OWNERS[0], false)];
+  const rand = shuffle(fam).slice(0, 6).map(v => possItem(v, OWNERS[Math.random() * 3 | 0], ['das Kind', 'der Sohn', 'die Tochter', 'der Bruder', 'die Schwester'].includes(v.de) && Math.random() < 0.3));
+  const verbs = [VERB_ITEMS[0], VERB_ITEMS[1], VERB_ITEMS[4], ...shuffle(VERB_ITEMS.slice(2).filter((_, i) => i !== 2)).slice(0, 1)];
+  possQ = shuffle([...must, ...rand, ...verbs]).map(q => ({ ...q, pick: null }));
+  pi = 0; pScore = 0; renderPoss();
+}
+function renderPoss() {
+  if (pi >= possQ.length) return roundEnd(pScore, possQ.length, 'poss', '口訣：先看誰的（mein／dein／Ihr），再看名詞：die（陰性、複數）加 -e；一個 → ist、多個 → sind、ich → bin');
+  const q = possQ[pi], full = q.text.replace('___', q.answer);
+  app.innerHTML = `
+    <div class="muted">👪 所有格＋ist/sind · ${pi + 1} / ${possQ.length} · 答對 ${pScore}</div>
+    <div class="progress"><div style="width:${pi / possQ.length * 100}%"></div></div>
+    <div class="card" style="text-align:center">
+      <div class="prompt">${q.pick ? esc(q.text).replace('___', `<span style="color:var(--gold)">${esc(q.answer)}</span>`) : esc(q.text)}</div>
+      <div class="muted">${esc(q.zh)}</div>
+      ${q.pick ? `<div class="why">${esc(q.why)}</div><button class="spk" id="say" style="margin-top:10px">🔊</button>` : ''}
+    </div>
+    ${q.opts.map(x => `<button class="opt ${q.pick ? (x === q.answer ? 'right' : (x === q.pick ? 'wrong' : '')) : ''}" data-x="${x}" style="text-align:center">${x}</button>`).join('')}
+    ${q.pick ? `<button class="btn" id="next" style="margin-top:6px">下一題</button>` : ''}`;
+  if (q.pick) {
+    $('#say').onclick = () => speak(full);
+    $('#next').onclick = () => { pi++; renderPoss(); };
+    return;
+  }
+  document.querySelectorAll('[data-x]').forEach(b => b.onclick = () => {
+    q.pick = b.dataset.x;
+    if (q.pick === q.answer) pScore++;
+    renderPoss(); speak(full);
   });
 }
 
