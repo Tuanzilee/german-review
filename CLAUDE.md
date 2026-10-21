@@ -74,5 +74,5 @@ hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若�
 > 踩坑：Seraphina 是多語語音，**單獨一個字**會自動判斷語言，Koreanisch、Englisch 這類字會念成英文腔。單字一律用純德語的 Katja；Seraphina 只用在整句會話。
 > 發音決策：Tschüs 畫面維持課本拼法，音檔念短音 Tschüss（hai 選定，對齊老師「ü 短促」）。
 > Nicos Weg（DW 影集，老師 W3 起分段播放）：首頁只放官方連結 https://learngerman.dw.com/en/nicos-weg/c-36519789 ，**不要把影片台詞抄進公開 repo**（DW 版權）。hai 2026-10-06 決定暫不加數字／同情境會話，等老師放完再說。
-> ⚠️ 2026-10-13：edge-tts 7.2.8（最新版）連線 403，微軟擋掉了，110 個新音檔（W4 下、W5、wir/ihr 變位）沒產生；App 會改用裝置語音。gen_audio.py 失敗時會刪掉空檔，check.py 把缺音檔列為警告。等 hai 決定替代方案前不要自己換服務。
+> 2026-10-13 edge-tts 7.2.8 曾被微軟擋（403）；2026-10-21 升級到 7.3.1 恢復，已補齊全部音檔。每次產生音檔前先 `~/.venvs/tts/bin/pip install -U edge-tts`。再壞掉時改走 Azure（程式已支援，需 hai 自己設金鑰）。gen_audio.py 失敗時會刪空檔，check.py 把缺音檔列為警告。
 > 上課討論軌跡：hai 會在 ChatGPT 開「YYYYMMDD 德文 …」對話做課本題；hai 同意時用 Claude in Chrome 搜尋「德」讀取（只讀不送出）。

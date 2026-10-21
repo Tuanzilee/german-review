@@ -555,6 +555,14 @@
   "text": "ich bin",
   "voice": "de-DE-KatjaNeural"
  },
+ "L1_W2_V019_c_ihr.mp3": {
+  "text": "ihr seid",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V019_c_wir.mp3": {
+  "text": "wir sind",
+  "voice": "de-DE-KatjaNeural"
+ },
  "L1_W2_V019_ex.mp3": {
   "text": "Ich bin Helga Weber.",
   "voice": "de-DE-KatjaNeural"
@@ -577,6 +585,14 @@
  },
  "L1_W2_V020_c_ich.mp3": {
   "text": "ich heiße",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V020_c_ihr.mp3": {
+  "text": "ihr heißt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V020_c_wir.mp3": {
+  "text": "wir heißen",
   "voice": "de-DE-KatjaNeural"
  },
  "L1_W2_V020_ex.mp3": {
@@ -603,6 +619,14 @@
   "text": "ich komme",
   "voice": "de-DE-KatjaNeural"
  },
+ "L1_W2_V021_c_ihr.mp3": {
+  "text": "ihr kommt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V021_c_wir.mp3": {
+  "text": "wir kommen",
+  "voice": "de-DE-KatjaNeural"
+ },
  "L1_W2_V021_ex.mp3": {
   "text": "Ich komme aus Polen.",
   "voice": "de-DE-KatjaNeural"
@@ -625,6 +649,14 @@
  },
  "L1_W2_V022_c_ich.mp3": {
   "text": "ich spreche",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V022_c_ihr.mp3": {
+  "text": "ihr sprecht",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W2_V022_c_wir.mp3": {
+  "text": "wir sprechen",
   "voice": "de-DE-KatjaNeural"
  },
  "L1_W2_V022_ex.mp3": {
@@ -931,6 +963,14 @@
   "text": "ich buchstabiere",
   "voice": "de-DE-KatjaNeural"
  },
+ "L1_W3_V033_c_ihr.mp3": {
+  "text": "ihr buchstabiert",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W3_V033_c_wir.mp3": {
+  "text": "wir buchstabieren",
+  "voice": "de-DE-KatjaNeural"
+ },
  "L1_W3_V033_ex.mp3": {
   "text": "Buchstabieren Sie, bitte.",
   "voice": "de-DE-KatjaNeural"
@@ -1069,6 +1109,558 @@
  },
  "L1_W4_V005_ex.mp3": {
   "text": "Das ist Maja.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V006.mp3": {
+  "text": "die Studentin",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V006_ex.mp3": {
+  "text": "Bist du Student oder Studentin?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V007.mp3": {
+  "text": "gern",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V007_ex.mp3": {
+  "text": "Ich lerne gern Sprachen.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V008.mp3": {
+  "text": "die Muttersprache",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L1_W4_V008_ex.mp3": {
+  "text": "Chinesisch ist meine Muttersprache.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_D01_00.mp3": {
+  "text": "Hallo Max! Wie geht's?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D01_01.mp3": {
+  "text": "Danke, super! Und dir?",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D01_02.mp3": {
+  "text": "Na ja, es geht.",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D01_03.mp3": {
+  "text": "Oh, guten Tag, Frau Weber! Wie geht es Ihnen?",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D01_04.mp3": {
+  "text": "Sehr gut, danke. Und Ihnen?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D01_05.mp3": {
+  "text": "Auch gut, danke.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D02_00.mp3": {
+  "text": "Wer ist das?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D02_01.mp3": {
+  "text": "Das ist mein Bruder. Er heißt Jan.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D02_02.mp3": {
+  "text": "Wohnt er auch in München?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D02_03.mp3": {
+  "text": "Nein, er wohnt in Hamburg. Er spricht gut Englisch.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D02_04.mp3": {
+  "text": "Und das? Sind das deine Eltern?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D02_05.mp3": {
+  "text": "Ja. Meine Mutter kommt aus Polen und mein Vater kommt aus Kanada.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D02_06.mp3": {
+  "text": "Und wo lebt ihr?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D02_07.mp3": {
+  "text": "Wir leben jetzt alle in Deutschland.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D03_00.mp3": {
+  "text": "Wer ist das? Dein Bruder?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D03_01.mp3": {
+  "text": "Nein, das ist mein Vater.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D03_02.mp3": {
+  "text": "Und das? Ist das deine Mutter?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D03_03.mp3": {
+  "text": "Nein, das ist meine Schwester. Und das sind meine Großeltern.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D03_04.mp3": {
+  "text": "Und wer ist das?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D03_05.mp3": {
+  "text": "Das bin ich!",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D04_00.mp3": {
+  "text": "Guten Abend, Herr Klein. Wer ist das? Ihre Frau?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D04_01.mp3": {
+  "text": "Meine Frau? Nein, das ist meine Tochter Anna.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D04_02.mp3": {
+  "text": "Ah, Ihre Tochter! Und das Kind?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D04_03.mp3": {
+  "text": "Das ist mein Enkel Tim.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D04_04.mp3": {
+  "text": "Und das? Ist das Ihre Frau?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D04_05.mp3": {
+  "text": "Ja, das ist meine Frau Maria. Und das sind meine Kinder.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_W5_V001.mp3": {
+  "text": "er",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V001_ex.mp3": {
+  "text": "Er wohnt in Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V002.mp3": {
+  "text": "sie",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V002_ex.mp3": {
+  "text": "Sie kommt aus Polen.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V003.mp3": {
+  "text": "es",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V003_ex.mp3": {
+  "text": "Das ist das Baby. Es heißt Lena.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V004.mp3": {
+  "text": "wir",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V004_ex.mp3": {
+  "text": "Wir wohnen in Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V005.mp3": {
+  "text": "ihr",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V005_ex.mp3": {
+  "text": "Ihr wohnt in Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V006.mp3": {
+  "text": "sie",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V006_ex.mp3": {
+  "text": "Sie wohnen in Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V007.mp3": {
+  "text": "wohnen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V007_c_Sie.mp3": {
+  "text": "Sie wohnen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V007_c_du.mp3": {
+  "text": "du wohnst",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V007_c_er.mp3": {
+  "text": "er wohnt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V007_c_ich.mp3": {
+  "text": "ich wohne",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V007_c_ihr.mp3": {
+  "text": "ihr wohnt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V007_c_wir.mp3": {
+  "text": "wir wohnen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V007_ex.mp3": {
+  "text": "Ich wohne in Neu-Taipeh.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V008.mp3": {
+  "text": "leben",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V008_c_Sie.mp3": {
+  "text": "Sie leben",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V008_c_du.mp3": {
+  "text": "du lebst",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V008_c_er.mp3": {
+  "text": "er lebt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V008_c_ich.mp3": {
+  "text": "ich lebe",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V008_c_ihr.mp3": {
+  "text": "ihr lebt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V008_c_wir.mp3": {
+  "text": "wir leben",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V008_ex.mp3": {
+  "text": "Laras Vater lebt in Posen.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V009.mp3": {
+  "text": "haben",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V009_c_Sie.mp3": {
+  "text": "Sie haben",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V009_c_du.mp3": {
+  "text": "du hast",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V009_c_er.mp3": {
+  "text": "er hat",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V009_c_ich.mp3": {
+  "text": "ich habe",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V009_c_ihr.mp3": {
+  "text": "ihr habt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V009_c_wir.mp3": {
+  "text": "wir haben",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V009_ex.mp3": {
+  "text": "Lara hat ein Baby.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V010.mp3": {
+  "text": "der Vater",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V010_ex.mp3": {
+  "text": "Das ist mein Vater.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V011.mp3": {
+  "text": "die Mutter",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V011_ex.mp3": {
+  "text": "Meine Mutter kommt aus Taiwan.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V012.mp3": {
+  "text": "die Eltern",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V012_ex.mp3": {
+  "text": "Meine Eltern wohnen in Taipei.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V013.mp3": {
+  "text": "der Sohn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V013_ex.mp3": {
+  "text": "Das ist mein Sohn.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V014.mp3": {
+  "text": "die Tochter",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V014_ex.mp3": {
+  "text": "Meine Tochter heißt Anna.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V015.mp3": {
+  "text": "der Bruder",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V015_ex.mp3": {
+  "text": "Mein Bruder wohnt in Berlin.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V016.mp3": {
+  "text": "die Schwester",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V016_ex.mp3": {
+  "text": "Meine Schwester ist Studentin.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V017.mp3": {
+  "text": "der Großvater",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V017_ex.mp3": {
+  "text": "Das ist mein Großvater.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V018.mp3": {
+  "text": "die Großmutter",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V018_ex.mp3": {
+  "text": "Meine Großmutter lebt in Tainan.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V019.mp3": {
+  "text": "die Großeltern",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V019_ex.mp3": {
+  "text": "Das sind meine Großeltern.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V020.mp3": {
+  "text": "das Kind",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V020_ex.mp3": {
+  "text": "Das ist Laras Kind.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V021.mp3": {
+  "text": "das Baby",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V021_ex.mp3": {
+  "text": "Das Baby heißt Mia. Es ist süß.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V022.mp3": {
+  "text": "mein / meine",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V022_ex.mp3": {
+  "text": "mein Vater, meine Mutter, meine Eltern",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V023.mp3": {
+  "text": "geschieden",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V023_ex.mp3": {
+  "text": "Sie sind geschieden.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V024.mp3": {
+  "text": "Wie geht's?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V024_ex.mp3": {
+  "text": "Hallo Tim, wie geht's?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V025.mp3": {
+  "text": "Wie geht es dir?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V025_ex.mp3": {
+  "text": "Wie geht es dir, Lara?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V026.mp3": {
+  "text": "Wie geht es Ihnen?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V026_ex.mp3": {
+  "text": "Guten Tag, Frau Weber! Wie geht es Ihnen?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V027.mp3": {
+  "text": "Super!",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V027_ex.mp3": {
+  "text": "Danke, super!",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V028.mp3": {
+  "text": "Gut, danke.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V028_ex.mp3": {
+  "text": "Sehr gut, danke.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V029.mp3": {
+  "text": "Es geht.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V029_ex.mp3": {
+  "text": "Na ja, es geht.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V030.mp3": {
+  "text": "Nicht so gut.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V030_ex.mp3": {
+  "text": "Ach, nicht so gut.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V031.mp3": {
+  "text": "Und dir? / Und Ihnen?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W5_V031_ex.mp3": {
+  "text": "Gut, danke. Und dir? – Auch gut, danke.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V001.mp3": {
+  "text": "der Mann",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V001_ex.mp3": {
+  "text": "Das ist mein Mann.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V002.mp3": {
+  "text": "der Enkel",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V002_ex.mp3": {
+  "text": "Das ist mein Enkel Tim.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V003.mp3": {
+  "text": "die Enkelin",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V003_ex.mp3": {
+  "text": "Das ist meine Enkelin Lily.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V004.mp3": {
+  "text": "die Geschwister",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V004_ex.mp3": {
+  "text": "Das sind meine Geschwister.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V005.mp3": {
+  "text": "der Opa",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V005_ex.mp3": {
+  "text": "Das ist mein Opa.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V006.mp3": {
+  "text": "die Oma",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V006_ex.mp3": {
+  "text": "Das ist meine Oma.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V007.mp3": {
+  "text": "die Familie",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V007_ex.mp3": {
+  "text": "Das ist meine Familie. Sie ist international.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V008.mp3": {
+  "text": "der Nachname",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V008_ex.mp3": {
+  "text": "Mein Nachname ist Peters.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V009.mp3": {
+  "text": "dein / deine",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V009_ex.mp3": {
+  "text": "dein Bruder, deine Schwester, deine Eltern",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V010.mp3": {
+  "text": "Ihr / Ihre",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V010_ex.mp3": {
+  "text": "Ah, Ihr Mann! Und das ist Ihre Tochter?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V011.mp3": {
+  "text": "Das ist …",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V011_ex.mp3": {
+  "text": "Das ist mein Bruder.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V012.mp3": {
+  "text": "Das sind …",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V012_ex.mp3": {
+  "text": "Das sind mein Vater und meine Mutter.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V013.mp3": {
+  "text": "Das bin ich.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W6_V013_ex.mp3": {
+  "text": "Das bin ich und das sind meine Eltern.",
   "voice": "de-DE-KatjaNeural"
  },
  "WF01.mp3": {
