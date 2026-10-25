@@ -135,7 +135,8 @@ function load(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
 }
 function save(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch {} }
-let srs = load('gr_srs', {});        // id -> {box, due, weak}
+let srs = load('gr_srs', {});
+let mockHist = load('gr_mock', []);   // 模擬考成績 [{date, score, total, byCat}]        // id -> {box, due, weak}
 let prefs = load('gr_prefs', { scope: 'all', dir: 'de2zh', rate: 0.9 });
 const savePrefs = () => save('gr_prefs', prefs);
 const saveSrs = () => save('gr_srs', srs);
@@ -245,7 +246,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -270,7 +271,9 @@ function renderHome() {
   const examDays = Math.ceil((new Date('2026-11-03T14:00:00+08:00') - Date.now()) / DAY);
   app.innerHTML = `
     ${examDays > 0 ? `<div class="card warn"><b>📅 期中考倒數 ${examDays} 天</b>（11/3，範圍 Lektion 1–2）
-      <div class="muted">老師提醒：人稱代名詞、動詞變化、所有格要背熟。首頁選「期中範圍」練習。</div></div>` : ''}
+      <div class="muted">老師提醒：人稱代名詞、動詞變化、所有格要背熟。首頁選「期中範圍」練習。</div>
+      <button class="btn" id="goMock" style="margin-top:10px">📝 期中模擬考（20 題）</button>
+      ${mockHist.length ? `<div class="muted" style="margin-top:8px">最近成績：${mockHist.slice(-5).map(h => `${h.date}（${h.score}/${h.total} 題）`).join('｜')}</div>` : ''}</div>` : ''}
     <div class="card">
       <div class="muted" style="margin-bottom:8px">複習範圍</div>
       ${scopeChips()}
@@ -319,6 +322,7 @@ function renderHome() {
   $('#goConj').onclick = () => go('conj');
   $('#goWq').onclick = () => go('wq');
   $('#goPoss').onclick = () => go('poss');
+  $('#goMock') && ($('#goMock').onclick = () => go('mock'));
   if (weak) $('#goWeak').onclick = () => go('weak');
   $('#testVoice').onclick = () => speak('Guten Tag!', { file: 'L1_W1_V002' });
   const info = () => {
@@ -640,6 +644,93 @@ function renderPoss() {
     if (q.pick === q.answer) pScore++;
     renderPoss(); speak(full);
   });
+}
+
+// ---------- 期中模擬考 ----------
+// 五種題型混合，範圍 Lektion 1–2；答完每題都顯示理由，結束時依題型統計
+const MOCK_CATS = { wq: '❓ 疑問詞', conj: '🔤 動詞變位', poss: '👪 所有格＋ist/sind', spell: '✍️ 拼字', listen: '🎧 聽力' };
+let mockQ = [], mi = 0;
+function startMock() {
+  const mid = VOCAB.filter(v => v.lektion <= 2);
+  const items = [];
+  shuffle(WFRAGEN).slice(0, 4).forEach(w => items.push({ cat: 'wq', type: 'choice',
+    prompt: '_____' + w.q.slice(w.answer.length), sub: '看動詞，選疑問詞', opts: WQ_WORDS, answer: w.answer,
+    why: WQ_WHY[w.answer], say: [w.q, w.id] }));
+  const verbs = mid.filter(v => v.conj);
+  const conjAll = verbs.flatMap(v => Object.keys(v.conj).map(p => ({ v, p })));
+  const hard = conjAll.filter(q => ['haben du', 'haben er/sie/es', 'sein ihr', 'sprechen er/sie/es', 'sprechen ihr', 'kommen er/sie/es'].includes(`${q.v.de} ${q.p}`));
+  [...shuffle(hard).slice(0, 3), ...shuffle(conjAll.filter(q => !hard.includes(q))).slice(0, 2)].forEach(({ v, p }) =>
+    items.push({ cat: 'conj', type: 'type', prompt: `${p} ＋ ${v.de}`, sub: `${PRON_ZH[p]}＋${v.zh.split('；')[0]}`,
+      answer: v.conj[p], why: conjWhy(v.de, p), say: [`${pronKey(p)} ${v.conj[p]}`, `${v.id}_c_${pronKey(p)}`], v }));
+  const fam = VOCAB.filter(v => v.tags.includes('家人') && v.article);
+  const pq = [...shuffle(fam).slice(0, 2).map(v => possItem(v, OWNERS[Math.random() * 3 | 0], false)),
+    possItem(fam.find(v => v.de === 'der Mann'), OWNERS[2], false), shuffle(VERB_ITEMS)[0]];
+  pq.forEach(q => items.push({ cat: 'poss', type: 'choice', prompt: q.text, sub: q.zh, opts: q.opts, answer: q.answer,
+    why: q.why, say: [q.text.replace('___', q.answer), null] }));
+  const sp = mid.filter(spellable);
+  [...shuffle(sp.filter(v => v.tags.includes('易錯'))).slice(0, 2), ...shuffle(sp.filter(v => !v.tags.includes('易錯'))).slice(0, 2)].forEach(v =>
+    items.push({ cat: 'spell', type: 'type', prompt: v.zh, sub: v.article ? '名詞：連冠詞一起拼' : '聽音檔，打出德文',
+      answer: v.de, accept: v.accept, why: v.spell_tip || v.example_de, say: [v.de, v.id], v, autoplay: true }));
+  shuffle(mid.filter(v => !items.some(i => i.v === v))).slice(0, 3).forEach(v => {
+    const others = shuffle(mid.filter(x => x.id !== v.id && x.pos === v.pos && x.zh !== v.zh)).slice(0, 3);
+    items.push({ cat: 'listen', type: 'choice', prompt: '🔊 聽音檔', sub: '選出意思', opts: shuffle([v, ...others]).map(x => x.zh),
+      answer: v.zh, why: `${v.de}：${v.zh}`, say: [v.de, v.id], v, autoplay: true, hideUntil: true });
+  });
+  mockQ = items.map(q => ({ ...q, given: null, ok: null }));
+  mi = 0; renderMock();
+}
+function mockCheck(q, given) {
+  q.given = given;
+  q.ok = q.type === 'type' ? [q.answer, ...(q.accept || [])].some(a => norm(a) === norm(given)) : given === q.answer;
+  if (!q.ok && q.v) markWeak(q.v);
+  speak(q.say[0], q.say[1] ? { file: q.say[1] } : {});
+  renderMock();
+}
+function renderMock() {
+  if (mi >= mockQ.length) return mockEnd();
+  const q = mockQ[mi], done = q.given !== null;
+  const prompt = q.cat === 'listen' && done ? esc(q.v.de) : esc(q.prompt);
+  app.innerHTML = `
+    <div class="muted">📝 期中模擬考 · ${mi + 1} / ${mockQ.length} · ${MOCK_CATS[q.cat]}</div>
+    <div class="progress"><div style="width:${mi / mockQ.length * 100}%"></div></div>
+    <div class="card" style="text-align:center">
+      <div class="prompt">${prompt}</div><div class="muted">${esc(q.sub)}</div>
+      ${q.say[1] || q.cat !== 'poss' || done ? `<button class="spk" id="say" style="margin-top:10px">🔊</button>` : ''}
+      ${q.type === 'type' ? `<input class="answer ${done ? (q.ok ? 'ok' : 'ng') : ''}" id="ans" style="margin-top:12px" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+        placeholder="打出答案" value="${esc(q.given ?? '')}" ${done ? 'readonly' : ''}>${done ? '' : KEYS}` : ''}
+      ${done ? `<div style="margin-top:10px">${q.ok ? '✅ 正確' : `❌ 正確答案：<b>${esc(q.answer)}</b>`}</div><div class="why">${esc(q.why)}</div>` : ''}
+    </div>
+    ${q.type === 'choice' ? q.opts.map((x, i) => `<button class="opt ${done ? (x === q.answer ? 'right' : (x === q.given ? 'wrong' : '')) : ''}" data-i="${i}" style="text-align:center">${esc(x)}</button>`).join('') : ''}
+    ${done ? `<button class="btn" id="next" style="margin-top:6px">${mi + 1 < mockQ.length ? '下一題' : '看成績'}</button>`
+      : q.type === 'type' ? `<button class="btn" id="check">送出</button>` : ''}`;
+  $('#say') && ($('#say').onclick = () => speak(q.say[0], q.say[1] ? { file: q.say[1] } : {}));
+  if (done) { $('#next').onclick = () => { mi++; renderMock(); }; return; }
+  if (q.type === 'choice') document.querySelectorAll('[data-i]').forEach(b => b.onclick = () => mockCheck(q, q.opts[+b.dataset.i]));
+  else {
+    const input = $('#ans'); bindKeys(input);
+    const go2 = () => { if (input.value.trim()) mockCheck(q, input.value); else input.focus(); };
+    $('#check').onclick = go2; input.onkeydown = e => { if (e.key === 'Enter') go2(); };
+    setTimeout(() => input.focus(), 50);
+  }
+  if (q.autoplay) speak(q.say[0], { file: q.say[1] });
+}
+function mockEnd() {
+  const byCat = {};
+  mockQ.forEach(q => { byCat[q.cat] = byCat[q.cat] || [0, 0]; byCat[q.cat][1]++; if (q.ok) byCat[q.cat][0]++; });
+  const score = mockQ.filter(q => q.ok).length;
+  const weakest = Object.entries(byCat).sort((a, b) => a[1][0] / a[1][1] - b[1][0] / b[1][1])[0][0];
+  const d = new Date();
+  mockHist.push({ date: `${d.getMonth() + 1}/${d.getDate()}`, score, total: mockQ.length, byCat });
+  save('gr_mock', mockHist.slice(-20));
+  const drill = { wq: 'wq', conj: 'conj', poss: 'poss', spell: 'spell', listen: 'listen' }[weakest];
+  app.innerHTML = `<div class="card" style="text-align:center"><p style="font-size:40px;margin:8px">📝</p>
+      <p style="font-size:24px"><b>${score} / ${mockQ.length}</b>（${Math.round(score / mockQ.length * 100)} 分）</p></div>
+    <div class="card">${Object.entries(byCat).map(([c, [ok, n]]) => `<div class="row" style="padding:6px 0">
+      <span>${MOCK_CATS[c]}</span><span style="text-align:right;flex:none"><b>${ok} / ${n}</b> ${ok === n ? '✅' : ''}</span></div>`).join('')}</div>
+    <div class="card warn">最弱的是 <b>${MOCK_CATS[weakest]}</b>，建議先專練這一項；答錯的單字已加入錯題本。</div>
+    <button class="btn" onclick="go('${drill}')">專練 ${MOCK_CATS[weakest]}</button>
+    <button class="btn ghost" style="margin-top:10px" onclick="go('mock')">再考一次</button>
+    <button class="btn ghost" style="margin-top:10px" onclick="go('home')">回首頁</button>`;
 }
 
 // ---------- 會話 ----------

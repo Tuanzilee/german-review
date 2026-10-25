@@ -43,7 +43,7 @@ spell_tip   （選填）拼錯時顯示的規則提示；tags 含「易錯」的
 - 考卷易錯（2026-10-06 W4 學習單）：-isch 寫成 -ish、Deutsch 漏 t、j 寫成 y、疑問詞配錯動詞 → 對應易錯範圍＋spell_tip＋疑問詞配對
 - 會話 L1_D10 是 hai 的自我介紹稿（Ming、über 30、Neu-Taipeh、Psychologie、Vibe-Coding mit KI、Vorträge），期末 200 字作業初稿；老師的 Marie 範文是老師自編教材，**不要原文放進公開 repo**
 - 👪 所有格＋ist/sind（W6）：首頁按鈕；家庭名詞（tags 含「家人」）× mein/dein/Ihr，遇 die（陰性、複數）加 -e；必出 Ihr Mann（hai 在 GPT 12a 寫成 Ihre Mann）、Das bin ich、Das sind mein Vater und meine Mutter、Das ist meine Familie。說明用老師口訣
-- 首頁期中倒數（11/3）
+- 首頁期中倒數（11/3）＋ 📝 期中模擬考：20 題（疑問詞 4、變位 5 打字、所有格 4、拼字 4 含易錯 2、聽力 3），範圍 lektion ≤ 2，結束依題型統計並導向最弱題型；成績存 localStorage `gr_mock`，首頁顯示最近 5 次
 - 老師 W4 說必背三樣：單字拼字、代名詞＋動詞搭配（du bist）、一般動詞詞尾變化（考前要整理）→ 對應拼字、變位兩個模式
 `dialogues.json` 每筆：`id`（L1_D01）、`lektion`、`week`、`title`、`scene`、`voices`（每個角色的聲音，`m`＝Conrad 男聲、`f`＝Seraphina 女聲，依角色性別指定）、`lines[{speaker, de, zh}]`。
 
