@@ -37,6 +37,9 @@ for w in json.load(open('wfragen.json')):
 for v in vocab:
     if v['conj'] and list(v['conj']) != ['ich', 'du', 'er/sie/es', 'wir', 'ihr', 'sie/Sie']:
         errors.append(f"{v['id']} {v['de']}：conj 要有六個人稱 ich/du/er/sie/es/wir/ihr/sie/Sie")
+TOPICS = {'1A','1B','1C','1D','1E','2A','2B','2C','2D','2E','extra'}
+for x in vocab + dialogues:
+    if x.get('topic') not in TOPICS: errors.append(f"{x['id']}：topic 要是 {sorted(TOPICS)} 之一（對應課本小節）")
 print(f'單字 {len(vocab)}、會話 {len(dialogues)}')
 if warnings: print(f'⚠️ 缺 {len(warnings)} 個音檔（App 會改用裝置語音），例如：{warnings[0]}')
 empty = [f for f in os.listdir('audio') if f.endswith('.mp3') and os.path.getsize(f'audio/{f}') == 0]

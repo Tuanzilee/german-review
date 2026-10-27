@@ -33,6 +33,7 @@ tags        ["期中"] / ["期末"]
 tts / tts_ex  （選填）音檔要念的文字，跟畫面拼法不同時才填；會話每句也可加 tts
 accept      （選填）拼字練習也算對的其他正確拼法，例 Tschüs 的 ["Tschüss"]
 spell_tip   （選填）拼錯時顯示的規則提示；tags 含「易錯」的會進首頁「⚠️ 考卷易錯」範圍
+topic       課本小節（必填）：1A–1E、2A–2E（Schritte 每課 A–E），老師額外補充、課本沒有的用 extra。dialogues 也要填
 ```
 
 ## 練習模式
@@ -71,7 +72,10 @@ hai 選定：單字／例句用 Katja（`de-DE-KatjaNeural`），會話依角色
 hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若改到德文就重跑 `tools/gen_audio.py` → bump `sw.js` → commit「修正 L1_W2_V007 …」→ 問 hai 後才 push。
 
 ## 範圍設定
-`index.html` 的 `SCOPES`：期中範圍 = Lektion 1–2（W8 期中），期末考 Lektion 2–3。加新週次時記得在 `SCOPES` 補 `w4`、`w5`… 的按鈕。
+2026-10-27 起 hai 決定範圍改用**課本主題**、拿掉週次標籤。`index.html` 的 `TOPICS` 列出各小節（標籤用中文短名）：
+- L1 Kennenlernen：1A 打招呼（Guten Tag.）、1B 名字（Ich heiße …）、1C 國家語言（Ich komme aus …）、1D 字母拼字（Buchstaben）、1E 地址表格（Adresse）
+- L2 Meine Familie：2A 你好嗎（Wie geht's?）、2B 家人所有格（Das ist mein Bruder.）、2C 人稱動詞（Er lebt in Poznań.）、2D 數字個資（Zahlen und Personalien）、2E 德語區（Deutschsprachige Länder）
+- 新課（Lektion 3）上課時，先看課本該課的 A–E 標題，在 `TOPICS` 補 3A–3E，再替新單字填 topic；期中範圍＝Lektion 1–2，期末＝Lektion 2–3
 
 > 踩坑：Seraphina 是多語語音，**單獨一個字**會自動判斷語言，Koreanisch、Englisch 這類字會念成英文腔。單字一律用純德語的 Katja；Seraphina 只用在整句會話。
 > 發音決策：Tschüs 畫面維持課本拼法，音檔念短音 Tschüss（hai 選定，對齊老師「ü 短促」）。

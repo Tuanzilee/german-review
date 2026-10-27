@@ -214,18 +214,28 @@ const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { c
 
 // ---------- 資料 ----------
 let VOCAB = [], DIALOGUES = [], WFRAGEN = [];
+// 範圍依課本主題（Schritte A1.1 每課 A–E 小節）；vocab / dialogues 的 topic 欄位對應這裡的 key
+const TOPICS = [
+  { key: '1A', label: '1A 打招呼', title: 'Guten Tag.' },
+  { key: '1B', label: '1B 名字', title: 'Ich heiße …' },
+  { key: '1C', label: '1C 國家語言', title: 'Ich komme aus …' },
+  { key: '1D', label: '1D 字母拼字', title: 'Buchstaben' },
+  { key: '1E', label: '1E 地址表格', title: 'Adresse' },
+  { key: '2A', label: '2A 你好嗎', title: "Wie geht's?" },
+  { key: '2B', label: '2B 家人所有格', title: 'Das ist mein Bruder.' },
+  { key: '2C', label: '2C 人稱動詞', title: 'Er lebt in Poznań.' },
+  { key: '2D', label: '2D 數字個資', title: 'Zahlen und Personalien' },
+  { key: '2E', label: '2E 德語區', title: 'Deutschsprachige Länder' },
+];
+const topicLabel = k => (TOPICS.find(t => t.key === k) || { label: '課堂補充' }).label;
 const SCOPES = [
   { key: 'all', label: '全部', test: () => true },
   { key: 'mid', label: '期中範圍', test: v => v.lektion <= 2 },
-  { key: 'w1', label: 'W1', test: v => v.week === 1 },
-  { key: 'w2', label: 'W2', test: v => v.week === 2 },
-  { key: 'w3', label: 'W3', test: v => v.week === 3 },
-  { key: 'w4', label: 'W4', test: v => v.week === 4 },
-  { key: 'w5', label: 'W5', test: v => v.week === 5 },
-  { key: 'w6', label: 'W6', test: v => v.week === 6 },
-  { key: 'w7', label: 'W7', test: v => v.week === 7 },
   { key: 'hard', label: '⚠️ 考卷易錯', test: v => v.tags.includes('易錯') },
+  ...TOPICS.map(t => ({ key: t.key, label: t.label, row: t.key[0], test: v => v.topic === t.key })),
+  { key: 'extra', label: '課堂補充', row: 'x', test: v => v.topic === 'extra' },
 ];
+if (!SCOPES.some(s => s.key === prefs.scope)) { prefs.scope = 'all'; savePrefs(); }   // 舊版的週次範圍（w1…）改回全部
 function inScope(list) {
   const s = SCOPES.find(s => s.key === prefs.scope) || SCOPES[0];
   return list.filter(s.test);
@@ -253,8 +263,11 @@ function go(t, arg) {
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
 
 function scopeChips(onChange) {
-  return `<div class="chips" id="scopeChips">${SCOPES.map(s =>
-    `<button class="chip ${prefs.scope === s.key ? 'on' : ''}" data-k="${s.key}">${s.label}</button>`).join('')}</div>`;
+  const chip = s => `<button class="chip ${prefs.scope === s.key ? 'on' : ''}" data-k="${s.key}">${s.label}</button>`;
+  const row = (title, r) => `<div class="muted" style="font-size:12px;margin:10px 0 4px">${title}</div>
+    <div class="chips">${SCOPES.filter(s => s.row === r).map(chip).join('')}</div>`;
+  return `<div id="scopeChips"><div class="chips">${SCOPES.filter(s => !s.row).map(chip).join('')}</div>
+    ${row('Lektion 1　Kennenlernen', '1')}${row('Lektion 2　Meine Familie', '2')}${row('其他', 'x')}</div>`;
 }
 function bindScope(onChange) {
   document.querySelectorAll('#scopeChips .chip').forEach(c => c.onclick = () => {
@@ -801,9 +814,9 @@ function mockEnd() {
 // ---------- 會話 ----------
 function renderTalkList() {
   app.innerHTML = `<h2>會話跟讀</h2><p class="muted">逐句播放，聽完跟著念；熟了就遮住德文，看中文自己說。</p>
-    <div class="card dlist" style="padding:0">${DIALOGUES.map(d => `
+    <div class="card dlist" style="padding:0">${[...DIALOGUES].sort((a, b) => (a.topic === 'extra') - (b.topic === 'extra') || a.topic.localeCompare(b.topic)).map(d => `
       <button data-id="${d.id}" style="border-bottom:1px solid var(--line)">
-        <span><b>${esc(d.title)}</b><br><span class="muted">W${d.week} · ${esc(d.scene)}</span></span><span>›</span>
+        <span><b>${esc(d.title)}</b><br><span class="muted">${topicLabel(d.topic)} · ${esc(d.scene)}</span></span><span>›</span>
       </button>`).join('')}</div>`;
   document.querySelectorAll('.dlist button').forEach(b => b.onclick = () => go('dialogue', b.dataset.id));
 }

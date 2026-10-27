@@ -41,7 +41,8 @@
   "voices": {
    "A": "m",
    "B": "f"
-  }
+  },
+  "topic": "1A"
  },
  {
   "id": "L1_D02",
@@ -84,7 +85,8 @@
   "voices": {
    "A": "m",
    "B": "f"
-  }
+  },
+  "topic": "1B"
  },
  {
   "id": "L1_D03",
@@ -122,7 +124,8 @@
   "voices": {
    "A": "m",
    "B": "f"
-  }
+  },
+  "topic": "1C"
  },
  {
   "id": "L1_D04",
@@ -160,7 +163,8 @@
   "voices": {
    "A": "m",
    "B": "f"
-  }
+  },
+  "topic": "1C"
  },
  {
   "id": "L1_D05",
@@ -204,7 +208,8 @@
    "A": "f",
    "B": "f",
    "C": "m"
-  }
+  },
+  "topic": "1C"
  },
  {
   "id": "L1_D06",
@@ -252,7 +257,8 @@
   "voices": {
    "A": "f",
    "B": "m"
-  }
+  },
+  "topic": "1D"
  },
  {
   "id": "L1_D07",
@@ -305,7 +311,8 @@
   "voices": {
    "A": "m",
    "B": "f"
-  }
+  },
+  "topic": "1E"
  },
  {
   "id": "L1_D08",
@@ -338,7 +345,8 @@
   "voices": {
    "A": "f",
    "B": "m"
-  }
+  },
+  "topic": "1B"
  },
  {
   "id": "L1_D09",
@@ -386,7 +394,8 @@
   "voices": {
    "A": "m",
    "B": "f"
-  }
+  },
+  "topic": "1B"
  },
  {
   "id": "L1_D10",
@@ -448,7 +457,8 @@
     "de": "Und du? Wie heißt du? Woher kommst du? Was sprichst du?",
     "zh": "那你呢？你叫什麼？你從哪裡來？你會說什麼語言？"
    }
-  ]
+  ],
+  "topic": "extra"
  },
  {
   "id": "L2_D01",
@@ -492,7 +502,8 @@
     "de": "Auch gut, danke.",
     "zh": "也很好，謝謝。"
    }
-  ]
+  ],
+  "topic": "2A"
  },
  {
   "id": "L2_D02",
@@ -545,7 +556,8 @@
     "de": "Wir leben jetzt alle in Deutschland.",
     "zh": "我們現在全都住在德國。"
    }
-  ]
+  ],
+  "topic": "2C"
  },
  {
   "id": "L2_D03",
@@ -588,7 +600,8 @@
     "de": "Das bin ich!",
     "zh": "這是我！"
    }
-  ]
+  ],
+  "topic": "2B"
  },
  {
   "id": "L2_D04",
@@ -631,7 +644,8 @@
     "de": "Ja, das ist meine Frau Maria. Und das sind meine Kinder.",
     "zh": "對，這是我太太 Maria。這些是我的孩子們。"
    }
-  ]
+  ],
+  "topic": "2B"
  },
  {
   "id": "L2_D05",
@@ -704,7 +718,8 @@
     "de": "Sieben und elf.",
     "zh": "七歲和十一歲。"
    }
-  ]
+  ],
+  "topic": "2D"
  },
  {
   "id": "L2_D06",
@@ -747,6 +762,7 @@
     "de": "Null, eins, sieben, neun, sechzehn, siebzehn.",
     "zh": "0、1、7、9、16、17。"
    }
-  ]
+  ],
+  "topic": "2D"
  }
 ]
