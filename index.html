@@ -223,6 +223,7 @@ const SCOPES = [
   { key: 'w4', label: 'W4', test: v => v.week === 4 },
   { key: 'w5', label: 'W5', test: v => v.week === 5 },
   { key: 'w6', label: 'W6', test: v => v.week === 6 },
+  { key: 'w7', label: 'W7', test: v => v.week === 7 },
   { key: 'hard', label: '⚠️ 考卷易錯', test: v => v.tags.includes('易錯') },
 ];
 function inScope(list) {
@@ -246,7 +247,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -272,7 +273,7 @@ function renderHome() {
   app.innerHTML = `
     ${examDays > 0 ? `<div class="card warn"><b>📅 期中考倒數 ${examDays} 天</b>（11/3，範圍 Lektion 1–2）
       <div class="muted">老師提醒：人稱代名詞、動詞變化、所有格要背熟。首頁選「期中範圍」練習。</div>
-      <button class="btn" id="goMock" style="margin-top:10px">📝 期中模擬考（20 題）</button>
+      <button class="btn" id="goMock" style="margin-top:10px">📝 期中模擬考（23 題）</button>
       ${mockHist.length ? `<div class="muted" style="margin-top:8px">最近成績：${mockHist.slice(-5).map(h => `${h.date}（${h.score}/${h.total} 題）`).join('｜')}</div>` : ''}</div>` : ''}
     <div class="card">
       <div class="muted" style="margin-bottom:8px">複習範圍</div>
@@ -294,6 +295,7 @@ function renderHome() {
     </div>
     <button class="btn ghost" id="goWq" style="margin-top:10px">❓ 疑問詞配對 Wie / Was / Woher / Wer</button>
     <button class="btn ghost" id="goPoss" style="margin-top:10px">👪 所有格 mein / dein / Ihr ＋ ist / sind</button>
+    <button class="btn ghost" id="goNum" style="margin-top:10px">🔢 數字 0–20（聽寫、拼字、電話號碼）</button>
     ${weak ? `<button class="btn ghost" id="goWeak" style="margin-top:10px">📕 錯題本（${weak}）</button>` : ''}
     <a class="card" href="https://learngerman.dw.com/en/nicos-weg/c-36519789" target="_blank" rel="noopener"
        style="display:block;text-decoration:none;color:inherit">
@@ -322,6 +324,7 @@ function renderHome() {
   $('#goConj').onclick = () => go('conj');
   $('#goWq').onclick = () => go('wq');
   $('#goPoss').onclick = () => go('poss');
+  $('#goNum').onclick = () => go('num');
   $('#goMock') && ($('#goMock').onclick = () => go('mock'));
   if (weak) $('#goWeak').onclick = () => go('weak');
   $('#testVoice').onclick = () => speak('Guten Tag!', { file: 'L1_W1_V002' });
@@ -553,8 +556,8 @@ function renderConj() {
 }
 
 // ---------- 疑問詞配對 ----------
-const WQ_WORDS = ['Wie', 'Was', 'Woher', 'Wer'];
-const WQ_WHY = { Wie: 'Wie（如何）＋ heißen：問名字', Woher: 'Woher（從哪裡）＋ kommen：問來自哪裡', Was: 'Was（什麼）＋ sprechen：問說什麼語言', Wer: 'Wer（誰）＋ sein：問是誰' };
+const WQ_WORDS = ['Wie', 'Was', 'Woher', 'Wo', 'Wer'];
+const WQ_WHY = { Wie: 'Wie（如何）＋ heißen：問名字', Woher: 'Woher（從哪裡）＋ kommen：問來自哪裡', Was: 'Was（什麼）＋ sprechen：問說什麼語言', Wer: 'Wer（誰）＋ sein：問是誰', Wo: 'Wo（在哪裡）＋ geboren：問出生地（不是 Woher、不是 Wie）' };
 let wqQ = [], wi = 0, wScore = 0;
 function startWq() { wqQ = shuffle(WFRAGEN).slice(0, 10).map(w => ({ w, pick: null })); wi = 0; wScore = 0; renderWq(); }
 function renderWq() {
@@ -615,8 +618,11 @@ function startPoss() {
   const fam = VOCAB.filter(v => v.tags.includes('家人') && v.article);
   const by = de => fam.find(v => v.de === de);
   // 必出：你在 GPT 12a 寫錯的 Ihr Mann、複數的 meine Eltern
-  const must = [possItem(by('der Mann'), OWNERS[2], false), possItem(by('die Eltern'), OWNERS[0], false)];
-  const rand = shuffle(fam).slice(0, 6).map(v => possItem(v, OWNERS[Math.random() * 3 | 0], ['das Kind', 'der Sohn', 'die Tochter', 'der Bruder', 'die Schwester'].includes(v.de) && Math.random() < 0.3));
+  const tel = VOCAB.find(v => v.de === 'die Telefonnummer');
+  const telQ = { ...possItem(tel, OWNERS[2], false), text: 'Wie ist ___ Telefonnummer?',
+    why: '複合字看最後一個字：Telefon（das）＋ Nummer（die）→ die Telefonnummer → Ihre（對照：Ihr Kind，Kind 是 das）' };
+  const must = [possItem(by('der Mann'), OWNERS[2], false), possItem(by('die Eltern'), OWNERS[0], false), telQ];
+  const rand = shuffle(fam).slice(0, 5).map(v => possItem(v, OWNERS[Math.random() * 3 | 0], ['das Kind', 'der Sohn', 'die Tochter', 'der Bruder', 'die Schwester'].includes(v.de) && Math.random() < 0.3));
   const verbs = [VERB_ITEMS[0], VERB_ITEMS[1], VERB_ITEMS[4], ...shuffle(VERB_ITEMS.slice(2).filter((_, i) => i !== 2)).slice(0, 1)];
   possQ = shuffle([...must, ...rand, ...verbs]).map(q => ({ ...q, pick: null }));
   pi = 0; pScore = 0; renderPoss();
@@ -646,14 +652,71 @@ function renderPoss() {
   });
 }
 
+// ---------- 數字 0–20 ----------
+// 三種題：聽德文寫阿拉伯數字、看數字拼德文（老師強調要會拼）、聽電話號碼
+const NUMS = () => VOCAB.filter(v => v.tags.includes('數字')).sort((a, b) => a.num - b.num);
+const NUM_WHY = n => n.spell_tip + (n.num >= 13 && n.num <= 19 ? `：${NUMS()[n.num - 10].de} ＋ zehn` : '');
+const normDigits = t => t.trim().split(/[\s,，、\-–\/]+/).filter(Boolean).join(' ');
+function playSeq(list, i = 0) {
+  if (i >= list.length) return;
+  speak(list[i].de, { file: list[i].id, onend: () => setTimeout(() => playSeq(list, i + 1), 250) });
+}
+function numItems(nHear, nSpell, nPhone) {
+  const all = NUMS(), items = [];
+  shuffle(all).slice(0, nHear).forEach(n => items.push({ cat: 'num', type: 'type', mode: 'hear', prompt: '🔊 聽到的是幾？', sub: '打阿拉伯數字',
+    answer: String(n.num), why: `${n.de} ＝ ${n.num}`, play: [n], say: [n.de, n.id], autoplay: true }));
+  const hard = all.filter(n => [11, 12, 16, 17, 20].includes(n.num));
+  [...shuffle(hard).slice(0, Math.ceil(nSpell / 2)), ...shuffle(all.filter(n => !hard.includes(n))).slice(0, Math.floor(nSpell / 2))].forEach(n =>
+    items.push({ cat: 'num', type: 'type', mode: 'spell', prompt: String(n.num), sub: '用德文拼出來（小寫）', answer: n.de, why: NUM_WHY(n), say: [n.de, n.id], v: n }));
+  for (let k = 0; k < nPhone; k++) {
+    const seq = Array.from({ length: 4 + (Math.random() * 2 | 0) }, () => all[Math.random() * all.length | 0]);
+    items.push({ cat: 'num', type: 'type', mode: 'phone', prompt: '☎️ 聽電話號碼', sub: '一個數字一格，用空白隔開（例：0 4 12）',
+      answer: seq.map(n => n.num).join(' '), why: seq.map(n => `${n.de}＝${n.num}`).join('、'), play: seq, say: [seq.map(n => n.de).join(', '), null], autoplay: true });
+  }
+  return items;
+}
+const numOk = (q, given) => q.mode === 'spell' ? norm(given).toLowerCase() === q.answer : normDigits(given) === q.answer;
+let numQ = [], ni = 0, nScore = 0;
+function startNum() { numQ = shuffle(numItems(4, 5, 3)).map(q => ({ ...q, given: null, ok: null })); ni = 0; nScore = 0; renderNum(); }
+function renderNum() {
+  if (ni >= numQ.length) return roundEnd(nScore, numQ.length, 'num', '0–12 硬記；13–19 ＝ 個位數＋zehn（sechzehn 去 s、siebzehn 去 en）；20 zwanzig');
+  const q = numQ[ni], done = q.given !== null;
+  const replay = () => q.play ? playSeq(q.play) : speak(q.say[0], { file: q.say[1] });
+  app.innerHTML = `
+    <div class="muted">🔢 數字 · ${ni + 1} / ${numQ.length} · 答對 ${nScore}</div>
+    <div class="progress"><div style="width:${ni / numQ.length * 100}%"></div></div>
+    <div class="card" style="text-align:center">
+      <div class="prompt" style="${q.mode === 'spell' ? 'font-size:44px' : ''}">${esc(q.prompt)}</div><div class="muted">${esc(q.sub)}</div>
+      ${q.mode !== 'spell' || done ? `<button class="spk" id="say" style="margin-top:10px">🔊</button>` : ''}
+      <input class="answer ${done ? (q.ok ? 'ok' : 'ng') : ''}" id="ans" style="margin-top:12px" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+        ${q.mode === 'spell' ? '' : 'inputmode="numeric"'} placeholder="${q.mode === 'spell' ? '德文拼字' : '數字'}" value="${esc(q.given ?? '')}" ${done ? 'readonly' : ''}>
+      ${!done && q.mode === 'spell' ? KEYS : ''}
+      ${done ? `<div style="margin-top:10px">${q.ok ? '✅ 正確' : `❌ 正確答案：<b>${esc(q.answer)}</b>`}</div><div class="why">${esc(q.why)}</div>` : ''}
+    </div>
+    ${done ? `<button class="btn" id="next">下一題</button>` : `<button class="btn" id="check">送出</button>`}`;
+  $('#say') && ($('#say').onclick = replay);
+  if (done) { $('#next').onclick = () => { ni++; renderNum(); }; return; }
+  const input = $('#ans'); if (q.mode === 'spell') bindKeys(input);
+  const check = () => {
+    if (!input.value.trim()) return input.focus();
+    q.given = input.value; q.ok = numOk(q, q.given);
+    if (q.ok) nScore++; else if (q.v) markWeak(q.v);
+    renderNum(); if (q.mode === 'spell') speak(q.say[0], { file: q.say[1] });
+  };
+  $('#check').onclick = check; input.onkeydown = e => { if (e.key === 'Enter') check(); };
+  if (q.autoplay) replay();
+  setTimeout(() => input.focus(), 50);
+}
+
 // ---------- 期中模擬考 ----------
 // 五種題型混合，範圍 Lektion 1–2；答完每題都顯示理由，結束時依題型統計
-const MOCK_CATS = { wq: '❓ 疑問詞', conj: '🔤 動詞變位', poss: '👪 所有格＋ist/sind', spell: '✍️ 拼字', listen: '🎧 聽力' };
+const MOCK_CATS = { wq: '❓ 疑問詞', conj: '🔤 動詞變位', poss: '👪 所有格＋ist/sind', num: '🔢 數字', spell: '✍️ 拼字', listen: '🎧 聽力' };
 let mockQ = [], mi = 0;
 function startMock() {
   const mid = VOCAB.filter(v => v.lektion <= 2);
   const items = [];
-  shuffle(WFRAGEN).slice(0, 4).forEach(w => items.push({ cat: 'wq', type: 'choice',
+  const wo = WFRAGEN.filter(w => w.answer === 'Wo');
+  [shuffle(wo)[0], ...shuffle(WFRAGEN.filter(w => w.answer !== 'Wo')).slice(0, 3)].forEach(w => items.push({ cat: 'wq', type: 'choice',
     prompt: '_____' + w.q.slice(w.answer.length), sub: '看動詞，選疑問詞', opts: WQ_WORDS, answer: w.answer,
     why: WQ_WHY[w.answer], say: [w.q, w.id] }));
   const verbs = mid.filter(v => v.conj);
@@ -676,14 +739,15 @@ function startMock() {
     items.push({ cat: 'listen', type: 'choice', prompt: '🔊 聽音檔', sub: '選出意思', opts: shuffle([v, ...others]).map(x => x.zh),
       answer: v.zh, why: `${v.de}：${v.zh}`, say: [v.de, v.id], v, autoplay: true, hideUntil: true });
   });
+  numItems(1, 1, 1).forEach(q => items.push(q));
   mockQ = items.map(q => ({ ...q, given: null, ok: null }));
   mi = 0; renderMock();
 }
 function mockCheck(q, given) {
   q.given = given;
-  q.ok = q.type === 'type' ? [q.answer, ...(q.accept || [])].some(a => norm(a) === norm(given)) : given === q.answer;
+  q.ok = q.cat === 'num' ? numOk(q, given) : q.type === 'type' ? [q.answer, ...(q.accept || [])].some(a => norm(a) === norm(given)) : given === q.answer;
   if (!q.ok && q.v) markWeak(q.v);
-  speak(q.say[0], q.say[1] ? { file: q.say[1] } : {});
+  if (q.play && q.mode !== 'phone') playSeq(q.play); else if (q.mode !== 'phone') speak(q.say[0], q.say[1] ? { file: q.say[1] } : {});
   renderMock();
 }
 function renderMock() {
@@ -703,7 +767,8 @@ function renderMock() {
     ${q.type === 'choice' ? q.opts.map((x, i) => `<button class="opt ${done ? (x === q.answer ? 'right' : (x === q.given ? 'wrong' : '')) : ''}" data-i="${i}" style="text-align:center">${esc(x)}</button>`).join('') : ''}
     ${done ? `<button class="btn" id="next" style="margin-top:6px">${mi + 1 < mockQ.length ? '下一題' : '看成績'}</button>`
       : q.type === 'type' ? `<button class="btn" id="check">送出</button>` : ''}`;
-  $('#say') && ($('#say').onclick = () => speak(q.say[0], q.say[1] ? { file: q.say[1] } : {}));
+  const replay = () => q.play ? playSeq(q.play) : speak(q.say[0], q.say[1] ? { file: q.say[1] } : {});
+  $('#say') && ($('#say').onclick = replay);
   if (done) { $('#next').onclick = () => { mi++; renderMock(); }; return; }
   if (q.type === 'choice') document.querySelectorAll('[data-i]').forEach(b => b.onclick = () => mockCheck(q, q.opts[+b.dataset.i]));
   else {
@@ -712,7 +777,7 @@ function renderMock() {
     $('#check').onclick = go2; input.onkeydown = e => { if (e.key === 'Enter') go2(); };
     setTimeout(() => input.focus(), 50);
   }
-  if (q.autoplay) speak(q.say[0], { file: q.say[1] });
+  if (q.autoplay) replay();
 }
 function mockEnd() {
   const byCat = {};
@@ -722,7 +787,7 @@ function mockEnd() {
   const d = new Date();
   mockHist.push({ date: `${d.getMonth() + 1}/${d.getDate()}`, score, total: mockQ.length, byCat });
   save('gr_mock', mockHist.slice(-20));
-  const drill = { wq: 'wq', conj: 'conj', poss: 'poss', spell: 'spell', listen: 'listen' }[weakest];
+  const drill = weakest;
   app.innerHTML = `<div class="card" style="text-align:center"><p style="font-size:40px;margin:8px">📝</p>
       <p style="font-size:24px"><b>${score} / ${mockQ.length}</b>（${Math.round(score / mockQ.length * 100)} 分）</p></div>
     <div class="card">${Object.entries(byCat).map(([c, [ok, n]]) => `<div class="row" style="padding:6px 0">

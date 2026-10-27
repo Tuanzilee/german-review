@@ -632,5 +632,121 @@
     "zh": "對，這是我太太 Maria。這些是我的孩子們。"
    }
   ]
+ },
+ {
+  "id": "L2_D05",
+  "lektion": 2,
+  "week": 7,
+  "title": "在櫃台填個人資料（Sie）",
+  "scene": "語言學校報名，職員問你的資料",
+  "voices": {
+   "A": "f",
+   "B": "m"
+  },
+  "lines": [
+   {
+    "speaker": "A",
+    "de": "Guten Tag. Wie heißen Sie?",
+    "zh": "您好，您叫什麼名字？"
+   },
+   {
+    "speaker": "B",
+    "de": "Jan Novak. N – O – V – A – K.",
+    "zh": "Jan Novak。N－O－V－A－K。"
+   },
+   {
+    "speaker": "A",
+    "de": "Wo sind Sie geboren?",
+    "zh": "您在哪裡出生？"
+   },
+   {
+    "speaker": "B",
+    "de": "In Linz. Das liegt in Österreich.",
+    "zh": "在林茲，那在奧地利。"
+   },
+   {
+    "speaker": "A",
+    "de": "Wie ist Ihre Adresse?",
+    "zh": "您的地址是什麼？"
+   },
+   {
+    "speaker": "B",
+    "de": "Parkstraße 7, Hamburg.",
+    "zh": "漢堡 Parkstraße 7 號。"
+   },
+   {
+    "speaker": "A",
+    "de": "Und wie ist Ihre Telefonnummer?",
+    "zh": "那您的電話號碼是多少？"
+   },
+   {
+    "speaker": "B",
+    "de": "Null, vier, null, drei, acht, sechs, zwölf.",
+    "zh": "0、4、0、3、8、6、12。"
+   },
+   {
+    "speaker": "A",
+    "de": "Sind Sie verheiratet?",
+    "zh": "您結婚了嗎？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ja. Ich habe zwei Kinder.",
+    "zh": "是的，我有兩個孩子。"
+   },
+   {
+    "speaker": "A",
+    "de": "Wie alt sind Ihre Kinder?",
+    "zh": "您的孩子們幾歲？"
+   },
+   {
+    "speaker": "B",
+    "de": "Sieben und elf.",
+    "zh": "七歲和十一歲。"
+   }
+  ]
+ },
+ {
+  "id": "L2_D06",
+  "lektion": 2,
+  "week": 7,
+  "title": "你幾歲？在哪出生？（du）",
+  "scene": "跟同學聊天",
+  "voices": {
+   "A": "f",
+   "B": "m"
+  },
+  "lines": [
+   {
+    "speaker": "A",
+    "de": "Wie alt bist du, Max?",
+    "zh": "Max，你幾歲？"
+   },
+   {
+    "speaker": "B",
+    "de": "Ich bin neunzehn. Und du?",
+    "zh": "我十九歲。你呢？"
+   },
+   {
+    "speaker": "A",
+    "de": "Ich bin zwanzig. Wo bist du geboren?",
+    "zh": "我二十歲。你在哪裡出生？"
+   },
+   {
+    "speaker": "B",
+    "de": "In Kiel. Kiel liegt in Norddeutschland.",
+    "zh": "在基爾。基爾在德國北部。"
+   },
+   {
+    "speaker": "A",
+    "de": "Ich bin in Taipei geboren. Wie ist deine Handynummer?",
+    "zh": "我在台北出生。你的手機號碼是多少？"
+   },
+   {
+    "speaker": "B",
+    "de": "Null, eins, sieben, neun, sechzehn, siebzehn.",
+    "zh": "0、1、7、9、16、17。"
+   }
+  ]
  }
 ]

@@ -64,5 +64,41 @@
   "q": "Wer ist Anna?",
   "zh": "Anna 是誰？",
   "answer": "Wer"
+ },
+ {
+  "id": "WF12",
+  "q": "Wo sind Sie geboren?",
+  "zh": "您在哪裡出生？",
+  "answer": "Wo"
+ },
+ {
+  "id": "WF13",
+  "q": "Wo bist du geboren?",
+  "zh": "你在哪裡出生？",
+  "answer": "Wo"
+ },
+ {
+  "id": "WF14",
+  "q": "Wie alt bist du?",
+  "zh": "你幾歲？",
+  "answer": "Wie"
+ },
+ {
+  "id": "WF15",
+  "q": "Wie alt sind Sie?",
+  "zh": "您幾歲？",
+  "answer": "Wie"
+ },
+ {
+  "id": "WF16",
+  "q": "Wie ist Ihre Telefonnummer?",
+  "zh": "您的電話號碼是多少？",
+  "answer": "Wie"
+ },
+ {
+  "id": "WF17",
+  "q": "Woher kommst du?",
+  "zh": "你從哪裡來？（對照：出生地用 Wo）",
+  "answer": "Woher"
  }
 ]

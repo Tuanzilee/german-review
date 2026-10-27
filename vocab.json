@@ -2488,5 +2488,923 @@
    "期中",
    "易錯"
   ]
+ },
+ {
+  "id": "L2_W7_V001",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "null",
+  "zh": "0",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Meine Telefonnummer ist null, eins, sieben, neun.",
+  "example_zh": "我的電話號碼是 0179。",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 0,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V002",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "eins",
+  "zh": "1",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "eins",
+  "example_zh": "1",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 1,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V003",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "zwei",
+  "zh": "2",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "zwei",
+  "example_zh": "2",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 2,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V004",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "drei",
+  "zh": "3",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Mein Kind ist drei.",
+  "example_zh": "我的小孩三歲。",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 3,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V005",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "vier",
+  "zh": "4",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "vier",
+  "example_zh": "4",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 4,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V006",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "fünf",
+  "zh": "5",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "fünf",
+  "example_zh": "5",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 5,
+  "spell_tip": "fünf 有 ü"
+ },
+ {
+  "id": "L2_W7_V007",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "sechs",
+  "zh": "6",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "sechs",
+  "example_zh": "6",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 6,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V008",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "sieben",
+  "zh": "7",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "sieben",
+  "example_zh": "7",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 7,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V009",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "acht",
+  "zh": "8",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "acht",
+  "example_zh": "8",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 8,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V010",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "neun",
+  "zh": "9",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "neun",
+  "example_zh": "9",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 9,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V011",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "zehn",
+  "zh": "10",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "zehn",
+  "example_zh": "10",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 10,
+  "spell_tip": "0–12 要硬記"
+ },
+ {
+  "id": "L2_W7_V012",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "elf",
+  "zh": "11",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "elf",
+  "example_zh": "11",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 11,
+  "spell_tip": "elf 不套 -zehn 規則"
+ },
+ {
+  "id": "L2_W7_V013",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "zwölf",
+  "zh": "12",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "zwölf",
+  "example_zh": "12",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 12,
+  "spell_tip": "0–12 要硬記；zwölf 有 ö"
+ },
+ {
+  "id": "L2_W7_V014",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "dreizehn",
+  "zh": "13",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "dreizehn",
+  "example_zh": "13",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 13,
+  "spell_tip": "13–19 ＝ 個位數＋zehn"
+ },
+ {
+  "id": "L2_W7_V015",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "vierzehn",
+  "zh": "14",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "vierzehn",
+  "example_zh": "14",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 14,
+  "spell_tip": "13–19 ＝ 個位數＋zehn"
+ },
+ {
+  "id": "L2_W7_V016",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "fünfzehn",
+  "zh": "15",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "fünfzehn",
+  "example_zh": "15",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 15,
+  "spell_tip": "13–19 ＝ 個位數＋zehn"
+ },
+ {
+  "id": "L2_W7_V017",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "sechzehn",
+  "zh": "16",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "sechzehn",
+  "example_zh": "16",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 16,
+  "spell_tip": "sechs → sechzehn（去掉 s）"
+ },
+ {
+  "id": "L2_W7_V018",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "siebzehn",
+  "zh": "17",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "siebzehn",
+  "example_zh": "17",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 17,
+  "spell_tip": "sieben → siebzehn（去掉 en）"
+ },
+ {
+  "id": "L2_W7_V019",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "achtzehn",
+  "zh": "18",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "achtzehn",
+  "example_zh": "18",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 18,
+  "spell_tip": "13–19 ＝ 個位數＋zehn"
+ },
+ {
+  "id": "L2_W7_V020",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "neunzehn",
+  "zh": "19",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "neunzehn",
+  "example_zh": "19",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 19,
+  "spell_tip": "13–19 ＝ 個位數＋zehn"
+ },
+ {
+  "id": "L2_W7_V021",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "zwanzig",
+  "zh": "20",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich bin zwanzig.",
+  "example_zh": "我二十歲。",
+  "tags": [
+   "期中",
+   "數字"
+  ],
+  "num": 20,
+  "spell_tip": "zwanzig：-zig 結尾"
+ },
+ {
+  "id": "L2_W7_V022",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "die Nummer",
+  "zh": "號碼",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Nummern",
+  "conj": null,
+  "example_de": "Wie ist Ihre Nummer?",
+  "example_zh": "您的號碼是多少？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V023",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "das Telefon",
+  "zh": "電話",
+  "pos": "noun",
+  "article": "das",
+  "plural": "die Telefone",
+  "conj": null,
+  "example_de": "Das ist mein Telefon.",
+  "example_zh": "這是我的電話。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V024",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "das Handy",
+  "zh": "手機（英文 handy 是「方便的」，別搞混）",
+  "pos": "noun",
+  "article": "das",
+  "plural": "die Handys",
+  "conj": null,
+  "example_de": "Das ist mein Handy.",
+  "example_zh": "這是我的手機。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V025",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "die Telefonnummer",
+  "zh": "電話號碼（複合字看最後一字：die Nummer → Ihre）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Telefonnummern",
+  "conj": null,
+  "example_de": "Wie ist Ihre Telefonnummer?",
+  "example_zh": "您的電話號碼是多少？",
+  "tags": [
+   "期中",
+   "易錯"
+  ],
+  "spell_tip": "複合字的性別看最後一個字：Telefon（das）＋ Nummer（die）→ die Telefonnummer → Ihre Telefonnummer"
+ },
+ {
+  "id": "L2_W7_V026",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "die Handynummer",
+  "zh": "手機號碼",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Handynummern",
+  "conj": null,
+  "example_de": "Meine Handynummer ist null, eins, sieben, neun …",
+  "example_zh": "我的手機號碼是 0179…",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V027",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "Wie ist Ihre Adresse?",
+  "zh": "您的地址是什麼？",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie ist Ihre Adresse? – Marktstraße 1, Hamburg.",
+  "example_zh": "您的地址是？－漢堡 Marktstraße 1 號。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V028",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "Wie alt sind Sie?",
+  "zh": "您幾歲？（du：Wie alt bist du?）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie alt sind Sie? – Ich bin zwanzig.",
+  "example_zh": "您幾歲？－我二十歲。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V029",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "Jahre alt",
+  "zh": "…歲",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich bin achtzehn Jahre alt.",
+  "example_zh": "我十八歲。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V030",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "wo",
+  "zh": "在哪裡（問出生地用 wo，不是 woher、不是 wie）",
+  "pos": "question",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wo sind Sie geboren?",
+  "example_zh": "您在哪裡出生？",
+  "tags": [
+   "期中",
+   "易錯"
+  ],
+  "spell_tip": "Wo＝在哪裡（出生地）；Woher＝從哪裡來；Wie alt＝幾歲"
+ },
+ {
+  "id": "L2_W7_V031",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "geboren",
+  "zh": "出生的（Ich bin in … geboren.）",
+  "pos": "adj",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich bin in Taipei geboren.",
+  "example_zh": "我在台北出生。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V032",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "Wo sind Sie geboren?",
+  "zh": "您在哪裡出生？（du：Wo bist du geboren?）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wo sind Sie geboren? – In Halle.",
+  "example_zh": "您在哪裡出生？－在哈勒。",
+  "tags": [
+   "期中",
+   "易錯"
+  ]
+ },
+ {
+  "id": "L2_W7_V033",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "Haben Sie Kinder?",
+  "zh": "您有孩子嗎？（是非問句：動詞放句首）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Haben Sie Kinder? – Ja, zwei Kinder.",
+  "example_zh": "您有孩子嗎？－有，兩個。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V034",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "Wie alt ist Ihr Kind?",
+  "zh": "您的孩子幾歲？（Kind 中性 → Ihr；複數 Wie alt sind Ihre Kinder?）",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie alt ist Ihr Kind? – Drei.",
+  "example_zh": "您的孩子幾歲？－三歲。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V035",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "ledig",
+  "zh": "未婚、單身",
+  "pos": "adj",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich bin ledig.",
+  "example_zh": "我單身。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V036",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "verheiratet",
+  "zh": "已婚",
+  "pos": "adj",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Sind Sie verheiratet?",
+  "example_zh": "您結婚了嗎？",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V037",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "verwitwet",
+  "zh": "喪偶",
+  "pos": "adj",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist verwitwet.",
+  "example_zh": "他喪偶。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V038",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "der Familienstand",
+  "zh": "婚姻狀況（表格欄位）",
+  "pos": "noun",
+  "article": "der",
+  "plural": null,
+  "conj": null,
+  "example_de": "Familienstand: ledig",
+  "example_zh": "婚姻狀況：未婚",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V039",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "der Geburtsort",
+  "zh": "出生地（表格欄位）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Geburtsorte",
+  "conj": null,
+  "example_de": "Geburtsort: Taipei",
+  "example_zh": "出生地：台北",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V040",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "die Hauptstadt",
+  "zh": "首都",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Hauptstädte",
+  "conj": null,
+  "example_de": "Berlin ist die Hauptstadt von Deutschland.",
+  "example_zh": "柏林是德國的首都。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V041",
+  "lektion": 2,
+  "week": 7,
+  "source": "both",
+  "de": "liegen",
+  "zh": "位於",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "liege",
+   "du": "liegst",
+   "er/sie/es": "liegt",
+   "wir": "liegen",
+   "ihr": "liegt",
+   "sie/Sie": "liegen"
+  },
+  "example_de": "München liegt in Süddeutschland.",
+  "example_zh": "慕尼黑位於德國南部。",
+  "tags": [
+   "期中"
+  ]
+ },
+ {
+  "id": "L2_W7_V042",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "Berlin",
+  "zh": "柏林：德國首都",
+  "pos": "city",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Berlin liegt in Deutschland.",
+  "example_zh": "德國首都",
+  "tags": [
+   "期中",
+   "城市"
+  ]
+ },
+ {
+  "id": "L2_W7_V043",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "Hamburg",
+  "zh": "漢堡：德國北部",
+  "pos": "city",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Hamburg liegt in Deutschland.",
+  "example_zh": "德國北部",
+  "tags": [
+   "期中",
+   "城市"
+  ]
+ },
+ {
+  "id": "L2_W7_V044",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "München",
+  "zh": "慕尼黑：德國南部",
+  "pos": "city",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "München liegt in Deutschland.",
+  "example_zh": "德國南部",
+  "tags": [
+   "期中",
+   "城市"
+  ]
+ },
+ {
+  "id": "L2_W7_V045",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "Kiel",
+  "zh": "基爾：德國北部，近丹麥",
+  "pos": "city",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Kiel liegt in Deutschland.",
+  "example_zh": "德國北部，近丹麥",
+  "tags": [
+   "期中",
+   "城市"
+  ]
+ },
+ {
+  "id": "L2_W7_V046",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "Wien",
+  "zh": "維也納：奧地利首都",
+  "pos": "city",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wien ist die Hauptstadt von Österreich.",
+  "example_zh": "奧地利首都",
+  "tags": [
+   "期中",
+   "城市"
+  ]
+ },
+ {
+  "id": "L2_W7_V047",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "Linz",
+  "zh": "林茲：奧地利",
+  "pos": "city",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Linz liegt in Österreich.",
+  "example_zh": "奧地利",
+  "tags": [
+   "期中",
+   "城市"
+  ]
+ },
+ {
+  "id": "L2_W7_V048",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "Bern",
+  "zh": "伯恩：瑞士首都（不是 Zürich！）",
+  "pos": "city",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Bern liegt in der Schweiz.",
+  "example_zh": "伯恩在瑞士（瑞士首都是 Bern）。",
+  "tags": [
+   "期中",
+   "城市",
+   "易錯"
+  ]
+ },
+ {
+  "id": "L2_W7_V049",
+  "lektion": 2,
+  "week": 7,
+  "source": "textbook",
+  "de": "Zürich",
+  "zh": "蘇黎世：瑞士（不是首都）",
+  "pos": "city",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Zürich liegt in der Schweiz.",
+  "example_zh": "瑞士",
+  "tags": [
+   "期中",
+   "城市",
+   "易錯"
+  ]
  }
 ]

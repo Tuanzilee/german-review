@@ -1239,6 +1239,78 @@
   "text": "Ja, das ist meine Frau Maria. Und das sind meine Kinder.",
   "voice": "de-DE-ConradNeural"
  },
+ "L2_D05_00.mp3": {
+  "text": "Guten Tag. Wie heißen Sie?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D05_01.mp3": {
+  "text": "Jan Novak. N – O – V – A – K.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D05_02.mp3": {
+  "text": "Wo sind Sie geboren?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D05_03.mp3": {
+  "text": "In Linz. Das liegt in Österreich.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D05_04.mp3": {
+  "text": "Wie ist Ihre Adresse?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D05_05.mp3": {
+  "text": "Parkstraße 7, Hamburg.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D05_06.mp3": {
+  "text": "Und wie ist Ihre Telefonnummer?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D05_07.mp3": {
+  "text": "Null, vier, null, drei, acht, sechs, zwölf.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D05_08.mp3": {
+  "text": "Sind Sie verheiratet?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D05_09.mp3": {
+  "text": "Ja. Ich habe zwei Kinder.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D05_10.mp3": {
+  "text": "Wie alt sind Ihre Kinder?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D05_11.mp3": {
+  "text": "Sieben und elf.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D06_00.mp3": {
+  "text": "Wie alt bist du, Max?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D06_01.mp3": {
+  "text": "Ich bin neunzehn. Und du?",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D06_02.mp3": {
+  "text": "Ich bin zwanzig. Wo bist du geboren?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D06_03.mp3": {
+  "text": "In Kiel. Kiel liegt in Norddeutschland.",
+  "voice": "de-DE-ConradNeural"
+ },
+ "L2_D06_04.mp3": {
+  "text": "Ich bin in Taipei geboren. Wie ist deine Handynummer?",
+  "voice": "de-DE-SeraphinaMultilingualNeural"
+ },
+ "L2_D06_05.mp3": {
+  "text": "Null, eins, sieben, neun, sechzehn, siebzehn.",
+  "voice": "de-DE-ConradNeural"
+ },
  "L2_W5_V001.mp3": {
   "text": "er",
   "voice": "de-DE-KatjaNeural"
@@ -1663,6 +1735,422 @@
   "text": "Das bin ich und das sind meine Eltern.",
   "voice": "de-DE-KatjaNeural"
  },
+ "L2_W7_V001.mp3": {
+  "text": "null",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V001_ex.mp3": {
+  "text": "Meine Telefonnummer ist null, eins, sieben, neun.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V002.mp3": {
+  "text": "eins",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V002_ex.mp3": {
+  "text": "eins",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V003.mp3": {
+  "text": "zwei",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V003_ex.mp3": {
+  "text": "zwei",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V004.mp3": {
+  "text": "drei",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V004_ex.mp3": {
+  "text": "Mein Kind ist drei.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V005.mp3": {
+  "text": "vier",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V005_ex.mp3": {
+  "text": "vier",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V006.mp3": {
+  "text": "fünf",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V006_ex.mp3": {
+  "text": "fünf",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V007.mp3": {
+  "text": "sechs",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V007_ex.mp3": {
+  "text": "sechs",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V008.mp3": {
+  "text": "sieben",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V008_ex.mp3": {
+  "text": "sieben",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V009.mp3": {
+  "text": "acht",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V009_ex.mp3": {
+  "text": "acht",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V010.mp3": {
+  "text": "neun",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V010_ex.mp3": {
+  "text": "neun",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V011.mp3": {
+  "text": "zehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V011_ex.mp3": {
+  "text": "zehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V012.mp3": {
+  "text": "elf",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V012_ex.mp3": {
+  "text": "elf",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V013.mp3": {
+  "text": "zwölf",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V013_ex.mp3": {
+  "text": "zwölf",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V014.mp3": {
+  "text": "dreizehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V014_ex.mp3": {
+  "text": "dreizehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V015.mp3": {
+  "text": "vierzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V015_ex.mp3": {
+  "text": "vierzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V016.mp3": {
+  "text": "fünfzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V016_ex.mp3": {
+  "text": "fünfzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V017.mp3": {
+  "text": "sechzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V017_ex.mp3": {
+  "text": "sechzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V018.mp3": {
+  "text": "siebzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V018_ex.mp3": {
+  "text": "siebzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V019.mp3": {
+  "text": "achtzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V019_ex.mp3": {
+  "text": "achtzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V020.mp3": {
+  "text": "neunzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V020_ex.mp3": {
+  "text": "neunzehn",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V021.mp3": {
+  "text": "zwanzig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V021_ex.mp3": {
+  "text": "Ich bin zwanzig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V022.mp3": {
+  "text": "die Nummer",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V022_ex.mp3": {
+  "text": "Wie ist Ihre Nummer?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V023.mp3": {
+  "text": "das Telefon",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V023_ex.mp3": {
+  "text": "Das ist mein Telefon.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V024.mp3": {
+  "text": "das Handy",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V024_ex.mp3": {
+  "text": "Das ist mein Handy.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V025.mp3": {
+  "text": "die Telefonnummer",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V025_ex.mp3": {
+  "text": "Wie ist Ihre Telefonnummer?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V026.mp3": {
+  "text": "die Handynummer",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V026_ex.mp3": {
+  "text": "Meine Handynummer ist null, eins, sieben, neun …",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V027.mp3": {
+  "text": "Wie ist Ihre Adresse?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V027_ex.mp3": {
+  "text": "Wie ist Ihre Adresse? – Marktstraße 1, Hamburg.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V028.mp3": {
+  "text": "Wie alt sind Sie?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V028_ex.mp3": {
+  "text": "Wie alt sind Sie? – Ich bin zwanzig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V029.mp3": {
+  "text": "Jahre alt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V029_ex.mp3": {
+  "text": "Ich bin achtzehn Jahre alt.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V030.mp3": {
+  "text": "wo",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V030_ex.mp3": {
+  "text": "Wo sind Sie geboren?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V031.mp3": {
+  "text": "geboren",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V031_ex.mp3": {
+  "text": "Ich bin in Taipei geboren.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V032.mp3": {
+  "text": "Wo sind Sie geboren?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V032_ex.mp3": {
+  "text": "Wo sind Sie geboren? – In Halle.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V033.mp3": {
+  "text": "Haben Sie Kinder?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V033_ex.mp3": {
+  "text": "Haben Sie Kinder? – Ja, zwei Kinder.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V034.mp3": {
+  "text": "Wie alt ist Ihr Kind?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V034_ex.mp3": {
+  "text": "Wie alt ist Ihr Kind? – Drei.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V035.mp3": {
+  "text": "ledig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V035_ex.mp3": {
+  "text": "Ich bin ledig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V036.mp3": {
+  "text": "verheiratet",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V036_ex.mp3": {
+  "text": "Sind Sie verheiratet?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V037.mp3": {
+  "text": "verwitwet",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V037_ex.mp3": {
+  "text": "Er ist verwitwet.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V038.mp3": {
+  "text": "der Familienstand",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V038_ex.mp3": {
+  "text": "Familienstand: ledig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V039.mp3": {
+  "text": "der Geburtsort",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V039_ex.mp3": {
+  "text": "Geburtsort: Taipei",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V040.mp3": {
+  "text": "die Hauptstadt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V040_ex.mp3": {
+  "text": "Berlin ist die Hauptstadt von Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V041.mp3": {
+  "text": "liegen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V041_c_Sie.mp3": {
+  "text": "Sie liegen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V041_c_du.mp3": {
+  "text": "du liegst",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V041_c_er.mp3": {
+  "text": "er liegt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V041_c_ich.mp3": {
+  "text": "ich liege",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V041_c_ihr.mp3": {
+  "text": "ihr liegt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V041_c_wir.mp3": {
+  "text": "wir liegen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V041_ex.mp3": {
+  "text": "München liegt in Süddeutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V042.mp3": {
+  "text": "Berlin",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V042_ex.mp3": {
+  "text": "Berlin liegt in Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V043.mp3": {
+  "text": "Hamburg",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V043_ex.mp3": {
+  "text": "Hamburg liegt in Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V044.mp3": {
+  "text": "München",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V044_ex.mp3": {
+  "text": "München liegt in Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V045.mp3": {
+  "text": "Kiel",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V045_ex.mp3": {
+  "text": "Kiel liegt in Deutschland.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V046.mp3": {
+  "text": "Wien",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V046_ex.mp3": {
+  "text": "Wien ist die Hauptstadt von Österreich.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V047.mp3": {
+  "text": "Linz",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V047_ex.mp3": {
+  "text": "Linz liegt in Österreich.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V048.mp3": {
+  "text": "Bern",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V048_ex.mp3": {
+  "text": "Bern liegt in der Schweiz.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V049.mp3": {
+  "text": "Zürich",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W7_V049_ex.mp3": {
+  "text": "Zürich liegt in der Schweiz.",
+  "voice": "de-DE-KatjaNeural"
+ },
  "WF01.mp3": {
   "text": "Wie heißen Sie?",
   "voice": "de-DE-KatjaNeural"
@@ -1705,6 +2193,30 @@
  },
  "WF11.mp3": {
   "text": "Wer ist Anna?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF12.mp3": {
+  "text": "Wo sind Sie geboren?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF13.mp3": {
+  "text": "Wo bist du geboren?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF14.mp3": {
+  "text": "Wie alt bist du?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF15.mp3": {
+  "text": "Wie alt sind Sie?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF16.mp3": {
+  "text": "Wie ist Ihre Telefonnummer?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF17.mp3": {
+  "text": "Woher kommst du?",
   "voice": "de-DE-KatjaNeural"
  }
 }
