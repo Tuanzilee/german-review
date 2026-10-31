@@ -257,7 +257,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum, dict: startDict })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -814,11 +814,13 @@ function mockEnd() {
 // ---------- 會話 ----------
 function renderTalkList() {
   app.innerHTML = `<h2>會話跟讀</h2><p class="muted">逐句播放，聽完跟著念；熟了就遮住德文，看中文自己說。</p>
+    <button class="btn" id="goDictAll" style="margin-bottom:12px">✍️ 全部字幕拼寫（隨機 10 句）</button>
     <div class="card dlist" style="padding:0">${[...DIALOGUES].sort((a, b) => (a.topic === 'extra') - (b.topic === 'extra') || a.topic.localeCompare(b.topic)).map(d => `
       <button data-id="${d.id}" style="border-bottom:1px solid var(--line)">
         <span><b>${esc(d.title)}</b><br><span class="muted">${topicLabel(d.topic)} · ${esc(d.scene)}</span></span><span>›</span>
       </button>`).join('')}</div>`;
   document.querySelectorAll('.dlist button').forEach(b => b.onclick = () => go('dialogue', b.dataset.id));
+  $('#goDictAll').onclick = () => go('dict');
 }
 function renderDialogue(id) {
   const d = DIALOGUES.find(x => x.id === id);
@@ -846,13 +848,15 @@ function renderDialogue(id) {
           <div class="txt"><div class="de ${mask ? 'masked' : ''}">${esc(l.de)}</div><div class="zhl">${esc(l.zh)}</div></div>
           <button class="spk" data-say="${i}">🔊</button></div>`;
       }).join('')}</div>
-      <button class="btn" id="playBtn">${playing ? '⏸ 停止' : '▶️ 從頭播放（輪到我時會停下讓我說）'}</button>`;
+      <button class="btn" id="playBtn">${playing ? '⏸ 停止' : '▶️ 從頭播放（輪到我時會停下讓我說）'}</button>
+      <button class="btn ghost" id="dictBtn" style="margin-top:10px">✍️ 拼寫這段字幕（${d.lines.length} 句）</button>`;
     $('#back').onclick = () => go('talk');
     document.querySelectorAll('[data-me]').forEach(c => c.onclick = () => { me = c.dataset.me === '旁聽' ? null : c.dataset.me; draw(); });
     $('#hideBtn').onclick = () => { hideDe = !hideDe; draw(); };
     $('#rateBtn').onclick = () => { prefs.rate = prefs.rate < 0.8 ? 0.9 : 0.7; savePrefs(); draw(); };
     document.querySelectorAll('[data-say]').forEach(b => b.onclick = () => { stop(); cur = +b.dataset.say; draw(); speak(d.lines[cur].de, { file: lineFile(cur) }); });
     document.querySelectorAll('.masked').forEach(m => m.onclick = () => m.classList.remove('masked'));
+    $('#dictBtn').onclick = () => go('dict', d.id);
     $('#playBtn').onclick = () => { if (playing) { stop(); draw(); } else { playing = true; playFrom(0); } };
   }
   function playFrom(i) {
@@ -871,6 +875,71 @@ function renderDialogue(id) {
     }
   }
   draw();
+}
+
+// ---------- 字幕拼寫 ----------
+// 看中文字幕＋聽音檔 → 打整句德文。大小寫要對，標點不計
+const sentTokens = t => t.replace(/[.,!?;:"«»„“”]/g, ' ').replace(/\s[–—-]+(?=\s)/g, ' ').trim().split(/\s+/).filter(Boolean);
+const sentOk = (a, b) => { const x = sentTokens(a), y = sentTokens(b); return x.length === y.length && x.every((w, i) => w === y[i]); };
+function sentDiffHtml(correct, typed) {
+  const ty = sentTokens(typed);
+  return sentTokens(correct).map((w, i) => w === ty[i] ? esc(w) : `<span class="x">${esc(w)}</span>`).join(' ');
+}
+let dictQ = [], di = 0, dScore = 0, dictId = null;
+function startDict(id) {
+  dictId = id || null;
+  const lineQs = d => d.lines.map((l, i) => ({ d, l, file: `${d.id}_${String(i).padStart(2, '0')}`, typed: null }));
+  if (dictId) dictQ = lineQs(DIALOGUES.find(x => x.id === dictId));
+  else {
+    const all = DIALOGUES.flatMap(lineQs);
+    const key = q => 'dict:' + q.file;
+    dictQ = shuffle(all.filter(q => srs[key(q)]?.weak)).concat(shuffle(all.filter(q => !srs[key(q)]?.weak))).slice(0, 10);
+  }
+  di = 0; dScore = 0; renderDict();
+}
+function renderDict() {
+  if (di >= dictQ.length) {
+    app.innerHTML = `<div class="card" style="text-align:center"><p style="font-size:40px;margin:8px">✍️</p>
+      <p style="font-size:22px"><b>${dScore} / ${dictQ.length}</b></p><p class="muted">拼錯的句子下次優先出現</p>
+      <button class="btn" onclick="go('dict'${dictId ? `,'${dictId}'` : ''})">再來一輪</button>
+      <button class="btn ghost" style="margin-top:10px" onclick="go('talk')">回會話列表</button></div>`;
+    return;
+  }
+  const q = dictQ[di], answered = q.typed !== null;
+  const ok = answered && sentOk(q.l.de, q.typed);
+  app.innerHTML = `
+    <div class="muted">✍️ 字幕拼寫 · ${di + 1} / ${dictQ.length} · 答對 ${dScore}</div>
+    <div class="progress"><div style="width:${di / dictQ.length * 100}%"></div></div>
+    <div class="card">
+      <div class="muted" style="text-align:center">${esc(q.d.title)} · ${esc(q.l.speaker)}</div>
+      <div class="prompt" style="font-size:22px">${esc(q.l.zh)}</div>
+      <div class="row" style="max-width:260px;margin:12px auto"><button class="btn ghost" id="sp">🔊 聽</button><button class="btn ghost" id="spSlow">🐢 慢速</button></div>
+      <textarea class="answer ${answered ? (ok ? 'ok' : 'ng') : ''}" id="ans" rows="2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+        placeholder="打出整句德文" ${answered ? 'readonly' : ''}>${esc(q.typed ?? '')}</textarea>
+      ${answered ? '' : KEYS}
+      ${answered ? `<div style="text-align:center;margin-top:12px">
+        ${ok ? '<div style="font-size:20px">✅ 正確</div>' : `<div class="muted">正確拼法（紅色是你錯的字）</div><div class="diff">${sentDiffHtml(q.l.de, q.typed)}</div>`}
+        <div class="muted" style="margin-top:6px">${esc(q.l.de)}</div></div>` : ''}
+    </div>
+    ${answered ? `<button class="btn" id="next">下一句</button>`
+      : `<div class="row"><button class="btn ghost" id="hint">💡 提示首字</button><button class="btn" id="check">檢查</button></div>`}`;
+  const input = $('#ans');
+  $('#sp').onclick = () => speak(q.l.de, { file: q.file });
+  $('#spSlow').onclick = () => speak(q.l.de, { rate: 0.6, file: q.file });
+  if (answered) { $('#next').onclick = () => { di++; renderDict(); }; return; }
+  bindKeys(input);
+  const check = () => {
+    if (!input.value.trim()) { input.focus(); return; }
+    q.typed = input.value;
+    if (sentOk(q.l.de, q.typed)) dScore++;
+    else { const k = 'dict:' + q.file; srs[k] = { ...(srs[k] || { box: 1, due: Date.now() }), weak: true }; saveSrs(); }
+    renderDict(); speak(q.l.de, { file: q.file });
+  };
+  $('#check').onclick = check;
+  input.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); check(); } };
+  $('#hint').onclick = () => { if (!input.value) input.value = sentTokens(q.l.de)[0]; input.focus(); };
+  speak(q.l.de, { file: q.file });
+  setTimeout(() => input.focus(), 50);
 }
 
 // ---------- 聽力 ----------
