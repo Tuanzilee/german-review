@@ -257,7 +257,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum, dict: startDict })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum, dict: startDict, list: renderList })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -306,6 +306,7 @@ function renderHome() {
       <button class="btn ghost" id="goSpell">✍️ 拼字 10 題</button>
       <button class="btn ghost" id="goConj">🔤 動詞變位</button>
     </div>
+    <button class="btn ghost" id="goList" style="margin-top:10px">📚 單字總表（${VOCAB.length} 字，含發音）</button>
     <button class="btn ghost" id="goWq" style="margin-top:10px">❓ 疑問詞配對 Wie / Was / Woher / Wer</button>
     <button class="btn ghost" id="goPoss" style="margin-top:10px">👪 所有格 mein / dein / Ihr ＋ ist / sind</button>
     <button class="btn ghost" id="goNum" style="margin-top:10px">🔢 數字 0–20（聽寫、拼字、電話號碼）</button>
@@ -335,6 +336,7 @@ function renderHome() {
   $('#goListen').onclick = () => go('listen');
   $('#goSpell').onclick = () => go('spell');
   $('#goConj').onclick = () => go('conj');
+  $('#goList').onclick = () => go('list');
   $('#goWq').onclick = () => go('wq');
   $('#goPoss').onclick = () => go('poss');
   $('#goNum').onclick = () => go('num');
@@ -874,6 +876,37 @@ function renderDialogue(id) {
       speak(l.de, { file: lineFile(i), onend: () => { timer = setTimeout(() => playFrom(i + 1), me === null ? 800 + l.de.length * 60 : 500); } });
     }
   }
+  draw();
+}
+
+// ---------- 單字總表 ----------
+let listQ = '';
+function renderList() {
+  app.innerHTML = `<h2>單字總表</h2><p class="muted">點 🔊 聽單字，點例句旁的 ▶ 聽整句。範圍跟首頁共用。</p>
+    <div class="card"><div class="muted" style="margin-bottom:8px">範圍</div>${scopeChips()}</div>
+    <input class="answer" id="lq" placeholder="搜尋德文或中文" autocomplete="off" autocapitalize="off" spellcheck="false" style="font-size:17px;margin-bottom:12px" value="${esc(listQ)}">
+    <div id="lbody"></div>`;
+  bindScope(renderList);
+  const draw = () => {
+    const q = listQ.trim().toLowerCase();
+    const items = inScope(VOCAB).filter(v => !q || v.de.toLowerCase().includes(q) || v.zh.includes(q));
+    const groups = [...TOPICS.map(t => t.key), 'extra'];
+    const secs = groups.map(k => [k, items.filter(v => (groups.includes(v.topic) ? v.topic : 'extra') === k)]).filter(([, a]) => a.length);
+    $('#lbody').innerHTML = `<div class="muted" style="margin-bottom:6px">共 ${items.length} 字</div>` + (secs.map(([k, a]) => `
+      <div class="muted" style="margin:14px 0 4px"><b>${topicLabel(k)}</b></div>
+      <div class="card" style="padding:0 14px">${a.map(v => `
+        <div class="line">
+          <div class="txt">
+            <div class="de">${deHtml(v)}${v.plural ? ` <span class="muted" style="font-weight:400">· 複數 ${esc(v.plural)}</span>` : ''}</div>
+            <div class="zhl">${esc(v.zh)}</div>
+            ${v.example_de ? `<div class="zhl" style="margin-top:4px">${esc(v.example_de)} <button class="spk" style="width:28px;height:28px;font-size:13px;vertical-align:middle" data-ex="${v.id}">▶</button></div>` : ''}
+          </div>
+          <button class="spk" data-w="${v.id}">🔊</button>
+        </div>`).join('')}</div>`).join('') || '<div class="card">找不到符合的單字。</div>');
+    document.querySelectorAll('[data-w]').forEach(b => b.onclick = () => { const v = VOCAB.find(x => x.id === b.dataset.w); speak(v.tts || v.de, { file: v.id }); });
+    document.querySelectorAll('[data-ex]').forEach(b => b.onclick = () => { const v = VOCAB.find(x => x.id === b.dataset.ex); speak(v.tts_ex || v.example_de, { file: v.id + '_ex' }); });
+  };
+  $('#lq').oninput = e => { listQ = e.target.value; draw(); };
   draw();
 }
 
