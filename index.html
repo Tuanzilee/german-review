@@ -259,7 +259,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum, numbig: startNumBig, dict: startDict, list: renderList })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum, numbig: startNumBig, introself: () => startIntro('introself'), introother: () => startIntro('introother'), introconv: () => startIntro('introconv'), dict: startDict, list: renderList })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -298,7 +298,12 @@ function renderHome() {
       </div>
       <div class="muted" style="margin-top:6px">詞尾口訣：wir / sie（複數）/ Sie 都是 -en；du 是 -st；er/sie/es 是 -t。</div>
       <div class="row" style="margin-top:10px">
-        <button class="btn" id="goIntro">🎯 練習介紹相關字</button>
+        <button class="btn" id="goIntroSelf">🧑 介紹自己</button>
+        <button class="btn" id="goIntroOther">👥 介紹他人</button>
+      </div>
+      <button class="btn ghost" id="goIntroConv" style="margin-top:10px">🔁 ich → er/sie 句子轉換</button>
+      <div class="row" style="margin-top:10px">
+        <button class="btn ghost" id="goIntro">🎯 練習介紹相關字</button>
         <button class="btn ghost" id="goConj2">🔤 動詞變位</button>
       </div>
     </div>
@@ -362,6 +367,9 @@ function renderHome() {
   $('#goNumBig').onclick = () => go('numbig');
   $('#goIntro').onclick = () => { prefs.scope = 'intro'; savePrefs(); go('cards'); };
   $('#goConj2').onclick = () => go('conj');
+  $('#goIntroSelf').onclick = () => go('introself');
+  $('#goIntroOther').onclick = () => go('introother');
+  $('#goIntroConv').onclick = () => go('introconv');
   $('#goMock').onclick = () => go('mock');
   if (weak) $('#goWeak').onclick = () => go('weak');
   $('#testVoice').onclick = () => speak('Guten Tag!', { file: 'L1_W1_V002' });
@@ -780,6 +788,86 @@ function renderNum() {
   };
   $('#check').onclick = check; input.onkeydown = e => { if (e.key === 'Enter') check(); };
   if (q.autoplay) replay();
+  setTimeout(() => input.focus(), 50);
+}
+
+// ---------- 介紹自己／他人（W9 目標：用德文介紹自己或別人） ----------
+// 人物資料卡是自編的（不抄課本）。三種模式：introself（ich）、introother（er/sie）、introconv（ich → er/sie 轉換）
+const PEOPLE = [
+  { name: 'Lena', g: 'f', age: 25, from: 'Österreich', city: 'Berlin', langs: ['Deutsch', 'Englisch'], job: 'Ärztin', status: 'ledig' },
+  { name: 'Jonas', g: 'm', age: 34, from: 'Deutschland', city: 'Wien', langs: ['Deutsch'], job: 'Pilot', status: 'verheiratet' },
+  { name: 'Sophie', g: 'f', age: 41, from: 'Frankreich', city: 'München', langs: ['Französisch', 'Deutsch'], job: 'Polizistin', status: 'verheiratet' },
+  { name: 'Marco', g: 'm', age: 52, from: 'Italien', city: 'Hamburg', langs: ['Italienisch', 'Deutsch'], job: 'Ingenieur', status: 'verheiratet' },
+  { name: 'Mei', g: 'f', age: 19, from: 'Taiwan', city: 'Berlin', langs: ['Chinesisch', 'Deutsch'], job: 'Studentin', status: 'ledig' },
+  { name: 'Carlos', g: 'm', age: 67, from: 'Spanien', city: 'Paris', langs: ['Spanisch', 'Französisch'], job: 'Arzt', status: 'ledig' },
+];
+const ageWord = n => n <= 20 ? NUMS().find(v => v.num === n).de : bigWord(n);
+// 一個人 × 一個面向 → 句子；form：'ich'（我）或 '3'（他／她）
+const INTRO_ASPECTS = ['name', 'from', 'city', 'age', 'langs', 'job', 'status'];
+function introSentence(p, asp, form) {
+  const ich = form === 'ich', P = ich ? 'Ich' : (p.g === 'm' ? 'Er' : 'Sie');
+  const zhP = ich ? '我' : (p.g === 'm' ? '他' : '她');
+  const be = ich ? 'bin' : 'ist';
+  const T = {
+    name: { hint: `${zhP}叫 ${p.name}`, de: `${P} ${ich ? 'heiße' : 'heißt'} ${p.name}.`, why: ich ? 'heißen：ich heiße（-e）' : 'heißen：er/sie heißt（-t；ß 後面不再重複 s）' },
+    from: { hint: `${zhP}來自${p.from}`, de: `${P} ${ich ? 'komme' : 'kommt'} aus ${p.from}.`, why: ich ? 'kommen：ich komme（-e）＋ aus' : 'kommen：er/sie kommt（-t）＋ aus' },
+    city: { hint: `${zhP}住在${p.city}`, de: `${P} ${ich ? 'wohne' : 'wohnt'} in ${p.city}.`, why: ich ? 'wohnen：ich wohne（-e）＋ in' : 'wohnen：er/sie wohnt（-t）＋ in' },
+    age: { hint: `${zhP}${p.age} 歲`, de: `${P} ${be} ${ageWord(p.age)} Jahre alt.`, accept: [`${P} ${be} ${ageWord(p.age)}.`],
+      why: `sein：${ich ? 'ich bin' : 'er/sie ist'}；${p.age} ＝ ${ageWord(p.age)}（數字要拼出來）` },
+    langs: { hint: `${zhP}說${p.langs.map(l => l).join('和')}`, de: `${P} ${ich ? 'spreche' : 'spricht'} ${p.langs.join(' und ')}.`, why: ich ? 'sprechen：ich spreche（-e）' : 'sprechen：er/sie spricht（e 變 i，-t）' },
+    job: { hint: `${zhP}的職業是${p.job}`, de: `${P} ${be} ${p.job}.`, why: `sein：${ich ? 'ich bin' : 'er/sie ist'}；職業不加冠詞` },
+    status: { hint: `${zhP}${p.status === 'ledig' ? '單身（未婚）' : '已婚'}`, de: `${P} ${be} ${p.status}.`, why: `sein：${ich ? 'ich bin' : 'er/sie ist'}` },
+  };
+  return T[asp];
+}
+const personCard = p => `<div class="card" style="text-align:left"><b>${esc(p.name)}</b>　${p.g === 'm' ? '男' : '女'}
+  <div class="muted" style="margin-top:4px;line-height:1.6">${p.age} 歲｜來自 ${esc(p.from)}｜住在 ${esc(p.city)}<br>語言：${esc(p.langs.join('、'))}｜職業：${esc(p.job)}｜${p.status === 'ledig' ? '單身' : '已婚'}</div></div>`;
+let introQ = [], ii = 0, iScore = 0, introAgain = 'introself', introP = null;
+const INTRO_NOTE = 'wir / sie（複數）/ Sie ＝ -en；du ＝ -st；er/sie/es ＝ -t；sein：ich bin、er/sie ist；sprechen：er/sie spricht';
+function startIntro(kind) {
+  introAgain = kind; introP = shuffle(PEOPLE)[0];
+  const p = introP;
+  if (kind === 'introconv') {
+    const pool = [shuffle(PEOPLE)[0], shuffle(PEOPLE)[0], shuffle(PEOPLE)[0]];
+    introQ = shuffle(INTRO_ASPECTS).slice(0, 6).map((asp, k) => {
+      const q = pool[k % 3], a = introSentence(q, asp, 'ich'), b = introSentence(q, asp, '3');
+      return { prompt: a.de, sub: `改成介紹「${q.g === 'm' ? '他' : '她'}（${q.g === 'm' ? 'Er' : 'Sie'}）」，人名不變`, card: q, answer: b.de, accept: b.accept, why: b.why };
+    });
+  } else {
+    const form = kind === 'introself' ? 'ich' : '3';
+    introQ = INTRO_ASPECTS.map(asp => {
+      const s = introSentence(p, asp, form);
+      return { prompt: s.hint, sub: form === 'ich' ? '用德文說說「我」：' : `用德文介紹「${p.g === 'm' ? '他（Er）' : '她（Sie）'}」：`, card: p, answer: s.de, accept: s.accept, why: s.why };
+    });
+  }
+  introQ = introQ.map(q => ({ ...q, given: null, ok: null })); ii = 0; iScore = 0; renderIntro();
+}
+function renderIntro() {
+  if (ii >= introQ.length) return roundEnd(iScore, introQ.length, introAgain, INTRO_NOTE);
+  const q = introQ[ii], done = q.given !== null, title = { introself: '🧑 介紹自己', introother: '👥 介紹他人', introconv: '🔁 ich → er/sie' }[introAgain];
+  app.innerHTML = `
+    <div class="muted">${title} · ${ii + 1} / ${introQ.length} · 答對 ${iScore}</div>
+    <div class="progress"><div style="width:${ii / introQ.length * 100}%"></div></div>
+    ${introAgain === 'introconv' ? '' : personCard(q.card)}
+    <div class="card" style="text-align:center">
+      <div class="muted">${esc(q.sub)}</div>
+      <div class="prompt" style="font-size:${introAgain === 'introconv' ? 24 : 22}px;margin-top:6px">${esc(q.prompt)}</div>
+      <input class="answer ${done ? (q.ok ? 'ok' : 'ng') : ''}" id="ans" style="margin-top:12px" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+        placeholder="完整句子" value="${esc(q.given ?? '')}" ${done ? 'readonly' : ''}>
+      ${done ? '' : KEYS}
+      ${done ? `<div style="margin-top:10px">${q.ok ? '✅ 正確' : `❌ 正確答案：<b>${diffHtml(q.answer, q.given)}</b>`}</div><div class="why">${esc(q.why)}</div>
+        <button class="spk" id="say" style="margin-top:10px">🔊</button>` : ''}
+    </div>
+    ${done ? `<button class="btn" id="next">下一題</button>` : `<button class="btn" id="check">檢查</button>`}`;
+  if (done) { $('#say').onclick = () => speak(q.answer, {}); $('#next').onclick = () => { ii++; renderIntro(); }; return; }
+  const input = $('#ans'); bindKeys(input);
+  const check = () => {
+    if (!input.value.trim()) return input.focus();
+    q.given = input.value; q.ok = [q.answer, ...(q.accept || [])].some(a => norm(a) === norm(q.given));
+    if (q.ok) iScore++;
+    renderIntro(); speak(q.answer, {});
+  };
+  $('#check').onclick = check; input.onkeydown = e => { if (e.key === 'Enter') check(); };
   setTimeout(() => input.focus(), 50);
 }
 

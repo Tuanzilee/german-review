@@ -88,5 +88,5 @@ hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若�
 - 🔢 數字 21–100：整十數（tags「整十數」，欄位 `num`）＋零件 `ein`、`und`（tags「數字零件」）；複合數字沒有獨立音檔，用 `playSeq` 串「個位＋und＋十位」的現成音檔，答案用 `bigWord(n)` 算出來。
 - W9 單字（L2_W9_V001…）：職業、Partner、lernen、auch、年齡／出生地問句。`Polizist` 為待對課本確認（錄音聽到 Polizei）。
 - wfragen 加 WF18–22（Wie alt ist er? 等）。
-- 尚未做（第二階段）：介紹自己／介紹他人／看資料卡寫介紹三個新模式。
+- 第二階段（已做）：`PEOPLE` 六張自編人物資料卡（不抄課本），模式 `introself`（ich 句）、`introother`（er/sie 句）、`introconv`（ich → er/sie 轉換），每輪 6–7 句整句輸入，句型模板在 `introSentence()`（面向：名字、來自、住在、年齡、語言、職業、婚姻）；年齡用 `ageWord()` 拼成德文。要加人物或面向就改 `PEOPLE` / `INTRO_ASPECTS`。沒有 hai 自己的資料卡（個人資料不放公開 repo）。
 
