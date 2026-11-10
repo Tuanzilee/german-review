@@ -230,11 +230,13 @@ const TOPICS = [
 const topicLabel = k => (TOPICS.find(t => t.key === k) || { label: '課堂補充' }).label;
 const SCOPES = [
   { key: 'all', label: '全部', test: () => true },
-  { key: 'mid', label: '期中範圍', test: v => v.lektion <= 2 },
+  { key: 'intro', label: '🎯 介紹自己／他人', test: v => v.tags.includes('介紹') },
+  { key: 'fin', label: '期末範圍（L2–3）', test: v => v.lektion >= 2 },
   { key: 'hard', label: '⚠️ 考卷易錯', test: v => v.tags.includes('易錯') },
   ...TOPICS.map(t => ({ key: t.key, label: t.label, row: t.key[0], test: v => v.topic === t.key })),
   { key: 'extra', label: '課堂補充', row: 'x', test: v => v.topic === 'extra' },
 ];
+if (prefs.scope === 'mid') prefs.scope = 'intro';   // 期中已考完，舊的「期中範圍」改成「介紹自己／他人」
 if (!SCOPES.some(s => s.key === prefs.scope)) { prefs.scope = 'all'; savePrefs(); }   // 舊版的週次範圍（w1…）改回全部
 function inScope(list) {
   const s = SCOPES.find(s => s.key === prefs.scope) || SCOPES[0];
@@ -257,7 +259,7 @@ function go(t, arg) {
   stopSpeak(); if (cleanup) { cleanup(); cleanup = null; }
   tab = t;
   document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum, dict: startDict, list: renderList })[t](arg);
+  ({ home: renderHome, cards: () => startCards(false), talk: renderTalkList, listen: startListen, weak: () => startCards(true), dialogue: renderDialogue, spell: startSpell, conj: startConj, wq: startWq, poss: startPoss, mock: startMock, num: startNum, numbig: startNumBig, dict: startDict, list: renderList })[t](arg);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => go(b.dataset.tab));
@@ -282,12 +284,24 @@ function renderHome() {
   const fresh = list.filter(isNew).length;
   const learned = list.filter(v => srs[v.id] && srs[v.id].box >= 3).length;
   const weak = VOCAB.filter(v => srs[v.id]?.weak).length;
-  const examDays = Math.ceil((new Date('2026-11-03T14:00:00+08:00') - Date.now()) / DAY);
   app.innerHTML = `
-    ${examDays > 0 ? `<div class="card warn"><b>📅 期中考倒數 ${examDays} 天</b>（11/3，範圍 Lektion 1–2）
-      <div class="muted">老師提醒：人稱代名詞、動詞變化、所有格要背熟。首頁選「期中範圍」練習。</div>
-      <button class="btn" id="goMock" style="margin-top:10px">📝 期中模擬考（23 題）</button>
-      ${mockHist.length ? `<div class="muted" style="margin-top:8px">最近成績：${mockHist.slice(-5).map(h => `${h.date}（${h.score}/${h.total} 題）`).join('｜')}</div>` : ''}</div>` : ''}
+    <div class="card warn">
+      <b>🎯 目標：用德文介紹自己，或介紹別人</b>
+      <div class="muted" style="margin-top:6px">期末範圍 Lektion 2–3。對照句型（自己 → 他人，注意詞尾）：</div>
+      <div style="margin-top:6px;line-height:1.7">
+        Ich <b>heiße</b> … → Er/Sie <b>heißt</b> …<br>
+        Ich <b>komme</b> aus … → Er/Sie <b>kommt</b> aus …<br>
+        Ich <b>wohne</b> in … → Er/Sie <b>wohnt</b> in …<br>
+        Ich <b>spreche</b> … → Er/Sie <b>spricht</b> …<br>
+        Ich <b>bin</b> … Jahre alt → Er/Sie <b>ist</b> … Jahre alt<br>
+        Ich <b>habe</b> … → Er/Sie <b>hat</b> …
+      </div>
+      <div class="muted" style="margin-top:6px">詞尾口訣：wir / sie（複數）/ Sie 都是 -en；du 是 -st；er/sie/es 是 -t。</div>
+      <div class="row" style="margin-top:10px">
+        <button class="btn" id="goIntro">🎯 練習介紹相關字</button>
+        <button class="btn ghost" id="goConj2">🔤 動詞變位</button>
+      </div>
+    </div>
     <div class="card">
       <div class="muted" style="margin-bottom:8px">複習範圍</div>
       ${scopeChips()}
@@ -309,7 +323,12 @@ function renderHome() {
     <button class="btn ghost" id="goList" style="margin-top:10px">📚 單字總表（${VOCAB.length} 字，含發音）</button>
     <button class="btn ghost" id="goWq" style="margin-top:10px">❓ 疑問詞配對 Wie / Was / Woher / Wer</button>
     <button class="btn ghost" id="goPoss" style="margin-top:10px">👪 所有格 mein / dein / Ihr ＋ ist / sind</button>
-    <button class="btn ghost" id="goNum" style="margin-top:10px">🔢 數字 0–20（聽寫、拼字、電話號碼）</button>
+    <div class="row" style="margin-top:10px">
+      <button class="btn ghost" id="goNum">🔢 數字 0–20</button>
+      <button class="btn ghost" id="goNumBig">🔢 數字 21–100</button>
+    </div>
+    <button class="btn ghost" id="goMock" style="margin-top:10px">📝 綜合模擬題（23 題，含疑問詞／變位／所有格／數字）</button>
+    ${mockHist.length ? `<div class="muted" style="margin-top:6px;font-size:12px">最近成績：${mockHist.slice(-5).map(h => `${h.date}（${h.score}/${h.total} 題）`).join('｜')}</div>` : ''}
     ${weak ? `<button class="btn ghost" id="goWeak" style="margin-top:10px">📕 錯題本（${weak}）</button>` : ''}
     <a class="card" href="https://learngerman.dw.com/en/nicos-weg/c-36519789" target="_blank" rel="noopener"
        style="display:block;text-decoration:none;color:inherit">
@@ -340,7 +359,10 @@ function renderHome() {
   $('#goWq').onclick = () => go('wq');
   $('#goPoss').onclick = () => go('poss');
   $('#goNum').onclick = () => go('num');
-  $('#goMock') && ($('#goMock').onclick = () => go('mock'));
+  $('#goNumBig').onclick = () => go('numbig');
+  $('#goIntro').onclick = () => { prefs.scope = 'intro'; savePrefs(); go('cards'); };
+  $('#goConj2').onclick = () => go('conj');
+  $('#goMock').onclick = () => go('mock');
   if (weak) $('#goWeak').onclick = () => go('weak');
   $('#testVoice').onclick = () => speak('Guten Tag!', { file: 'L1_W1_V002' });
   const info = () => {
@@ -691,10 +713,45 @@ function numItems(nHear, nSpell, nPhone) {
   return items;
 }
 const numOk = (q, given) => q.mode === 'spell' ? norm(given).toLowerCase() === q.answer : normDigits(given) === q.answer;
-let numQ = [], ni = 0, nScore = 0;
-function startNum() { numQ = shuffle(numItems(4, 5, 3)).map(q => ({ ...q, given: null, ok: null })); ni = 0; nScore = 0; renderNum(); }
+let numQ = [], ni = 0, nScore = 0, numAgain = 'num', numNote = '0–12 硬記；13–19 ＝ 個位數＋zehn（sechzehn 去 s、siebzehn 去 en）；20 zwanzig';
+function startNum() {
+  numAgain = 'num'; numNote = '0–12 硬記；13–19 ＝ 個位數＋zehn（sechzehn 去 s、siebzehn 去 en）；20 zwanzig';
+  numQ = shuffle(numItems(4, 5, 3)).map(q => ({ ...q, given: null, ok: null })); ni = 0; nScore = 0; renderNum();
+}
+// ---------- 數字 21–100（W9）：個位數 ＋ und ＋ 十位數，連寫成一個字 ----------
+const NUM_TENS = () => VOCAB.filter(v => v.tags.includes('整十數')).sort((a, b) => a.num - b.num);
+const numUnit = u => u === 1 ? VOCAB.find(v => v.de === 'ein') : NUMS().find(v => v.num === u);
+const numTen = t => t === 20 ? NUMS().find(v => v.num === 20) : NUM_TENS().find(v => v.num === t);
+function bigParts(n) {   // 依唸的順序回傳單字物件（用現成音檔逐個播）
+  if (n % 10 === 0) return [numTen(n)];
+  return [numUnit(n % 10), VOCAB.find(v => v.de === 'und'), numTen(n - n % 10)];
+}
+const bigWord = n => bigParts(n).map(p => p.de).join('');
+const bigWhy = n => n % 10 === 0 ? `${bigWord(n)} ＝ ${n}：${numTen(n).spell_tip}`
+  : `${bigWord(n)} ＝ ${n}：先說個位 ${numUnit(n % 10).de}，加 und，再說十位 ${numTen(n - n % 10).de}`;
+function numBigItems() {
+  const items = [], pick = (lo, hi, skipTens = true) => { let n; do { n = lo + (Math.random() * (hi - lo + 1) | 0); } while (skipTens && n % 10 === 0); return n; };
+  const used = new Set(), uniq = f => { let n; do { n = f(); } while (used.has(n)); used.add(n); return n; };
+  for (let k = 0; k < 3; k++) { const n = uniq(() => pick(21, 99));
+    items.push({ cat: 'num', type: 'type', mode: 'hear', prompt: '🔊 聽到的是幾？', sub: '打阿拉伯數字（先聽個位數）', answer: String(n), why: bigWhy(n), play: bigParts(n), say: [bigWord(n), null], autoplay: true }); }
+  // 十幾 vs 整十：聽力最容易混淆（13／30、16／60 …）
+  shuffle([13, 14, 15, 16, 17, 18, 19, 30, 40, 50, 60, 70, 80, 90]).slice(0, 3).forEach(n => {
+    const w = n < 20 ? NUMS().find(v => v.num === n) : numTen(n);
+    items.push({ cat: 'num', type: 'type', mode: 'hear', prompt: '🔊 聽到的是幾？', sub: '小心十幾（-zehn）和整十（-zig）', answer: String(n),
+      why: `${w.de} ＝ ${n}。十幾是 -zehn（13–19），整十是 -zig／-ßig（30–90）`, play: [w], say: [w.de, w.id], autoplay: true });
+  });
+  for (let k = 0; k < 3; k++) { const n = uniq(() => pick(21, 99));
+    items.push({ cat: 'num', type: 'type', mode: 'spell', prompt: String(n), sub: '用德文拼出來，連寫成一個字（小寫）', answer: bigWord(n), why: bigWhy(n), play: bigParts(n), say: [bigWord(n), null] }); }
+  const t = [30, 40, 50, 60, 70, 80, 90, 100][Math.random() * 8 | 0];
+  items.push({ cat: 'num', type: 'type', mode: 'spell', prompt: String(t), sub: '用德文拼出來（小寫）', answer: bigWord(t), why: bigWhy(t), play: bigParts(t), say: [bigWord(t), null] });
+  return items;
+}
+function startNumBig() {
+  numAgain = 'numbig'; numNote = '個位數 ＋ und ＋ 十位數，連寫：34 ＝ vierunddreißig；21 要寫 ein（不是 eins）；60 sechzig、70 siebzig 比 16、17 少一截';
+  numQ = shuffle(numBigItems()).map(q => ({ ...q, given: null, ok: null })); ni = 0; nScore = 0; renderNum();
+}
 function renderNum() {
-  if (ni >= numQ.length) return roundEnd(nScore, numQ.length, 'num', '0–12 硬記；13–19 ＝ 個位數＋zehn（sechzehn 去 s、siebzehn 去 en）；20 zwanzig');
+  if (ni >= numQ.length) return roundEnd(nScore, numQ.length, numAgain, numNote);
   const q = numQ[ni], done = q.given !== null;
   const replay = () => q.play ? playSeq(q.play) : speak(q.say[0], { file: q.say[1] });
   app.innerHTML = `
@@ -716,7 +773,7 @@ function renderNum() {
     if (!input.value.trim()) return input.focus();
     q.given = input.value; q.ok = numOk(q, q.given);
     if (q.ok) nScore++; else if (q.v) markWeak(q.v);
-    renderNum(); if (q.mode === 'spell') speak(q.say[0], { file: q.say[1] });
+    renderNum(); if (q.mode === 'spell') { if (q.play) playSeq(q.play); else speak(q.say[0], { file: q.say[1] }); }
   };
   $('#check').onclick = check; input.onkeydown = e => { if (e.key === 'Enter') check(); };
   if (q.autoplay) replay();

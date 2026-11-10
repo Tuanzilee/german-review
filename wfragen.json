@@ -100,5 +100,35 @@
   "q": "Woher kommst du?",
   "zh": "你從哪裡來？（對照：出生地用 Wo）",
   "answer": "Woher"
+ },
+ {
+  "id": "WF18",
+  "q": "Wie alt ist er?",
+  "zh": "他幾歲？",
+  "answer": "Wie"
+ },
+ {
+  "id": "WF19",
+  "q": "Wo bist du geboren?",
+  "zh": "你在哪裡出生？",
+  "answer": "Wo"
+ },
+ {
+  "id": "WF20",
+  "q": "Wo ist er geboren?",
+  "zh": "他在哪裡出生？",
+  "answer": "Wo"
+ },
+ {
+  "id": "WF21",
+  "q": "Woher kommt sie?",
+  "zh": "她從哪裡來？",
+  "answer": "Woher"
+ },
+ {
+  "id": "WF22",
+  "q": "Was spricht er?",
+  "zh": "他說什麼語言？",
+  "answer": "Was"
  }
 ]

@@ -82,3 +82,11 @@ hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若�
 > Nicos Weg（DW 影集，老師 W3 起分段播放）：首頁只放官方連結 https://learngerman.dw.com/en/nicos-weg/c-36519789 ，**不要把影片台詞抄進公開 repo**（DW 版權）。hai 2026-10-06 決定暫不加數字／同情境會話，等老師放完再說。
 > 2026-10-13 edge-tts 7.2.8 曾被微軟擋（403）；2026-10-21 升級到 7.3.1 恢復，已補齊全部音檔。每次產生音檔前先 `~/.venvs/tts/bin/pip install -U edge-tts`。再壞掉時改走 Azure（程式已支援，需 hai 自己設金鑰）。gen_audio.py 失敗時會刪空檔，check.py 把缺音檔列為警告。
 > 上課討論軌跡：hai 會在 ChatGPT 開「YYYYMMDD 德文 …」對話做課本題；hai 同意時用 Claude in Chrome 搜尋「德」讀取（只讀不送出）。
+
+## 2026-11-10 重整（W09 後）
+- 目標改成「用德文介紹自己／他人」：首頁最上方是對照句型卡（ich → er/sie 詞尾）＋「介紹自己／他人」範圍（tags 含「介紹」，topic 1B/1C/2B/2C/2D）；期中倒數拿掉，改成「期末範圍（L2–3）」（lektion ≥ 2）；舊的「期中範圍」存檔值自動轉成「介紹」。期中模擬考保留為「綜合模擬題」。
+- 🔢 數字 21–100：整十數（tags「整十數」，欄位 `num`）＋零件 `ein`、`und`（tags「數字零件」）；複合數字沒有獨立音檔，用 `playSeq` 串「個位＋und＋十位」的現成音檔，答案用 `bigWord(n)` 算出來。
+- W9 單字（L2_W9_V001…）：職業、Partner、lernen、auch、年齡／出生地問句。`Polizist` 為待對課本確認（錄音聽到 Polizei）。
+- wfragen 加 WF18–22（Wie alt ist er? 等）。
+- 尚未做（第二階段）：介紹自己／介紹他人／看資料卡寫介紹三個新模式。
+

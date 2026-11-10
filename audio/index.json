@@ -2151,6 +2151,246 @@
   "text": "Zürich liegt in der Schweiz.",
   "voice": "de-DE-KatjaNeural"
  },
+ "L2_W9_V001.mp3": {
+  "text": "der Beruf",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V001_ex.mp3": {
+  "text": "Mein Beruf: Student.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V002.mp3": {
+  "text": "der Polizist",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V002_ex.mp3": {
+  "text": "Er ist Polizist.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V003.mp3": {
+  "text": "die Polizistin",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V003_ex.mp3": {
+  "text": "Sie ist Polizistin.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V004.mp3": {
+  "text": "der Arzt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V004_ex.mp3": {
+  "text": "Er ist Arzt.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V005.mp3": {
+  "text": "die Ärztin",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V005_ex.mp3": {
+  "text": "Sie ist Ärztin.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V006.mp3": {
+  "text": "der Ingenieur",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V006_ex.mp3": {
+  "text": "Arto ist Ingenieur.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V007.mp3": {
+  "text": "der Pilot",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V007_ex.mp3": {
+  "text": "Thomas ist Pilot.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V008.mp3": {
+  "text": "der Fotograf",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V008_ex.mp3": {
+  "text": "Ralf ist Fotograf.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V009.mp3": {
+  "text": "der Partner",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V009_ex.mp3": {
+  "text": "Mein Partner kommt aus Dänemark.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V010.mp3": {
+  "text": "die Partnerin",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V010_ex.mp3": {
+  "text": "Meine Partnerin wohnt in Basel.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V011.mp3": {
+  "text": "das Jahr",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V011_ex.mp3": {
+  "text": "Ich lerne seit einem Jahr Deutsch.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V012.mp3": {
+  "text": "lernen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V012_c_Sie.mp3": {
+  "text": "Sie lernen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V012_c_du.mp3": {
+  "text": "du lernst",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V012_c_er.mp3": {
+  "text": "er lernt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V012_c_ich.mp3": {
+  "text": "ich lerne",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V012_c_ihr.mp3": {
+  "text": "ihr lernt",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V012_c_wir.mp3": {
+  "text": "wir lernen",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V012_ex.mp3": {
+  "text": "Er lernt auch Deutsch.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V013.mp3": {
+  "text": "auch",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V013_ex.mp3": {
+  "text": "Ich lerne auch Deutsch.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V014.mp3": {
+  "text": "Wie alt bist du?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V014_ex.mp3": {
+  "text": "Wie alt bist du? – Ich bin dreißig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V015.mp3": {
+  "text": "Wie alt ist er?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V015_ex.mp3": {
+  "text": "Wie alt ist er? – Er ist sechzehn.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V016.mp3": {
+  "text": "Wo bist du geboren?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V016_ex.mp3": {
+  "text": "Wo bist du geboren? – Ich bin in Taipeh geboren.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V017.mp3": {
+  "text": "Wo ist er geboren?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V017_ex.mp3": {
+  "text": "Wo ist er geboren? – Er ist in Kiel geboren.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V018.mp3": {
+  "text": "ein",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V018_ex.mp3": {
+  "text": "einundzwanzig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V019.mp3": {
+  "text": "und",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V019_ex.mp3": {
+  "text": "vierundreißig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V020.mp3": {
+  "text": "dreißig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V020_ex.mp3": {
+  "text": "Er ist dreißig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V021.mp3": {
+  "text": "vierzig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V021_ex.mp3": {
+  "text": "Er ist vierzig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V022.mp3": {
+  "text": "fünfzig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V022_ex.mp3": {
+  "text": "Er ist fünfzig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V023.mp3": {
+  "text": "sechzig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V023_ex.mp3": {
+  "text": "Er ist sechzig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V024.mp3": {
+  "text": "siebzig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V024_ex.mp3": {
+  "text": "Er ist siebzig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V025.mp3": {
+  "text": "achtzig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V025_ex.mp3": {
+  "text": "Er ist achtzig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V026.mp3": {
+  "text": "neunzig",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V026_ex.mp3": {
+  "text": "Er ist neunzig.",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V027.mp3": {
+  "text": "hundert",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V027_ex.mp3": {
+  "text": "Er ist hundert.",
+  "voice": "de-DE-KatjaNeural"
+ },
  "WF01.mp3": {
   "text": "Wie heißen Sie?",
   "voice": "de-DE-KatjaNeural"
@@ -2217,6 +2457,26 @@
  },
  "WF17.mp3": {
   "text": "Woher kommst du?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF18.mp3": {
+  "text": "Wie alt ist er?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF19.mp3": {
+  "text": "Wo bist du geboren?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF20.mp3": {
+  "text": "Wo ist er geboren?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF21.mp3": {
+  "text": "Woher kommt sie?",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "WF22.mp3": {
+  "text": "Was spricht er?",
   "voice": "de-DE-KatjaNeural"
  }
 }

@@ -360,7 +360,8 @@
   "example_de": "Entschuldigung, wie heißen Sie?",
   "example_zh": "不好意思，您叫什麼名字？",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -378,7 +379,8 @@
   "example_de": "Ja, stimmt.",
   "example_zh": "對，沒錯。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -396,7 +398,8 @@
   "example_de": "Nein, nur ein bisschen.",
   "example_zh": "不，只會一點點。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -451,7 +454,8 @@
   "example_de": "Guten Tag, Frau Deiser, freut mich.",
   "example_zh": "您好，Deiser 女士，很高興認識您。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -469,7 +473,8 @@
   "example_de": "Guten Tag, Herr Yulu.",
   "example_zh": "您好，Yulu 先生。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -488,7 +493,8 @@
   "example_zh": "Beck 女士在嗎？",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -506,7 +512,8 @@
   "example_de": "Mein Name ist Richard Yulu.",
   "example_zh": "我的名字是 Richard Yulu。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -525,7 +532,8 @@
   "example_zh": "那是誰？",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "固定搭配：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein",
   "topic": "1B"
@@ -545,7 +553,8 @@
   "example_zh": "您叫什麼名字？",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "固定搭配：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein",
   "topic": "1B"
@@ -565,7 +574,8 @@
   "example_zh": "您從哪裡來？",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "固定搭配：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein",
   "topic": "1C"
@@ -585,7 +595,8 @@
   "example_zh": "您說什麼語言？",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "固定搭配：Wie＋heißen、Woher＋kommen、Was＋sprechen、Wer＋sein",
   "topic": "1C"
@@ -604,7 +615,8 @@
   "example_de": "Ich bin Lili.",
   "example_zh": "我是 Lili。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -622,7 +634,8 @@
   "example_de": "Wie heißt du?",
   "example_zh": "你叫什麼名字？",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -640,7 +653,8 @@
   "example_de": "Wer sind Sie?",
   "example_zh": "您是誰？",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -665,7 +679,8 @@
   "example_de": "Ich bin Helga Weber.",
   "example_zh": "我是 Helga Weber。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -690,7 +705,8 @@
   "example_de": "Ich heiße Lara Nowak.",
   "example_zh": "我叫 Lara Nowak。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -715,7 +731,8 @@
   "example_de": "Ich komme aus Polen.",
   "example_zh": "我來自波蘭。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -740,7 +757,8 @@
   "example_de": "Ich spreche Deutsch und Englisch.",
   "example_zh": "我會說德文和英文。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -758,7 +776,8 @@
   "example_de": "Ich komme aus Taiwan.",
   "example_zh": "我來自台灣。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -776,7 +795,8 @@
   "example_de": "Ich komme aus Taipei. Und du?",
   "example_zh": "我來自台北。你呢？",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -794,7 +814,8 @@
   "example_de": "Das ist Herr Yulu.",
   "example_zh": "這位是 Yulu 先生。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -812,7 +833,8 @@
   "example_de": "Welche Sprachen sprichst du?",
   "example_zh": "你會說哪些語言？",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -831,7 +853,8 @@
   "example_zh": "你德文說得很好。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "「ㄑ」的音德文寫 tsch，t 不能省：D-e-u-t-s-c-h",
   "topic": "1C"
@@ -851,7 +874,8 @@
   "example_zh": "我會說英文。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -871,7 +895,8 @@
   "example_zh": "我會說中文。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -891,7 +916,8 @@
   "example_zh": "你會說日文嗎？",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -911,7 +937,8 @@
   "example_zh": "我會說一點韓文。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -931,7 +958,8 @@
   "example_zh": "她會說法文。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -951,7 +979,8 @@
   "example_zh": "我會說義大利文。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -971,7 +1000,8 @@
   "example_zh": "Nico 會說西班牙文。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -991,7 +1021,8 @@
   "example_zh": "您會說俄文嗎？",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -1011,7 +1042,8 @@
   "example_zh": "我會說德文和土耳其文。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -1031,7 +1063,8 @@
   "example_zh": "你會說阿拉伯文嗎？",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -1051,7 +1084,8 @@
   "example_zh": "我會說波蘭文。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -1071,7 +1105,8 @@
   "example_zh": "您會說希臘文嗎？",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "德文語言名稱字尾是 -isch（有 c），不是英文的 -ish",
   "topic": "1C"
@@ -1090,7 +1125,8 @@
   "example_de": "Nein, nur ein bisschen.",
   "example_zh": "不，只會一點點。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -1108,7 +1144,8 @@
   "example_de": "Du sprichst gut Deutsch.",
   "example_zh": "你德文說得很好。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -1127,7 +1164,8 @@
   "example_zh": "我來自德國。",
   "tags": [
    "易錯",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "「ㄑ」的音德文寫 tsch，t 不能省：D-e-u-t-s-c-h",
   "topic": "1C"
@@ -1146,7 +1184,8 @@
   "example_de": "Ich bin aus Österreich.",
   "example_zh": "我來自奧地利。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -1164,7 +1203,8 @@
   "example_de": "Ich komme aus der Schweiz.",
   "example_zh": "我來自瑞士。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -1182,7 +1222,8 @@
   "example_de": "Ich komme aus Liechtenstein.",
   "example_zh": "我來自列支敦斯登。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -1200,7 +1241,8 @@
   "example_de": "Ich komme aus Polen.",
   "example_zh": "我來自波蘭。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -1218,7 +1260,8 @@
   "example_de": "Nico kommt aus Spanien.",
   "example_zh": "Nico 來自西班牙。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1C"
  },
@@ -1531,7 +1574,8 @@
   "example_de": "Wer ist das? – Ich weiß es nicht.",
   "example_zh": "那是誰？－我不知道。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -1549,7 +1593,8 @@
   "example_de": "Wo ist Nico? – Keine Ahnung.",
   "example_zh": "Nico 在哪？－不知道。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -1567,7 +1612,8 @@
   "example_de": "Das ist Mozart. – Ja, stimmt.",
   "example_zh": "這是莫札特。－對，沒錯。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -1585,7 +1631,8 @@
   "example_de": "Aha! Und Sie? Wer sind Sie?",
   "example_zh": "原來！那您呢？您是誰？",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -1657,7 +1704,8 @@
   "example_de": "Wer bist du? – Ich bin Lena.",
   "example_zh": "你是誰？－我是 Lena。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -1675,7 +1723,8 @@
   "example_de": "Wer sind Sie? – Ich bin Frau Weber.",
   "example_zh": "您是誰？－我是 Weber 女士。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -1693,7 +1742,8 @@
   "example_de": "Du bist Max. Und ich bin Lena.",
   "example_zh": "你是 Max。而我是 Lena。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -1805,7 +1855,8 @@
   "example_de": "Er wohnt in Deutschland.",
   "example_zh": "他住在德國。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2C"
  },
@@ -1823,7 +1874,8 @@
   "example_de": "Sie kommt aus Polen.",
   "example_zh": "她來自波蘭。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "判斷 sie／Sie：動詞是 -t 結尾就是「她」，原形就是「他們」或「您」",
   "topic": "2C"
@@ -1842,7 +1894,8 @@
   "example_de": "Das ist das Baby. Es heißt Lena.",
   "example_zh": "這是那個嬰兒。她叫 Lena。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2C"
  },
@@ -1860,7 +1913,8 @@
   "example_de": "Wir wohnen in Deutschland.",
   "example_zh": "我們住在德國。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2C"
  },
@@ -1878,7 +1932,8 @@
   "example_de": "Ihr wohnt in Deutschland.",
   "example_zh": "你們住在德國。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2C"
  },
@@ -1896,7 +1951,8 @@
   "example_de": "Sie wohnen in Deutschland.",
   "example_zh": "他們住在德國。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "spell_tip": "判斷 sie／Sie：動詞是 -t 結尾就是「她」，原形就是「他們」或「您」",
   "topic": "2C"
@@ -1922,7 +1978,8 @@
   "example_de": "Ich wohne in Neu-Taipeh.",
   "example_zh": "我住在新北。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2C"
  },
@@ -1947,7 +2004,8 @@
   "example_de": "Laras Vater lebt in Posen.",
   "example_zh": "Lara 的爸爸住在波茲南。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2C"
  },
@@ -1972,7 +2030,8 @@
   "example_de": "Lara hat ein Baby.",
   "example_zh": "Lara 有一個嬰兒。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2C"
  },
@@ -1991,7 +2050,8 @@
   "example_zh": "這是我爸爸。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2010,7 +2070,8 @@
   "example_zh": "我媽媽來自台灣。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2029,7 +2090,8 @@
   "example_zh": "我父母住在台北。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2048,7 +2110,8 @@
   "example_zh": "這是我兒子。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2067,7 +2130,8 @@
   "example_zh": "我女兒叫 Anna。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2086,7 +2150,8 @@
   "example_zh": "我兄弟住在柏林。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2105,7 +2170,8 @@
   "example_zh": "我姊妹是大學生。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2124,7 +2190,8 @@
   "example_zh": "這是我爺爺。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2143,7 +2210,8 @@
   "example_zh": "我奶奶住在台南。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2162,7 +2230,8 @@
   "example_zh": "這是我的祖父母。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2181,7 +2250,8 @@
   "example_zh": "這是 Lara 的小孩。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2200,7 +2270,8 @@
   "example_zh": "嬰兒叫 Mia。她很可愛。",
   "tags": [
    "家人",
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2218,7 +2289,8 @@
   "example_de": "mein Vater, meine Mutter, meine Eltern",
   "example_zh": "我爸爸、我媽媽、我父母",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2236,7 +2308,8 @@
   "example_de": "Sie sind geschieden.",
   "example_zh": "他們離婚了。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2C"
  },
@@ -2399,7 +2472,8 @@
   "example_zh": "這是我先生。",
   "tags": [
    "期中",
-   "家人"
+   "家人",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2418,7 +2492,8 @@
   "example_zh": "這是我孫子 Tim。",
   "tags": [
    "期中",
-   "家人"
+   "家人",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2437,7 +2512,8 @@
   "example_zh": "這是我孫女 Lily。",
   "tags": [
    "期中",
-   "家人"
+   "家人",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2456,7 +2532,8 @@
   "example_zh": "這是我的兄弟姊妹。",
   "tags": [
    "期中",
-   "家人"
+   "家人",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2475,7 +2552,8 @@
   "example_zh": "這是我爺爺。",
   "tags": [
    "期中",
-   "家人"
+   "家人",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2494,7 +2572,8 @@
   "example_zh": "這是我奶奶。",
   "tags": [
    "期中",
-   "家人"
+   "家人",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2513,7 +2592,8 @@
   "example_zh": "這是我的家庭。它很國際化。",
   "tags": [
    "期中",
-   "家人"
+   "家人",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2549,7 +2629,8 @@
   "example_de": "dein Bruder, deine Schwester, deine Eltern",
   "example_zh": "你的兄弟、你的姊妹、你的父母",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2568,7 +2649,8 @@
   "example_zh": "啊，您先生！那這是您女兒嗎？",
   "tags": [
    "期中",
-   "易錯"
+   "易錯",
+   "介紹"
   ],
   "spell_tip": "Mann 是 der → Ihr Mann（不加 -e）；你在 12a 寫成 Ihre Mann",
   "topic": "2B"
@@ -2587,7 +2669,8 @@
   "example_de": "Das ist mein Bruder.",
   "example_zh": "這是我的兄弟。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "1B"
  },
@@ -2605,7 +2688,8 @@
   "example_de": "Das sind mein Vater und meine Mutter.",
   "example_zh": "這是我爸爸和我媽媽。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2624,7 +2708,8 @@
   "example_zh": "這是我，這些是我的父母。",
   "tags": [
    "期中",
-   "易錯"
+   "易錯",
+   "介紹"
   ],
   "topic": "2B"
  },
@@ -2643,7 +2728,8 @@
   "example_zh": "我的電話號碼是 0179。",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 0,
   "spell_tip": "0–12 要硬記",
@@ -2664,7 +2750,8 @@
   "example_zh": "1",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 1,
   "spell_tip": "0–12 要硬記",
@@ -2685,7 +2772,8 @@
   "example_zh": "2",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 2,
   "spell_tip": "0–12 要硬記",
@@ -2706,7 +2794,8 @@
   "example_zh": "我的小孩三歲。",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 3,
   "spell_tip": "0–12 要硬記",
@@ -2727,7 +2816,8 @@
   "example_zh": "4",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 4,
   "spell_tip": "0–12 要硬記",
@@ -2748,7 +2838,8 @@
   "example_zh": "5",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 5,
   "spell_tip": "fünf 有 ü",
@@ -2769,7 +2860,8 @@
   "example_zh": "6",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 6,
   "spell_tip": "0–12 要硬記",
@@ -2790,7 +2882,8 @@
   "example_zh": "7",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 7,
   "spell_tip": "0–12 要硬記",
@@ -2811,7 +2904,8 @@
   "example_zh": "8",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 8,
   "spell_tip": "0–12 要硬記",
@@ -2832,7 +2926,8 @@
   "example_zh": "9",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 9,
   "spell_tip": "0–12 要硬記",
@@ -2853,7 +2948,8 @@
   "example_zh": "10",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 10,
   "spell_tip": "0–12 要硬記",
@@ -2874,7 +2970,8 @@
   "example_zh": "11",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 11,
   "spell_tip": "elf 不套 -zehn 規則",
@@ -2895,7 +2992,8 @@
   "example_zh": "12",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 12,
   "spell_tip": "0–12 要硬記；zwölf 有 ö",
@@ -2916,7 +3014,8 @@
   "example_zh": "13",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 13,
   "spell_tip": "13–19 ＝ 個位數＋zehn",
@@ -2937,7 +3036,8 @@
   "example_zh": "14",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 14,
   "spell_tip": "13–19 ＝ 個位數＋zehn",
@@ -2958,7 +3058,8 @@
   "example_zh": "15",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 15,
   "spell_tip": "13–19 ＝ 個位數＋zehn",
@@ -2979,7 +3080,8 @@
   "example_zh": "16",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 16,
   "spell_tip": "sechs → sechzehn（去掉 s）",
@@ -3000,7 +3102,8 @@
   "example_zh": "17",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 17,
   "spell_tip": "sieben → siebzehn（去掉 en）",
@@ -3021,7 +3124,8 @@
   "example_zh": "18",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 18,
   "spell_tip": "13–19 ＝ 個位數＋zehn",
@@ -3042,7 +3146,8 @@
   "example_zh": "19",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 19,
   "spell_tip": "13–19 ＝ 個位數＋zehn",
@@ -3063,7 +3168,8 @@
   "example_zh": "我二十歲。",
   "tags": [
    "期中",
-   "數字"
+   "數字",
+   "介紹"
   ],
   "num": 20,
   "spell_tip": "zwanzig：-zig 結尾",
@@ -3083,7 +3189,8 @@
   "example_de": "Wie ist Ihre Nummer?",
   "example_zh": "您的號碼是多少？",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3101,7 +3208,8 @@
   "example_de": "Das ist mein Telefon.",
   "example_zh": "這是我的電話。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3119,7 +3227,8 @@
   "example_de": "Das ist mein Handy.",
   "example_zh": "這是我的手機。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3138,7 +3247,8 @@
   "example_zh": "您的電話號碼是多少？",
   "tags": [
    "期中",
-   "易錯"
+   "易錯",
+   "介紹"
   ],
   "spell_tip": "複合字的性別看最後一個字：Telefon（das）＋ Nummer（die）→ die Telefonnummer → Ihre Telefonnummer",
   "topic": "2D"
@@ -3157,7 +3267,8 @@
   "example_de": "Meine Handynummer ist null, eins, sieben, neun …",
   "example_zh": "我的手機號碼是 0179…",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3175,7 +3286,8 @@
   "example_de": "Wie ist Ihre Adresse? – Marktstraße 1, Hamburg.",
   "example_zh": "您的地址是？－漢堡 Marktstraße 1 號。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3193,7 +3305,8 @@
   "example_de": "Wie alt sind Sie? – Ich bin zwanzig.",
   "example_zh": "您幾歲？－我二十歲。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3211,7 +3324,8 @@
   "example_de": "Ich bin achtzehn Jahre alt.",
   "example_zh": "我十八歲。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3230,7 +3344,8 @@
   "example_zh": "您在哪裡出生？",
   "tags": [
    "期中",
-   "易錯"
+   "易錯",
+   "介紹"
   ],
   "spell_tip": "Wo＝在哪裡（出生地）；Woher＝從哪裡來；Wie alt＝幾歲",
   "topic": "2D"
@@ -3249,7 +3364,8 @@
   "example_de": "Ich bin in Taipei geboren.",
   "example_zh": "我在台北出生。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3268,7 +3384,8 @@
   "example_zh": "您在哪裡出生？－在哈勒。",
   "tags": [
    "期中",
-   "易錯"
+   "易錯",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3286,7 +3403,8 @@
   "example_de": "Haben Sie Kinder? – Ja, zwei Kinder.",
   "example_zh": "您有孩子嗎？－有，兩個。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3304,7 +3422,8 @@
   "example_de": "Wie alt ist Ihr Kind? – Drei.",
   "example_zh": "您的孩子幾歲？－三歲。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3322,7 +3441,8 @@
   "example_de": "Ich bin ledig.",
   "example_zh": "我單身。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3340,7 +3460,8 @@
   "example_de": "Sind Sie verheiratet?",
   "example_zh": "您結婚了嗎？",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3358,7 +3479,8 @@
   "example_de": "Er ist verwitwet.",
   "example_zh": "他喪偶。",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3376,7 +3498,8 @@
   "example_de": "Familienstand: ledig",
   "example_zh": "婚姻狀況：未婚",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3394,7 +3517,8 @@
   "example_de": "Geburtsort: Taipei",
   "example_zh": "出生地：台北",
   "tags": [
-   "期中"
+   "期中",
+   "介紹"
   ],
   "topic": "2D"
  },
@@ -3594,5 +3718,557 @@
    "易錯"
   ],
   "topic": "2E"
+ },
+ {
+  "id": "L2_W9_V001",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "der Beruf",
+  "zh": "職業",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Berufe",
+  "conj": null,
+  "example_de": "Mein Beruf: Student.",
+  "example_zh": "我的職業：學生。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V002",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "der Polizist",
+  "zh": "警察（男）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Polizisten",
+  "conj": null,
+  "example_de": "Er ist Polizist.",
+  "example_zh": "他是警察。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D",
+  "spell_tip": "錄音聽到 Polizei（警察局／警察），人物介紹用 Polizist；待對課本確認"
+ },
+ {
+  "id": "L2_W9_V003",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "die Polizistin",
+  "zh": "警察（女）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Polizistinnen",
+  "conj": null,
+  "example_de": "Sie ist Polizistin.",
+  "example_zh": "她是警察。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V004",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "der Arzt",
+  "zh": "醫生（男）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Ärzte",
+  "conj": null,
+  "example_de": "Er ist Arzt.",
+  "example_zh": "他是醫生。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D",
+  "spell_tip": "Arzt：複數 Ärzte（a 變 ä）"
+ },
+ {
+  "id": "L2_W9_V005",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "die Ärztin",
+  "zh": "醫生（女）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Ärztinnen",
+  "conj": null,
+  "example_de": "Sie ist Ärztin.",
+  "example_zh": "她是醫生。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D",
+  "spell_tip": "Ärztin：a 上有兩點 ä"
+ },
+ {
+  "id": "L2_W9_V006",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "der Ingenieur",
+  "zh": "工程師",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Ingenieure",
+  "conj": null,
+  "example_de": "Arto ist Ingenieur.",
+  "example_zh": "Arto 是工程師。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D",
+  "spell_tip": "Ingenieur：字尾 -eur"
+ },
+ {
+  "id": "L2_W9_V007",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "der Pilot",
+  "zh": "飛行員",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Piloten",
+  "conj": null,
+  "example_de": "Thomas ist Pilot.",
+  "example_zh": "Thomas 是飛行員。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V008",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "der Fotograf",
+  "zh": "攝影師",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Fotografen",
+  "conj": null,
+  "example_de": "Ralf ist Fotograf.",
+  "example_zh": "Ralf 是攝影師。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D",
+  "spell_tip": "Fotograf：f 開頭、不是 ph"
+ },
+ {
+  "id": "L2_W9_V009",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "der Partner",
+  "zh": "伴侶（男）",
+  "pos": "noun",
+  "article": "der",
+  "plural": "die Partner",
+  "conj": null,
+  "example_de": "Mein Partner kommt aus Dänemark.",
+  "example_zh": "我的伴侶來自丹麥。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V010",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "die Partnerin",
+  "zh": "伴侶（女）",
+  "pos": "noun",
+  "article": "die",
+  "plural": "die Partnerinnen",
+  "conj": null,
+  "example_de": "Meine Partnerin wohnt in Basel.",
+  "example_zh": "我的伴侶住在巴塞爾。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V011",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "das Jahr",
+  "zh": "年；歲",
+  "pos": "noun",
+  "article": "das",
+  "plural": "die Jahre",
+  "conj": null,
+  "example_de": "Ich lerne seit einem Jahr Deutsch.",
+  "example_zh": "我學德文一年了。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V012",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "lernen",
+  "zh": "學習",
+  "pos": "verb",
+  "article": null,
+  "plural": null,
+  "conj": {
+   "ich": "lerne",
+   "du": "lernst",
+   "er/sie/es": "lernt",
+   "wir": "lernen",
+   "ihr": "lernt",
+   "sie/Sie": "lernen"
+  },
+  "example_de": "Er lernt auch Deutsch.",
+  "example_zh": "他也在學德文。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V013",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "auch",
+  "zh": "也",
+  "pos": "adv",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Ich lerne auch Deutsch.",
+  "example_zh": "我也學德文。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V014",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "Wie alt bist du?",
+  "zh": "你幾歲？",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie alt bist du? – Ich bin dreißig.",
+  "example_zh": "你幾歲？－我三十歲。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V015",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "Wie alt ist er?",
+  "zh": "他幾歲？",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wie alt ist er? – Er ist sechzehn.",
+  "example_zh": "他幾歲？－他十六歲。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V016",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "Wo bist du geboren?",
+  "zh": "你在哪裡出生？",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wo bist du geboren? – Ich bin in Taipeh geboren.",
+  "example_zh": "你在哪裡出生？－我在台北出生。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V017",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "Wo ist er geboren?",
+  "zh": "他在哪裡出生？",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Wo ist er geboren? – Er ist in Kiel geboren.",
+  "example_zh": "他在哪裡出生？－他在基爾出生。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D"
+ },
+ {
+  "id": "L2_W9_V018",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "ein",
+  "zh": "一（用在個位數組合）",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "einundzwanzig",
+  "example_zh": "21",
+  "tags": [
+   "數字零件",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num_part": 1,
+  "spell_tip": "21 以上的「一」寫 ein，不是 eins：einunddreißig"
+ },
+ {
+  "id": "L2_W9_V019",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "und",
+  "zh": "和；（數字中）連接個位與十位",
+  "pos": "phrase",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "vierundreißig",
+  "example_zh": "34",
+  "tags": [
+   "數字零件",
+   "介紹"
+  ],
+  "topic": "2D",
+  "spell_tip": "個位數 ＋ und ＋ 十位數，全部連寫成一個字"
+ },
+ {
+  "id": "L2_W9_V020",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "dreißig",
+  "zh": "30",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist dreißig.",
+  "example_zh": "他30歲。",
+  "tags": [
+   "期末",
+   "整十數",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num": 30,
+  "spell_tip": "ß 不是 ss：dreißig（對照 drei）"
+ },
+ {
+  "id": "L2_W9_V021",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "vierzig",
+  "zh": "40",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist vierzig.",
+  "example_zh": "他40歲。",
+  "tags": [
+   "期末",
+   "整十數",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num": 40,
+  "spell_tip": "vier ＋ zig（不是 vierzehn）"
+ },
+ {
+  "id": "L2_W9_V022",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "fünfzig",
+  "zh": "50",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist fünfzig.",
+  "example_zh": "他50歲。",
+  "tags": [
+   "期末",
+   "整十數",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num": 50,
+  "spell_tip": "fünf ＋ zig，ü 要有兩點"
+ },
+ {
+  "id": "L2_W9_V023",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "sechzig",
+  "zh": "60",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist sechzig.",
+  "example_zh": "他60歲。",
+  "tags": [
+   "期末",
+   "整十數",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num": 60,
+  "spell_tip": "sechs → sechzig（去掉 s，和 sechzehn 不同）"
+ },
+ {
+  "id": "L2_W9_V024",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "siebzig",
+  "zh": "70",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist siebzig.",
+  "example_zh": "他70歲。",
+  "tags": [
+   "期末",
+   "整十數",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num": 70,
+  "spell_tip": "sieben → siebzig（去掉 en）"
+ },
+ {
+  "id": "L2_W9_V025",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "achtzig",
+  "zh": "80",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist achtzig.",
+  "example_zh": "他80歲。",
+  "tags": [
+   "期末",
+   "整十數",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num": 80,
+  "spell_tip": "acht ＋ zig"
+ },
+ {
+  "id": "L2_W9_V026",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "neunzig",
+  "zh": "90",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist neunzig.",
+  "example_zh": "他90歲。",
+  "tags": [
+   "期末",
+   "整十數",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num": 90,
+  "spell_tip": "neun ＋ zig"
+ },
+ {
+  "id": "L2_W9_V027",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "hundert",
+  "zh": "100",
+  "pos": "num",
+  "article": null,
+  "plural": null,
+  "conj": null,
+  "example_de": "Er ist hundert.",
+  "example_zh": "他100歲。",
+  "tags": [
+   "期末",
+   "整十數",
+   "介紹"
+  ],
+  "topic": "2D",
+  "num": 100,
+  "spell_tip": "hundert：d 結尾，不是 hundred"
  }
 ]
