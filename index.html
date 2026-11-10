@@ -462,11 +462,14 @@ function diffHtml(correct, typed) {
 function bindKeys(input) {
   document.querySelectorAll('.keys button').forEach(b => b.onclick = () => {
     const [a, z] = [input.selectionStart ?? input.value.length, input.selectionEnd ?? input.value.length];
-    input.value = input.value.slice(0, a) + b.textContent + input.value.slice(z);
-    input.focus(); input.setSelectionRange(a + 1, a + 1);
+    const ins = b.dataset.ins ?? b.textContent;
+    input.value = input.value.slice(0, a) + ins + input.value.slice(z);
+    input.focus(); input.setSelectionRange(a + ins.length, a + ins.length);
   });
 }
 const KEYS = `<div class="keys">${['ä', 'ö', 'ü', 'ß'].map(k => `<button type="button">${k}</button>`).join('')}</div>`;
+// 數字鍵盤沒有空白鍵：電話號碼題要用空白分隔數字，所以加一顆畫面上的空白鍵
+const KEYS_SP = `<div class="keys"><button type="button" data-ins=" " style="width:140px;font-size:16px">␣ 空白</button></div>`;
 function markWeak(v) { const s = srs[v.id] || { box: 1, due: Date.now() }; s.weak = true; srs[v.id] = s; saveSrs(); }
 function roundEnd(score, total, again, note) {
   app.innerHTML = `<div class="card" style="text-align:center"><p style="font-size:40px;margin:8px">✍️</p>
@@ -762,13 +765,13 @@ function renderNum() {
       ${q.mode !== 'spell' || done ? `<button class="spk" id="say" style="margin-top:10px">🔊</button>` : ''}
       <input class="answer ${done ? (q.ok ? 'ok' : 'ng') : ''}" id="ans" style="margin-top:12px" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
         ${q.mode === 'spell' ? '' : 'inputmode="numeric"'} placeholder="${q.mode === 'spell' ? '德文拼字' : '數字'}" value="${esc(q.given ?? '')}" ${done ? 'readonly' : ''}>
-      ${!done && q.mode === 'spell' ? KEYS : ''}
+      ${!done ? (q.mode === 'spell' ? KEYS : q.mode === 'phone' ? KEYS_SP : '') : ''}
       ${done ? `<div style="margin-top:10px">${q.ok ? '✅ 正確' : `❌ 正確答案：<b>${esc(q.answer)}</b>`}</div><div class="why">${esc(q.why)}</div>` : ''}
     </div>
     ${done ? `<button class="btn" id="next">下一題</button>` : `<button class="btn" id="check">送出</button>`}`;
   $('#say') && ($('#say').onclick = replay);
   if (done) { $('#next').onclick = () => { ni++; renderNum(); }; return; }
-  const input = $('#ans'); if (q.mode === 'spell') bindKeys(input);
+  const input = $('#ans'); if (q.mode === 'spell' || q.mode === 'phone') bindKeys(input);
   const check = () => {
     if (!input.value.trim()) return input.focus();
     q.given = input.value; q.ok = numOk(q, q.given);
@@ -833,7 +836,7 @@ function renderMock() {
       <div class="prompt">${prompt}</div><div class="muted">${esc(q.sub)}</div>
       ${q.say[1] || q.cat !== 'poss' || done ? `<button class="spk" id="say" style="margin-top:10px">🔊</button>` : ''}
       ${q.type === 'type' ? `<input class="answer ${done ? (q.ok ? 'ok' : 'ng') : ''}" id="ans" style="margin-top:12px" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
-        placeholder="打出答案" value="${esc(q.given ?? '')}" ${done ? 'readonly' : ''}>${done ? '' : KEYS}` : ''}
+        placeholder="打出答案" value="${esc(q.given ?? '')}" ${done ? 'readonly' : ''}>${done ? '' : (q.mode === 'phone' ? KEYS_SP : KEYS)}` : ''}
       ${done ? `<div style="margin-top:10px">${q.ok ? '✅ 正確' : `❌ 正確答案：<b>${esc(q.answer)}</b>`}</div><div class="why">${esc(q.why)}</div>` : ''}
     </div>
     ${q.type === 'choice' ? q.opts.map((x, i) => `<button class="opt ${done ? (x === q.answer ? 'right' : (x === q.given ? 'wrong' : '')) : ''}" data-i="${i}" style="text-align:center">${esc(x)}</button>`).join('') : ''}
