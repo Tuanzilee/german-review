@@ -3756,7 +3756,7 @@
    "介紹"
   ],
   "topic": "2D",
-  "spell_tip": "錄音聽到 Polizei（警察局／警察），人物介紹用 Polizist；待對課本確認"
+  "spell_tip": "課堂和課本教的是 Polizei（警察）；Polizist／Polizistin 是「一位警察」，德文通用，考試以老師教的 Polizei 為主"
  },
  {
   "id": "L2_W9_V003",
@@ -3775,7 +3775,8 @@
    "期末",
    "介紹"
   ],
-  "topic": "2D"
+  "topic": "2D",
+  "spell_tip": "課堂和課本教的是 Polizei（警察）；Polizist／Polizistin 是「一位警察」，德文通用，考試以老師教的 Polizei 為主"
  },
  {
   "id": "L2_W9_V004",
@@ -4270,5 +4271,25 @@
   "topic": "2D",
   "num": 100,
   "spell_tip": "hundert：d 結尾，不是 hundred"
+ },
+ {
+  "id": "L2_W9_V028",
+  "lektion": 2,
+  "week": 9,
+  "source": "plaud",
+  "de": "die Polizei",
+  "zh": "警察（課堂教的職業說法）",
+  "pos": "noun",
+  "article": "die",
+  "plural": null,
+  "conj": null,
+  "example_de": "Das ist die Polizei.",
+  "example_zh": "這是警察（局）。",
+  "tags": [
+   "期末",
+   "介紹"
+  ],
+  "topic": "2D",
+  "spell_tip": "Polizei：結尾是 -ei（念 ai），沒有 t"
  }
 ]

@@ -2391,6 +2391,14 @@
   "text": "Er ist hundert.",
   "voice": "de-DE-KatjaNeural"
  },
+ "L2_W9_V028.mp3": {
+  "text": "die Polizei",
+  "voice": "de-DE-KatjaNeural"
+ },
+ "L2_W9_V028_ex.mp3": {
+  "text": "Das ist die Polizei.",
+  "voice": "de-DE-KatjaNeural"
+ },
  "WF01.mp3": {
   "text": "Wie heißen Sie?",
   "voice": "de-DE-KatjaNeural"

@@ -86,7 +86,7 @@ hai 指出哪個字錯 → 用 `de` 或 `id` 找到該筆 → 改欄位 → 若�
 ## 2026-11-10 重整（W09 後）
 - 目標改成「用德文介紹自己／他人」：首頁最上方是對照句型卡（ich → er/sie 詞尾）＋「介紹自己／他人」範圍（tags 含「介紹」，topic 1B/1C/2B/2C/2D）；期中倒數拿掉，改成「期末範圍（L2–3）」（lektion ≥ 2）；舊的「期中範圍」存檔值自動轉成「介紹」。期中模擬考保留為「綜合模擬題」。
 - 🔢 數字 21–100：整十數（tags「整十數」，欄位 `num`）＋零件 `ein`、`und`（tags「數字零件」）；複合數字沒有獨立音檔，用 `playSeq` 串「個位＋und＋十位」的現成音檔，答案用 `bigWord(n)` 算出來。
-- W9 單字（L2_W9_V001…）：職業、Partner、lernen、auch、年齡／出生地問句。`Polizist` 為待對課本確認（錄音聽到 Polizei）。
+- W9 單字（L2_W9_V001…）：職業、Partner、lernen、auch、年齡／出生地問句。課堂教的職業詞是 `Polizei`（hai 2026-11-10 確認），Polizist/Polizistin 保留作人物介紹用。
 - wfragen 加 WF18–22（Wie alt ist er? 等）。
 - 第二階段（已做）：`PEOPLE` 六張自編人物資料卡（不抄課本），模式 `introself`（ich 句）、`introother`（er/sie 句）、`introconv`（ich → er/sie 轉換），每輪 6–7 句整句輸入，句型模板在 `introSentence()`（面向：名字、來自、住在、年齡、語言、職業、婚姻）；年齡用 `ageWord()` 拼成德文。要加人物或面向就改 `PEOPLE` / `INTRO_ASPECTS`。沒有 hai 自己的資料卡（個人資料不放公開 repo）。
 
